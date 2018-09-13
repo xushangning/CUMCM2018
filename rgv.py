@@ -1,5 +1,5 @@
 RGV_modecode = {
-    0: 'idle'
+    0: 'idle',
     1: 'move 1 left',
     2: 'move 1 right',
     3: 'move 2 left',
