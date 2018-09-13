@@ -70,7 +70,7 @@ class RGV:
             elif tmp == RGV_modecode_rev['move 3 right']:
                 self.posi += 3
                 return tmp, None
-            elif tmp == RGV_modecode_rev['supply cargo 1'] or tmp == RGV_modecode_rev['supply cargo 2']
+            elif tmp == RGV_modecode_rev['supply cargo 1'] or tmp == RGV_modecode_rev['supply cargo 2']:
                 tmp_id = self.carry_id
                 self.carry_id = 0
                 return tmp, tmp_id
