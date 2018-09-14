@@ -1,14 +1,12 @@
 import numpy as np
-import rgv
-import cnc
+import world
 
 # parameters
 proc_time = 3600*8
 clockCycle = 1
 commandQueue = list()
 completeWork = 0
-controller = cnc.CNC(proc_time)
-vehicle = rgv.RGV([x for x in range(1, 13)], controller)
+simulator = world.World(proc_time)
 
 # default list of priority
 priorList = {
@@ -19,27 +17,34 @@ priorList = {
     "Load2odd": 3,
     "Load2even": 3.5,
     "Load3odd": 4,
-    "Load3even":4.5,
+    "Load3even": 4.5,
     "Take0odd": 5,    # take and load in one step
     "Take0even": 5.5,
     "Take1odd": 6,
     "Take1even": 6.5,
     "Take2odd": 7,
-    "Take2even":7.5,
+    "Take2even": 7.5,
     "Take3odd": 8,
     "Take3even": 8.5,
     "WaitNext": 9,  # go to waiting position
 }
 
 
-# the status of CNCs
-def cncStatus():
-    return
-
-
 # add a command to the command queue
-def addCommand(command):
-    commandQueue.append(command)
+def addCommand():
+    cncStatus = simulator.entity_dict['CNC']    # get the status of all CNCs
+    rgvStatus = simulator.entity_dict['RGV']    # same as above
+    rgvPosition = rgvStatus.posi                # the position of RGV
+    for cncNum in range(1, 1 + len(cncStatus)):
+        cnc = cncStatus[cncNum - 1]
+        if cnc.status == 1:
+            continue
+        cncPosition = (cncNum + 1) // 2         # the position of the current CNC
+        if cncNum % 2 == 0:                     # judge the odevity of CNC
+            OEproperty = "even"
+        else:
+            OEproperty = "odd"
+        
     return
 
 
