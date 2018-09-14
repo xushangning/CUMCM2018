@@ -8,7 +8,9 @@ RGV_param = [
     46,
     28,
     31,
-    25
+    28,
+    31,
+    25,
 ]
 
 RGV_modecode = {
