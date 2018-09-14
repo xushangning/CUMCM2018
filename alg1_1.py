@@ -2,6 +2,21 @@
 # First draft on Sept.14, 20:12
 # Command code to be added in Line 81-111, depending on rgv.py
 
+RGV_modecode_rev = {
+    'idle': 0,
+    'move 1 left': 1,
+    'move 1 right': 2,
+    'move 2 left': 3,
+    'move 2 right': 4,
+    'move 3 left': 5,
+    'move 3 right': 6,
+    'supply cargo 1': 7,
+    'consume cargo 1': 8,
+    'supply cargo 2': 9,
+    'consume cargo 2': 10,
+    'wash': 11
+}
+
 
 class PriorityListAlgorithm:
     def __init__(self):
@@ -80,16 +95,16 @@ class PriorityListAlgorithm:
 
                 if not direction:
                     if OEproperty == "even":
-                        commandCode.append()    # append the even one
+                        commandCode.append(7)    # append the even one
                     else:
-                        commandCode.append()    # append the odd one
+                        commandCode.append(8)    # append the odd one
                 else:
                     moveCommand = "move " + str(int(abs(cncPosition))) + " " + direction
-                    commandCode.append()    # append the code for moveCommand
+                    commandCode.append(RGV_modecode_rev[moveCommand])    # append the code for moveCommand
                     if OEproperty == "even":
-                        commandCode.append()    # append the even one
+                        commandCode.append(7)    # append the even one
                     else:
-                        commandCode.append()    # append the odd one
+                        commandCode.append(8)    # append the odd one
 
             else:
                 # if the cnc is done working, load then wash
@@ -97,18 +112,18 @@ class PriorityListAlgorithm:
                 commandPriority = self.priorList[command]
                 if not direction:
                     if OEproperty == "even":
-                        commandCode.append()    # append the even one
+                        commandCode.append(7)    # append the even one
                     else:
-                        commandCode.append()    # append the odd one
+                        commandCode.append(8)    # append the odd one
                 else:
                     moveCommand = "move " + str(int(abs(cncPosition))) + " " + direction
-                    commandCode.append()    # append the code for moveCommand
+                    commandCode.append(RGV_modecode_rev[moveCommand])    # append the code for moveCommand
                     if OEproperty == "even":
-                        commandCode.append()    # append the even one
+                        commandCode.append(7)    # append the even one
                     else:
-                        commandCode.append()    # append the odd one
+                        commandCode.append(8)    # append the odd one
                 # wash process
-                commandCode.append()    # append the wash process (depending on rgv.py)
+                commandCode.append(11)    # append the wash process (depending on rgv.py)
 
             # load the commandCode into commandQueue
             commandQueue[commandPriority] = commandCode
