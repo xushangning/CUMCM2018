@@ -8,7 +8,9 @@ RGV_param = [
     46,
     28,
     31,
-    25
+    28,
+    31,
+    25,
 ]
 
 RGV_modecode = {
@@ -80,14 +82,14 @@ class RGV:
                 return -1
             self.carry_id = cid
         elif RGV_modecode[modecode] == 'consume cargo 1':
-            if self.cnc['status'](self.posi, 1) == 0:
+            if self.cnc['status'](self.posi, 1) != 2:
                 return -1
         elif RGV_modecode[modecode] == 'supply cargo 2':
             if self.cnc['status'](self.posi, 2) != 0:
                 return -1
             self.carry_id = cid
         elif RGV_modecode[modecode] == 'consume cargo 2':
-            if self.cnc['status'](self.posi, 2) == 0:
+            if self.cnc['status'](self.posi, 2) != 2:
                 return -1
 
         self.status = modecode
@@ -134,15 +136,11 @@ class RGV:
                 self.cnc['supply'](self.posi, 2, tmp_id)
                 return tmp, tmp_id
             elif tmp == RGV_modecode_rev['consume cargo 1']:
-                tmp_id = self.carry_id
-                self.carry_id = 0
-                self.cnc['consume'](self.posi, 1)
-                return tmp, tmp_id
+                self.carry_id = self.cnc['consume'](self.posi, 1)
+                return tmp, self.carry_id
             elif tmp == RGV_modecode_rev['consume cargo 2']:
-                tmp_id = self.carry_id
-                self.carry_id = 0
-                self.cnc['consume'](self.posi, 2)
-                return tmp, tmp_id
+                self.carry_id = self.cnc['consume'](self.posi, 2)
+                return tmp, self.carry_id
             elif tmp == RGV_modecode_rev['wash']:
                 return tmp, self.carry_id
 
