@@ -60,7 +60,7 @@ class World:
                             'time': self.clock
                         })
 
-                    new_inst = self.alg(self.entity_dict)
+                    new_inst = self.alg(self.entity_dict, self.clock)
                     if new_inst == rgv.RGV_modecode_rev['supply cargo 1'] or \
                             new_inst == rgv.RGV_modecode_rev['supply cargo 2']:
                         self.cargo_id += 1
@@ -72,7 +72,7 @@ class World:
                 for e in entity[1:]:
                     event, cargo = e.update()
                     if event is not None:
-                        print(rgv.RGV_modecode[event])
+                        print(cnc.CNC_modecode[event])
 
         self.clock += 1
         return 0
@@ -82,6 +82,7 @@ class World:
             flag = self.update()
             if flag == -1:
                 print("Error", self.clock)
+                self.info()
                 break
 
     def info(self):
@@ -108,7 +109,7 @@ class World:
         else:
             return -1
 
-        return self.entity_dict['CNC'][cnc_id].proc_id
+        return self.entity_dict['CNC'][cnc_id].status
 
     def cnc_supply(self, posi, side, cid):
         if side == 1:
@@ -130,6 +131,7 @@ class World:
         else:
             return -1
 
+        tmp = self.entity_dict['CNC'][cnc_id].proc_id
         self.entity_dict['CNC'][cnc_id].proc_id = 0
         self.entity_dict['CNC'][cnc_id].inst(cnc.CNC_modecode_rev['idle'])
-        return 0
+        return tmp
