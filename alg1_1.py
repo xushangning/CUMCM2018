@@ -46,7 +46,7 @@ class PriorityListAlgorithm:
             "WaitNext": 16,  # go to waiting position
         }
 
-    def alg(self, entity_dict):
+    def alg(self, entity_dict, clock):
         """
         :param entity_dict: entity_dict of world.py
         :return: method code
