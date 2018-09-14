@@ -1,3 +1,5 @@
+import cnc
+
 RGV_param = [
     -1,
     20,
@@ -6,8 +8,6 @@ RGV_param = [
     33,
     46,
     46,
-    28,
-    31,
     28,
     31,
     25,
@@ -22,10 +22,8 @@ RGV_modecode = {
     5: 'move 3 left',
     6: 'move 3 right',
     7: 'supply cargo 1',
-    8: 'consume cargo 1',
-    9: 'supply cargo 2',
-    10: 'consume cargo 2',
-    11: 'wash'
+    8: 'supply cargo 2',
+    9: 'wash'
 }
 
 RGV_modecode_rev = {
@@ -37,10 +35,8 @@ RGV_modecode_rev = {
     'move 3 left': 5,
     'move 3 right': 6,
     'supply cargo 1': 7,
-    'consume cargo 1': 8,
-    'supply cargo 2': 9,
-    'consume cargo 2': 10,
-    'wash': 11
+    'supply cargo 2': 8,
+    'wash': 9
 }
 
 
@@ -58,42 +54,41 @@ class RGV:
         self.cnc = cnc_api
 
     def inst(self, modecode, cid):
+        last_id = None
+
         # check the validity of instruction
         if RGV_modecode[modecode] == 'move 1 left':
             if self.posi <= 1:
-                return -1
+                return -1, None
         elif RGV_modecode[modecode] == 'move 1 right':
             if self.posi >= 4:
-                return -1
+                return -1, None
         elif RGV_modecode[modecode] == 'move 2 left':
             if self.posi <= 2:
-                return -1
+                return -1, None
         elif RGV_modecode[modecode] == 'move 2 right':
             if self.posi >= 3:
-                return -1
+                return -1, None
         elif RGV_modecode[modecode] == 'move 3 left':
             if self.posi <= 3:
-                return -1
+                return -1, None
         elif RGV_modecode[modecode] == 'move 3 right':
             if self.posi >= 2:
-                return -1
+                return -1, None
         elif RGV_modecode[modecode] == 'supply cargo 1':
-            if self.cnc['status'](self.posi, 1) != 0:
-                return -1
+            if self.cnc['status'](self.posi, 1) == cnc.CNC_modecode_rev['processing']:
+                return -1, None
             self.carry_id = cid
-        elif RGV_modecode[modecode] == 'consume cargo 1':
-            if self.cnc['status'](self.posi, 1) != 2:
-                return -1
+            last_id = self.cnc['curr_id'](self.posi, 1)
         elif RGV_modecode[modecode] == 'supply cargo 2':
-            if self.cnc['status'](self.posi, 2) != 0:
-                return -1
+            if self.cnc['status'](self.posi, 2) == cnc.CNC_modecode_rev['processing']:
+                return -1, None
             self.carry_id = cid
-        elif RGV_modecode[modecode] == 'consume cargo 2':
-            if self.cnc['status'](self.posi, 2) != 2:
-                return -1
+            last_id = self.cnc['curr_id'](self.posi, 1)
 
         self.status = modecode
         self.proc_clock = RGV_param[modecode]
+        return 0, last_id
 
     def update(self):
         self.clock += 1
@@ -127,20 +122,14 @@ class RGV:
                 return tmp, None
             elif tmp == RGV_modecode_rev['supply cargo 1']:
                 tmp_id = self.carry_id
-                self.carry_id = 0
+                self.carry_id = self.cnc['consume'](self.posi, 2)
                 self.cnc['supply'](self.posi, 1, tmp_id)
                 return tmp, tmp_id
             elif tmp == RGV_modecode_rev['supply cargo 2']:
                 tmp_id = self.carry_id
-                self.carry_id = 0
+                self.carry_id = self.cnc['consume'](self.posi, 2)
                 self.cnc['supply'](self.posi, 2, tmp_id)
                 return tmp, tmp_id
-            elif tmp == RGV_modecode_rev['consume cargo 1']:
-                self.carry_id = self.cnc['consume'](self.posi, 1)
-                return tmp, self.carry_id
-            elif tmp == RGV_modecode_rev['consume cargo 2']:
-                self.carry_id = self.cnc['consume'](self.posi, 2)
-                return tmp, self.carry_id
             elif tmp == RGV_modecode_rev['wash']:
                 return tmp, self.carry_id
 
