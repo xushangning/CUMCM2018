@@ -1,6 +1,7 @@
 # The idiot demo for problem 1_1, no algorithm at all
 # First draft on Sept.14, 20:12
-# Command code to be added in Line 81-111, depending on rgv.py
+# Command code to be added in Line 82-112, depending on rgv.py
+# Sept.14, 22:10, notice that the entity_dict["CNC"] starts with a -1.
 
 RGV_modecode_rev = {
     'idle': 0,
@@ -68,7 +69,7 @@ class PriorityListAlgorithm:
         rgvPosition = rgvStatus.posi  # the position of RGV
 
         for cncNum in range(1, 1 + len(cncStatus)):
-            cnc = cncStatus[cncNum - 1]
+            cnc = cncStatus[cncNum]
             if cnc.status == 1:
                 continue
             cncPosition = (cncNum + 1) // 2  # the position of the current CNC
