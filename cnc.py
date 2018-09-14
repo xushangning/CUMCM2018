@@ -7,11 +7,13 @@ CNC_proctime_2 = 378
 CNC_modecode = {
     0: 'idle',
     1: 'processing',
+    2: 'processed'
 }
 
 CNC_modecode_rev = {
     'idle': 0,
-    'processing': 1
+    'processing': 1,
+    'processed': 2
 }
 
 
@@ -26,7 +28,8 @@ class CNC:
 
     def inst(self, modecode):
         self.status = modecode
-        self.proc_clock = self.proc_time
+        if modecode == CNC_modecode_rev['processing']:
+            self.proc_clock = self.proc_time
 
     def update(self):
         self.clock += 1
@@ -35,5 +38,8 @@ class CNC:
             self.proc_clock -= 1
             if self.proc_clock == 0:
                 tmp = self.status
-                self.status = CNC_modecode_rev['idle']
+                self.status = CNC_modecode_rev['processed']
+                self.proc_clock = -1
                 return tmp, self.proc_id
+
+        return None, None
