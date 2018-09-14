@@ -1,5 +1,3 @@
-import cnc
-
 RGV_param = [
     -1,
     20,
@@ -98,7 +96,9 @@ class RGV:
     def update(self):
         self.clock += 1
 
-        if self.status != RGV_modecode_rev['idle']:
+        if self.status == RGV_modecode_rev['idle']:
+            return self.status, None
+        else:
             self.proc_clock -= 1
 
         if self.proc_clock == 0:
