@@ -12,10 +12,8 @@ RGV_modecode_rev = {
     'move 3 left': 5,
     'move 3 right': 6,
     'supply cargo 1': 7,
-    'consume cargo 1': 8,
-    'supply cargo 2': 9,
-    'consume cargo 2': 10,
-    'wash': 11
+    'supply cargo 2': 8,
+    'wash': 9
 }
 
 
@@ -68,7 +66,7 @@ class PriorityListAlgorithm:
         rgvStatus = entity_dict['RGV']  # same as above
         rgvPosition = rgvStatus.posi  # the position of RGV
 
-        for cncNum in range(1, 1 + len(cncStatus)):
+        for cncNum in range(1, len(cncStatus)):
             cnc = cncStatus[cncNum]
             if cnc.status == 1:
                 continue
@@ -84,7 +82,7 @@ class PriorityListAlgorithm:
             elif cncPosition - rgvPosition > 0:
                 direction = "right"
             else:
-                direction = None
+                direction = False
 
             commandCode = []    # save the bunch of command code
 
@@ -96,16 +94,16 @@ class PriorityListAlgorithm:
 
                 if not direction:
                     if OEproperty == "even":
-                        commandCode.append(7)    # append the even one
+                        commandCode.append(8)    # append the even one
                     else:
-                        commandCode.append(8)    # append the odd one
+                        commandCode.append(7)    # append the odd one
                 else:
-                    moveCommand = "move " + str(int(abs(cncPosition))) + " " + direction
+                    moveCommand = "move " + str(abs(rgvPosition - cncPosition)) + " " + direction
                     commandCode.append(RGV_modecode_rev[moveCommand])    # append the code for moveCommand
                     if OEproperty == "even":
-                        commandCode.append(7)    # append the even one
+                        commandCode.append(8)    # append the even one
                     else:
-                        commandCode.append(8)    # append the odd one
+                        commandCode.append(7)    # append the odd one
 
             else:
                 # if the cnc is done working, load then wash
@@ -113,24 +111,27 @@ class PriorityListAlgorithm:
                 commandPriority = self.priorList[command]
                 if not direction:
                     if OEproperty == "even":
-                        commandCode.append(7)    # append the even one
+                        commandCode.append(8)    # append the even one
                     else:
-                        commandCode.append(8)    # append the odd one
+                        commandCode.append(7)    # append the odd one
                 else:
-                    moveCommand = "move " + str(int(abs(cncPosition))) + " " + direction
+                    moveCommand = "move " + str(abs(rgvPosition - cncPosition)) + " " + direction
                     commandCode.append(RGV_modecode_rev[moveCommand])    # append the code for moveCommand
                     if OEproperty == "even":
-                        commandCode.append(7)    # append the even one
+                        commandCode.append(8)    # append the even one
                     else:
-                        commandCode.append(8)    # append the odd one
+                        commandCode.append(7)    # append the odd one
                 # wash process
-                commandCode.append(11)    # append the wash process (depending on rgv.py)
+                commandCode.append(9)    # append the wash process (depending on rgv.py)
 
             # load the commandCode into commandQueue
             commandQueue[commandPriority] = commandCode
-            for commands in commandQueue:
-                if commands != 0:
-                    return commands
+
+        for commands in commandQueue:
+            if commands != 0:
+                return commands
+
+        return [0]
 
     # get the first command in the command list, and then erase it
     def nextCommand(self):
