@@ -78,18 +78,18 @@ class RGV:
             if self.posi >= 2:
                 return -1
         elif RGV_modecode[modecode] == 'supply cargo 1':
-            if self.cnc['status'](self.posi, 1) == 0:
+            if self.cnc['status'](self.posi, 1) != 0:
                 return -1
             self.carry_id = cid
         elif RGV_modecode[modecode] == 'consume cargo 1':
-            if self.cnc['status'](self.posi, 1) != 0:
+            if self.cnc['status'](self.posi, 1) == 0:
                 return -1
         elif RGV_modecode[modecode] == 'supply cargo 2':
-            if self.cnc['status'](self.posi, 2) == 0:
+            if self.cnc['status'](self.posi, 2) != 0:
                 return -1
             self.carry_id = cid
         elif RGV_modecode[modecode] == 'consume cargo 2':
-            if self.cnc['status'](self.posi, 2) != 0:
+            if self.cnc['status'](self.posi, 2) == 0:
                 return -1
 
         self.status = modecode

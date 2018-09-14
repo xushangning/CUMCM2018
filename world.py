@@ -72,7 +72,8 @@ class World:
         else:
             return -1
 
-        self.entity_dict['CNC'][cnc_id].inst(cid)
+        self.entity_dict['CNC'][cnc_id].proc_id = cid
+        self.entity_dict['CNC'][cnc_id].inst(cnc.CNC_modecode_rev['processing'])
         return 0
 
     def cnc_consume(self, posi, side):

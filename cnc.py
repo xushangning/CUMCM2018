@@ -1,3 +1,6 @@
+# note
+# CNC have no control over its cargo
+
 CNC_proctime_1 = 560
 CNC_proctime_2 = 378
 
@@ -21,8 +24,9 @@ class CNC:
         self.proc_id = 0  # cargo
         self.proc_clock = -1
 
-    def inst(self):
-        pass
+    def inst(self, modecode):
+        self.status = modecode
+        self.proc_clock = self.proc_time
 
     def update(self):
         self.clock += 1
@@ -30,4 +34,6 @@ class CNC:
         if self.status == CNC_modecode_rev['processing']:
             self.proc_clock -= 1
             if self.proc_clock == 0:
-                pass
+                tmp = self.status
+                self.status = CNC_modecode_rev['idle']
+                return tmp, self.proc_id
