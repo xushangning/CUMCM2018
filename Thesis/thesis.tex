@@ -2,273 +2,291 @@
 %!TEX program  = xelatex
 
 \documentclass{cumcmthesis}
-%\documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页
-
-\usepackage{url}
-\begin{document}
-
-\begin{abstract}
-
-\keywords{决策模型\ \ }
-\end{abstract}
-
-%目录
-\tableofcontents
-
-\section{问题重述}
-\subsection{问题背景}
-一个智能加工系统由8台计算机数控机床 (Computer Number Controller, CNC)、1辆轨道式自动导引车 (Rail Guide Vehicle, RGV)、1条RGV直线轨道、1条上料传送带、1条下料传送带等附属设备组成。RGV是一种无人驾驶、能在固定轨道上自由运行的智能车。它根据指令能自动控制移动方向和距离，并自带一个机械手臂、两只机械手爪和物料清洗槽，能够完成上下料及清洗物料等作业任务。\cite{Saiti}通常来说，一个工件成品的完成需要若干步，鉴于RGV小车在同一时间只能处理同一种任务，而同时最多可以有8台数控机床在运行，因此对RGV小车进行正确的调度将显著地提高该智能加工系统的加工效率。在本文中，我们将运用不同模型讨论在不同情形下，如何调度小车能够使该系统达到最高效的工作状态。
-
-\subsection{问题提出}
-根据以上的背景，我们在本文中需要针对下面的三种具体情况：
-
-\begin{itemize}
-    \item 一道工序的物料加工作业情况，每台CNC安装同样的刀具，物料可以在任一台CNC上加工完成；
-    \item 两道工序的物料加工作业情况，每个物料的第一和第二道工序分别由两台不同的CNC依次加工完成；
-    \item CNC在加工过程中可能发生故障（据统计：故障的发生概率约为1\%）的情况，每次故障排除（人工处理，未完成的物料报废）时间介于10~20分钟之间，故障排除后即刻加入作业序列。要求分别考虑一道工序和两道工序的物料加工作业情况。
-\end{itemize}
-
-完成两项任务：\newline
-任务1：对一般问题进行研究，给出RGV动态调度模型和相应的求解算法；\newline
-任务2：利用已给出的系统作业参数的3组数据分别检验模型的实用性和算法的有效性，给出RGV的调度策略和系统的作业效率。
-
-\section{模型的假设}
-基于赛题中给出的一些条件和生活常识，我们在本文中提出如下假设。此后在用到这些假设时，我们将不再另作声明。
-\begin{itemize}
-\item RGV小车需要对某台数控机床上下料作业时，数控机床对应的传送带上一定有一个预备好的原料工件；
-\item RGV小车不能同时进行两项或以上的工作 (包括移动)；
-\item 
-\end{itemize}
-
-
-\section{符号说明}
-\begin{table}[!htbp]
-    \centering
-    \begin{tabular}{cc}
-    \toprule[1.5pt]
-    符号 & 意义\\
-    \midrule[1pt]
-    alg     & 调度算法/调度方案 \\
-    \(n_t\) & 在$t$时间内加工完的工件数  \\
-    10 & 421.0 \\
-    20 & 640.2 \\
-    \bottomrule[1.5pt]
-    \end{tabular}
-    \caption{文中用到的符号和含义}\label{fuHaoShuoMing}
-\end{table}
-
-\section{问题分析}
-我们将针对本问题给出的三种情况分别予以分析，并提出可能的优化算法。
-\subsection{情况一、二分析}
-在情况一中，一个工件只需经过一步加工就可以成为成品，然后经过RGV小车清洗后放入下料传送带送出该系统。此时，一个工件从原料到成品需要RGV小车的如下操作：
-\begin{enumerate}
-    \item 移动步骤：RGV小车从原来的位置运行到CNC的位置；
-    \item 第一次上下料步骤：小车将上料传送带上的原料取下，将CNC中的成品置换为原料，若CNC原来处于空置状态，则只将原料放入CNC中；
-    \item 等待：等待CNC加工完成，此时小车可以进行其他任务；
-    \item 第二次上下料步骤：小车再次运行到CNC的位置，将CNC中的成品置换为原料，此时小车不能为已装载成品的状态；
-    \item 清洗步骤：小车清洗成品，并将成品置入下料传送带上。
-\end{enumerate}
-而在情况二中，一个工件需要两步加工才能制成成品，因此工件由原料到成品需要多一次上下料步骤，即在第一轮加工完成后，将加工完成的工件放入第二步工序的CNC中加工。其他的步骤均是相同的。\newline
-显然，因为不存在任何随机因素，因此所有小车调度方案的数量是有限的，故情况一、二的全局最优解是一定存在并且确定的，意即：
-\[\exists\textrm{alg}\ \textrm{s.t.}\ n_{t, \textrm{alg}}=\textrm{Max}[n_t]\]
-所以我们需要找到该最优的调度方案或接近最优的调度方案。\newline
-要得到最优的调度方案，可能可以使用的算法有：穷举法、模拟退火算法、决策树算法、遗传算法、神经网络等。其中，穷举法和模拟退火算法的时间复杂度过高，超过了我们所拥有的算力极限，故我们不考虑用此两种方法。同样是基于统计的算法，遗传算法在该题中表现出比模拟算法更优的时间性能，因此遗传算法将成为我们探寻最优解的一种尝试。
-
-\subsection{情况三分析}
-对于情况三，由于加入了随机因素（CNC发生故障），因此不存在固定的全局最优解。在此情况下，调度过程转化成了小车的决策过程。空闲的小车需要灵活地根据当前加工系统的状态来决定下一步将要进行的步骤。在该情况下，遗传算法仍然可以使用，但是由原来的提供静态方案转变为即时演算出动态决策。
-
-\section{模拟环境}
-为了能够实际测试调度算法产生的指令序列在RGV智能加工系统中的表现，我们基于题目中给出的文档与数据，设计了一个简易的智能加工系统模拟器。每当RGV小车处于空闲状态时，模拟器会将当前智能加工系统各部分的状态以及当前的时刻作为参数传递给调度算法，调度算法会以此作为输入进行计算，并且输出当前小车需要执行的指令。
-
-模拟器使用python设计，主要由4个模块组成。它们分别是world.py，rgv.py，cnc.py以及cargo.py。
-
-world.py是模拟器的核心部分。在world.py中包含模拟器的主对象World，构造该对象时需要传入工作时间或者加工工件总数，以及调度器作为参数。对象构造完成后，调用对象的simulate()方法就可以开始模拟。模拟结束后，可以调用result()和final()方法获得加工的工件个数/加工的总时间长，以及每一个工件上料和下料的时间日志记录。
-
-rgv.py包含了RGV对象，其中定义了RGV可以接受的指令和它们的编码，它们在模拟器中的对应关系如下表所示。
-
-\begin{tabular}{c|c}
-	\hline
-	编码 & 指令 \\
-	\hline
-	0 & 空闲 \\
-	1 & 向左移动一格\\
-	2 & 向右移动一格\\
-	3 & 向左移动两格\\
-	4 & 向右移动两格\\
-	5 & 向左移动三格\\
-	6 & 向右移动三格\\
-	7 & 向\#1，\#3，\#5，\#7号CNC上下料\\
-	8 & 向\#2，\#4，\#6，\#8号CNC上下料\\
-	9 & 清洗工件\\
-	\hline
-\end{tabular}
-
-RGV对象可以通过inst()方法来接受指令。调用这个方法时需要传入一个有效指令的编码，同时根据指令的种类传入一个可选参数，类型为代表工件的Cargo类。关于Cargo类的信息会在下文描述。调用该方法后会设置RGV内部的一些属性，包括对象内部的计时器。
-
-同时，RGV对象也拥有update()方法，调用这个方法时，如果RGV正在执行空闲之外的指令，那么程序会将RGV内部的计时器减少1秒。接着，程序将会检查RGV内部的计时器是否已经达到零。如果计时器已经达到零，那么表明当前指令已经执行完成，那么RGV对象会根据指令的不同执行一些动作，比如修改CNC机床内部的工件对象或者修改自身内部的工件状态。
-
-cnc.py包含了CNC对象。CNC对象的可能状态如下表所示：
-
-\begin{tabular}{c|c}
-	\hline
-	编码 & 指令 \\
-	\hline
-	0 & 空闲 \\
-	1 & 加工中\\
-	2 & 加工完成\\
-	3 & 故障\\
-	\hline
-\end{tabular}
-
-与RGV对象类似，CNC对象也拥有inst()方法与update()方法。它们的功能也与RGV对象中的对应方法类似。
-
-由于智能加工系统的要求，CNC对象拥有不同模式。可能的模式如下表所示：
-
-\begin{tabular}{c|c}
-	\hline
-	编码 & 状态 \\
-	\hline
-	0 & 一阶段加工 \\
-	1 & 二阶段加工，第一阶段\\
-	2 & 二阶段加工，第二阶段\\
-	\hline
-\end{tabular}
-
-cargo.py内部包含Cargo对象。Cargo对象的状态如下表所示：
-
-\begin{tabular}{c|c}
-	\hline
-	编码 & 状态 \\
-	\hline
-	0 & 未加工 \\
-	1 & 半加工\\
-	2 & 加工完成，未清洗\\
-	3 & 加工完成，已清洗\\
-	\hline
-\end{tabular}
-
-Cargo对象的状态可以用RGV对象和CNC对象中的相应指令来修改。同时，保存工件的状态也使得模拟器能够检测出输入的指令序列中的错误，防止不能出现的情况发生。
-
-为了调试方便，我们为模拟器添加了输出函数info()。输出示例如下：
-
-\begin{tabular}{ccccccccc}
-	supply cargo 2 & & & & & & & & \\
-	Clock: 3931 & & & & & & & & \\
-	RGV:        & CNC 1:     & CNC 2:     & CNC 3:     & CNC 4:     & CNC 5:     & CNC 6:     & CNC 7:     & CNC 8: \\     
-	idle       & processed  & processed  & idle       & idle       & processed  & processing & idle       & idle \\        
-	8, ready   & 4, ready   & 5, ready   & & &  7, ready  &  9, raw & & \\                             
-	current cargo: 9
-\end{tabular}
-
-模拟结束后，模拟器会将数据写入对应的文件中。
-
-\section{标准调度模型}
-为了能够定量的评价后续模型的优劣，我们按照题意设计了一个标准调度模型，来与之后的模型对比。标准调度模型基于以下几条原则：
-\begin{itemize}
-    \item 小车会优先执行完当前的指令队列，然后再接收CNC的服务请求；
-    \item 在所有CNC都工作时，若小车的执行队列为空，则小车处于空闲状态；
-    \item 若只有一台CNC处于可服务状态，小车将会为这台CNC提供服务；
-    \item 若有多台CNC处于可服务状态，小车将会优先服务近的、奇数号的CNC；
-    \item 在完成一次上下料作业后，若需要清洗，小车会立即进行清洗。
-\end{itemize}
-
-
-\section{绘制普通三线表格}
-表格应具有三线表格式，因此常用 booktabs宏包，其标准格式如表~\ref{tab001}~所示。
-\begin{table}[!htbp]
-\caption{标准三线表格}\label{tab001} \centering
-\begin{tabular}{ccccc}
-\toprule[1.5pt]
-$D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
-\midrule[1pt]
- 5 & 269.8 & 0.000674 & 1.79 & 0.04089\\
-10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
-20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
-\bottomrule[1.5pt]
-\end{tabular}
-\end{table}
-
-其绘制表格的代码及其说明如下。
-\begin{tcode}
-\begin{table}[!htbp]
-\caption[标签名]{中文标题}
-\begin{tabular}{cc...c}
-\toprule[1.5pt]
-表头第1个格   & 表头第2个格   & ... & 表头第n个格  \\
-\midrule[1pt]
-表中数据(1,1) & 表中数据(1,2) & ... & 表中数据(1,n)\\
-表中数据(2,1) & 表中数据(2,2) & ... & 表中数据(2,n)\\
-...................................................\\
-表中数据(m,1) & 表中数据(m,2) & ... & 表中数据(m,n)\\
-\bottomrule[1.5pt]
-\end{tabular}
-\end{table}
-\end{tcode}
-
-\bigskip
-table环境是一个将表格嵌入文本的浮动环境。
-tabular环境的必选参数由每列对应一个格式字符所组成：c表示居中，l表示左对齐，r表示右对齐，其总
-个数应与表的列数相同。此外，\verb|@{文本}|可以出现在任意两个上述的列格式之间，其中的文本将被插入每一行
-的同一位置。表格的各行以\verb|\\|分隔，同一行的各列则以\&分隔。
-\verb|\toprule|、\verb|\midrule|和\verb|\bottomrule|三个命令是由booktabs宏包提供的，其
-中\verb|\toprule|和\verb|\bottomrule|分别用来绘制表格的第一条（表格最顶部）和第三条（表格最底部）水平线，
-\verb|\midrule|用来绘制第二条（表头之下）水平线，且第一条和第三条水平线的线宽为1.5pt，第二条水平线的线宽为1pt。
-引用方法：“如表~\verb|\ref{标签名}|~所示”。
-
-
-%参考文献
-\begin{thebibliography}{9}%宽度9
-    \bibitem{Saiti} 2018年全国大学生数学建模竞赛B题，cumcm.cnki.net，2018.9.13
-\end{thebibliography}
-
-\newpage
-%附录
-\appendix
-\section{排队算法--matlab 源程序}
-\begin{lstlisting}[language=matlab]
-kk=2;[mdd,ndd]=size(dd);
-while ~isempty(V)
-[tmpd,j]=min(W(i,V));tmpj=V(j);
-for k=2:ndd
-[tmp1,jj]=min(dd(1,k)+W(dd(2,k),V));
-tmp2=V(jj);tt(k-1,:)=[tmp1,tmp2,jj];
-end
-tmp=[tmpd,tmpj,j;tt];[tmp3,tmp4]=min(tmp(:,1));
-if tmp3==tmpd, ss(1:2,kk)=[i;tmp(tmp4,2)];
-else,tmp5=find(ss(:,tmp4)~=0);tmp6=length(tmp5);
-if dd(2,tmp4)==ss(tmp6,tmp4)
-ss(1:tmp6+1,kk)=[ss(tmp5,tmp4);tmp(tmp4,2)];
-else, ss(1:3,kk)=[i;dd(2,tmp4);tmp(tmp4,2)];
-end;end
-dd=[dd,[tmp3;tmp(tmp4,2)]];V(tmp(tmp4,3))=[];
-[mdd,ndd]=size(dd);kk=kk+1;
-end; S=ss; D=dd(1,:);
- \end{lstlisting}
- \section{规划解决程序--lingo源代码}
-\begin{lstlisting}[language=c]
-kk=2;
-[mdd,ndd]=size(dd);
-while ~isempty(V)
-    [tmpd,j]=min(W(i,V));tmpj=V(j);
-for k=2:ndd
-    [tmp1,jj]=min(dd(1,k)+W(dd(2,k),V));
-    tmp2=V(jj);tt(k-1,:)=[tmp1,tmp2,jj];
-end
-    tmp=[tmpd,tmpj,j;tt];[tmp3,tmp4]=min(tmp(:,1));
-if tmp3==tmpd, ss(1:2,kk)=[i;tmp(tmp4,2)];
-else,tmp5=find(ss(:,tmp4)~=0);tmp6=length(tmp5);
-if dd(2,tmp4)==ss(tmp6,tmp4)
-    ss(1:tmp6+1,kk)=[ss(tmp5,tmp4);tmp(tmp4,2)];
-else, ss(1:3,kk)=[i;dd(2,tmp4);tmp(tmp4,2)];
-end;
-end
-    dd=[dd,[tmp3;tmp(tmp4,2)]];V(tmp(tmp4,3))=[];
-    [mdd,ndd]=size(dd);
-    kk=kk+1;
-end;
-S=ss;
-D=dd(1,:);
- \end{lstlisting}
-
-
-\end{document} 
+	%\documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页
+	
+	\usepackage{url}
+	\begin{document}
+	
+	\begin{abstract}
+	
+	\keywords{决策模型\ \ }
+	\end{abstract}
+	
+	%目录
+	\tableofcontents
+	
+	\section{问题重述}
+	\subsection{问题背景}
+	一个智能加工系统由8台计算机数控机床 (Computer Number Controller, CNC)、1辆轨道式自动导引车 (Rail Guide Vehicle, RGV)、1条RGV直线轨道、1条上料传送带、1条下料传送带等附属设备组成。RGV是一种无人驾驶、能在固定轨道上自由运行的智能车。它根据指令能自动控制移动方向和距离，并自带一个机械手臂、两只机械手爪和物料清洗槽，能够完成上下料及清洗物料等作业任务。\cite{Saiti}通常来说，一个工件成品的完成需要若干步，鉴于RGV小车在同一时间只能处理同一种任务，而同时最多可以有8台数控机床在运行，因此对RGV小车进行正确的调度将显著地提高该智能加工系统的加工效率。在本文中，我们将运用不同模型讨论在不同情形下，如何调度小车能够使该系统达到最高效的工作状态。
+	
+	\subsection{问题提出}
+	根据以上的背景，我们在本文中需要针对下面的三种具体情况：
+	
+	\begin{itemize}
+		\item 一道工序的物料加工作业情况，每台CNC安装同样的刀具，物料可以在任一台CNC上加工完成；
+		\item 两道工序的物料加工作业情况，每个物料的第一和第二道工序分别由两台不同的CNC依次加工完成；
+		\item CNC在加工过程中可能发生故障（据统计：故障的发生概率约为1\%）的情况，每次故障排除（人工处理，未完成的物料报废）时间介于10~20分钟之间，故障排除后即刻加入作业序列。要求分别考虑一道工序和两道工序的物料加工作业情况。
+	\end{itemize}
+	
+	完成两项任务：\newline
+	任务1：对一般问题进行研究，给出RGV动态调度模型和相应的求解算法；\newline
+	任务2：利用已给出的系统作业参数的3组数据分别检验模型的实用性和算法的有效性，给出RGV的调度策略和系统的作业效率。
+	
+	\section{模型的假设}
+	基于赛题中给出的一些条件和生活常识，我们在本文中提出如下假设。此后在用到这些假设时，我们将不再另作声明。
+	\begin{itemize}
+	\item RGV小车需要对某台数控机床上下料作业时，数控机床对应的传送带上一定有一个预备好的原料工件；
+	\item RGV小车不能同时进行两项或以上的工作 (包括移动)；
+	\item 
+	\end{itemize}
+	
+	
+	\section{符号说明}
+	\begin{table}[!htbp]
+		\centering
+		\begin{tabular}{cc}
+		\toprule[1.5pt]
+		符号 & 意义\\
+		\midrule[1pt]
+		alg     & 调度算法/调度方案 \\
+		\(n_t\) & 在$t$时间内加工完的工件数  \\
+		10 & 421.0 \\
+		20 & 640.2 \\
+		\bottomrule[1.5pt]
+		\end{tabular}
+		\caption{文中用到的符号和含义}\label{fuHaoShuoMing}
+	\end{table}
+	
+	\section{问题分析}
+	我们将针对本问题给出的三种情况分别予以分析，并提出可能的优化算法。
+	\subsection{情况一、二分析}
+	在情况一中，一个工件只需经过一步加工就可以成为成品，然后经过RGV小车清洗后放入下料传送带送出该系统。此时，一个工件从原料到成品需要RGV小车的如下操作：
+	\begin{enumerate}
+		\item 移动步骤：RGV小车从原来的位置运行到CNC的位置；
+		\item 第一次上下料步骤：小车将上料传送带上的原料取下，将CNC中的成品置换为原料，若CNC原来处于空置状态，则只将原料放入CNC中；
+		\item 等待：等待CNC加工完成，此时小车可以进行其他任务；
+		\item 第二次上下料步骤：小车再次运行到CNC的位置，将CNC中的成品置换为原料，此时小车不能为已装载成品的状态；
+		\item 清洗步骤：小车清洗成品，并将成品置入下料传送带上。
+	\end{enumerate}
+	而在情况二中，一个工件需要两步加工才能制成成品，因此工件由原料到成品需要多一次上下料步骤，即在第一轮加工完成后，将加工完成的工件放入第二步工序的CNC中加工。其他的步骤均是相同的。\newline
+	显然，因为不存在任何随机因素，因此所有小车调度方案的数量是有限的，故情况一、二的全局最优解是一定存在并且确定的，意即：
+	\[\exists\textrm{alg}\ \textrm{s.t.}\ n_{t, \textrm{alg}}=\textrm{Max}[n_t]\]
+	所以我们需要找到该最优的调度方案或接近最优的调度方案。\newline
+	要得到最优的调度方案，可能可以使用的算法有：穷举法、模拟退火算法、决策树算法、遗传算法、神经网络等。其中，穷举法和模拟退火算法的时间复杂度过高，超过了我们所拥有的算力极限，故我们不考虑用此两种方法。同样是基于统计的算法，遗传算法在该题中表现出比模拟算法更优的时间性能，因此遗传算法将成为我们探寻最优解的一种尝试。
+	
+	\subsection{情况三分析}
+	对于情况三，由于加入了随机因素（CNC发生故障），因此不存在固定的全局最优解。在此情况下，调度过程转化成了小车的决策过程。空闲的小车需要灵活地根据当前加工系统的状态来决定下一步将要进行的步骤。在该情况下，遗传算法仍然可以使用，但是由原来的提供静态方案转变为即时演算出动态决策。
+	
+	\section{模拟环境}
+	为了能够实际测试调度算法产生的指令序列在RGV智能加工系统中的表现，我们基于题目中给出的文档与数据，设计了一个简易的智能加工系统模拟器。每当RGV小车处于空闲状态时，模拟器会将当前智能加工系统各部分的状态以及当前的时刻作为参数传递给调度算法，调度算法会以此作为输入进行计算，并且输出当前小车需要执行的指令。
+	
+	模拟器使用python设计，主要由4个模块组成。它们分别是world.py，rgv.py，cnc.py以及cargo.py。
+	
+	world.py是模拟器的核心部分。在world.py中包含模拟器的主对象World，构造该对象时需要传入工作时间或者加工工件总数，以及调度器作为参数。对象构造完成后，调用对象的simulate()方法就可以开始模拟。模拟结束后，可以调用result()和final()方法获得加工的工件个数/加工的总时间长，以及每一个工件上料和下料的时间日志记录。
+	
+	rgv.py包含了RGV对象，其中定义了RGV可以接受的指令和它们的编码，它们在模拟器中的对应关系如下表所示。
+	
+	\begin{table}[!htbp]
+		\centering
+		\begin{tabular}{c|c}
+			\toprule[1.5pt]
+			编码 & 指令 \\
+			\midrule[1pt]
+			0 & 空闲 \\
+			1 & 向左移动一格\\
+			2 & 向右移动一格\\
+			3 & 向左移动两格\\
+			4 & 向右移动两格\\
+			5 & 向左移动三格\\
+			6 & 向右移动三格\\
+			7 & 向\#1，\#3，\#5，\#7号CNC上下料\\
+			8 & 向\#2，\#4，\#6，\#8号CNC上下料\\
+			9 & 清洗工件\\
+			\bottomrule[1.5pt]
+		\end{tabular}
+		\caption{RGV的指令和编码}\label{rgv指令和编码}
+	\end{table}
+	
+	RGV对象可以通过inst()方法来接受指令。调用这个方法时需要传入一个有效指令的编码，同时根据指令的种类传入一个可选参数，类型为代表工件的Cargo类。关于Cargo类的信息会在下文描述。调用该方法后会设置RGV内部的一些属性，包括对象内部的计时器。
+	
+	同时，RGV对象也拥有update()方法，调用这个方法时，如果RGV正在执行空闲之外的指令，那么程序会将RGV内部的计时器减少1秒。接着，程序将会检查RGV内部的计时器是否已经达到零。如果计时器已经达到零，那么表明当前指令已经执行完成，那么RGV对象会根据指令的不同执行一些动作，比如修改CNC机床内部的工件对象或者修改自身内部的工件状态。
+	
+	cnc.py包含了CNC对象。CNC对象的可能状态如下表所示：
+	
+	\begin{table}[!htbp]
+		\centering
+		\begin{tabular}{c|c}
+			\toprule[1.5pt]
+			编码 & 指令 \\
+			\midrule[1.5pt]
+			0 & 空闲 \\
+			1 & 加工中\\
+			2 & 加工完成\\
+			3 & 故障\\
+			\bottomrule[1.5pt]
+		\end{tabular}
+		\caption{CNC对象的可能状态}
+	\end{table}
+	
+	与RGV对象类似，CNC对象也拥有inst()方法与update()方法。它们的功能也与RGV对象中的对应方法类似。
+	
+	由于智能加工系统的要求，CNC对象拥有不同模式。可能的模式如下表所示：
+	\begin{table}[!htbp]
+		\centering
+		\begin{tabular}{c|c}
+			\toprule[1.5pt]
+			编码 & 状态 \\
+			\midrule[1.5pt]
+			0 & 一阶段加工 \\
+			1 & 二阶段加工，第一阶段\\
+			2 & 二阶段加工，第二阶段\\
+			\bottomrule[1.5pt]
+		\end{tabular}
+		\caption{CNC对象的可能模式}
+	\end{table}
+	
+	cargo.py内部包含Cargo对象。Cargo对象的状态如下表所示：
+	\begin{table}[!htbp]
+		\centering
+		\begin{tabular}{c|c}
+			\toprule[1.5pt]
+			编码 & 状态 \\
+			\midrule[1.5pt]
+			0 & 未加工 \\
+			1 & 半加工\\
+			2 & 加工完成，未清洗\\
+			3 & 加工完成，已清洗\\
+			\bottomrule[1.5pt]
+		\end{tabular}
+		\caption{Cargo（工件）对象的可能状态}
+	\end{table}
+	Cargo（工件）对象的状态可以用RGV对象和CNC对象中的相应指令来修改。同时，保存工件的状态也使得模拟器能够检测出输入的指令序列中的错误，防止不能出现的情况发生。
+	
+	为了调试方便，我们为模拟器添加了输出函数info()。输出示例如下：
+	
+	\begin{lstlisting}
+		supply cargo 2
+		Clock: 3931
+		RGV:        CNC 1:      CNC 2:      CNC 3:      CNC 4:      CNC 5:      CNC 6:      CNC 7:      CNC 8:
+		idle        processed   processed   idle        idle        processed   processing  idle        idle
+		8, ready    4, ready    5, ready                            7, ready    9, raw
+		current cargo: 9
+	\end{lstlisting}
+	
+	模拟结束后，模拟器会将数据写入对应的文件中。
+	
+	\section{标准调度模型}
+	为了能够定量的评价后续模型的优劣，我们按照题意设计了一个标准调度模型，来与之后的模型对比。对于情况一，标准调度模型基于以下几条原则：
+	\begin{itemize}
+		\item 小车会优先执行完当前的指令队列，然后再接收CNC的服务请求；
+		\item 在所有CNC都工作时，若小车的执行队列为空，则小车处于空闲状态；
+		\item 若只有一台CNC处于可服务状态，小车将会为这台CNC提供服务；
+		\item 若有多台CNC处于可服务状态，小车将会优先服务近的、奇数号的CNC；
+		\item 在完成一次上下料作业后，若需要清洗，小车会立即进行清洗。
+	\end{itemize}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=.7\linewidth]{simple_model_1.pdf}
+		\caption{标准模型（情况一）的运行流程}
+	\end{figure}
+	
+	
+	\section{绘制普通三线表格}
+	表格应具有三线表格式，因此常用 booktabs宏包，其标准格式如表~\ref{tab001}~所示。
+	\begin{table}[!htbp]
+	\caption{标准三线表格}\label{tab001} \centering
+	\begin{tabular}{ccccc}
+	\toprule[1.5pt]
+	$D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
+	\midrule[1pt]
+	 5 & 269.8 & 0.000674 & 1.79 & 0.04089\\
+	10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
+	20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
+	\bottomrule[1.5pt]
+	\end{tabular}
+	\end{table}
+	
+	其绘制表格的代码及其说明如下。
+	\begin{tcode}
+	\begin{table}[!htbp]
+	\caption[标签名]{中文标题}
+	\begin{tabular}{cc...c}
+	\toprule[1.5pt]
+	表头第1个格   & 表头第2个格   & ... & 表头第n个格  \\
+	\midrule[1pt]
+	表中数据(1,1) & 表中数据(1,2) & ... & 表中数据(1,n)\\
+	表中数据(2,1) & 表中数据(2,2) & ... & 表中数据(2,n)\\
+	...................................................\\
+	表中数据(m,1) & 表中数据(m,2) & ... & 表中数据(m,n)\\
+	\bottomrule[1.5pt]
+	\end{tabular}
+	\end{table}
+	\end{tcode}
+	
+	\bigskip
+	table环境是一个将表格嵌入文本的浮动环境。
+	tabular环境的必选参数由每列对应一个格式字符所组成：c表示居中，l表示左对齐，r表示右对齐，其总
+	个数应与表的列数相同。此外，\verb|@{文本}|可以出现在任意两个上述的列格式之间，其中的文本将被插入每一行
+	的同一位置。表格的各行以\verb|\\|分隔，同一行的各列则以\&分隔。
+	\verb|\toprule|、\verb|\midrule|和\verb|\bottomrule|三个命令是由booktabs宏包提供的，其
+	中\verb|\toprule|和\verb|\bottomrule|分别用来绘制表格的第一条（表格最顶部）和第三条（表格最底部）水平线，
+	\verb|\midrule|用来绘制第二条（表头之下）水平线，且第一条和第三条水平线的线宽为1.5pt，第二条水平线的线宽为1pt。
+	引用方法：“如表~\verb|\ref{标签名}|~所示”。
+	
+	
+	%参考文献
+	\begin{thebibliography}{9}%宽度9
+		\bibitem{Saiti} 2018年全国大学生数学建模竞赛B题，cumcm.cnki.net，2018.9.13
+	\end{thebibliography}
+	
+	\newpage
+	%附录
+	\appendix
+	\section{排队算法--matlab 源程序}
+	\begin{lstlisting}[language=matlab]
+	kk=2;[mdd,ndd]=size(dd);
+	while ~isempty(V)
+	[tmpd,j]=min(W(i,V));tmpj=V(j);
+	for k=2:ndd
+	[tmp1,jj]=min(dd(1,k)+W(dd(2,k),V));
+	tmp2=V(jj);tt(k-1,:)=[tmp1,tmp2,jj];
+	end
+	tmp=[tmpd,tmpj,j;tt];[tmp3,tmp4]=min(tmp(:,1));
+	if tmp3==tmpd, ss(1:2,kk)=[i;tmp(tmp4,2)];
+	else,tmp5=find(ss(:,tmp4)~=0);tmp6=length(tmp5);
+	if dd(2,tmp4)==ss(tmp6,tmp4)
+	ss(1:tmp6+1,kk)=[ss(tmp5,tmp4);tmp(tmp4,2)];
+	else, ss(1:3,kk)=[i;dd(2,tmp4);tmp(tmp4,2)];
+	end;end
+	dd=[dd,[tmp3;tmp(tmp4,2)]];V(tmp(tmp4,3))=[];
+	[mdd,ndd]=size(dd);kk=kk+1;
+	end; S=ss; D=dd(1,:);
+	 \end{lstlisting}
+	\begin{lstlisting}[language=c]
+	kk=2;
+	[mdd,ndd]=size(dd);
+	while ~isempty(V)
+		[tmpd,j]=min(W(i,V));tmpj=V(j);
+	for k=2:ndd
+		[tmp1,jj]=min(dd(1,k)+W(dd(2,k),V));
+		tmp2=V(jj);tt(k-1,:)=[tmp1,tmp2,jj];
+	end
+		tmp=[tmpd,tmpj,j;tt];[tmp3,tmp4]=min(tmp(:,1));
+	if tmp3==tmpd, ss(1:2,kk)=[i;tmp(tmp4,2)];
+	else,tmp5=find(ss(:,tmp4)~=0);tmp6=length(tmp5);
+	if dd(2,tmp4)==ss(tmp6,tmp4)
+		ss(1:tmp6+1,kk)=[ss(tmp5,tmp4);tmp(tmp4,2)];
+	else, ss(1:3,kk)=[i;dd(2,tmp4);tmp(tmp4,2)];
+	end;
+	end
+		dd=[dd,[tmp3;tmp(tmp4,2)]];V(tmp(tmp4,3))=[];
+		[mdd,ndd]=size(dd);
+		kk=kk+1;
+	end;
+	S=ss;
+	D=dd(1,:);
+	 \end{lstlisting}
+	
+	
+	\end{document} 

@@ -8,7 +8,6 @@
 \contentsline {subsection}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}情况三分析}{4}
 \contentsline {section}{\numberline {五、}模拟环境}{4}
 \contentsline {section}{\numberline {六、}标准调度模型}{7}
-\contentsline {section}{\numberline {七、}绘制普通三线表格}{7}
+\contentsline {section}{\numberline {七、}绘制普通三线表格}{8}
 \contentsline {section}{\numberline {附录A}排队算法--matlab 源程序}{9}
-\contentsline {section}{\numberline {附录B}规划解决程序--lingo源代码}{9}
 \contentsfinish 
