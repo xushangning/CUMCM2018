@@ -21,14 +21,14 @@ class World:
         self.entity_dict['RGV'] = rgv.RGV(rgv.RGV_param, self.cnc_api)
         self.entity_dict['CNC'] = [
             -1,
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure)
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to half'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from half to ready'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to half'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from half to ready'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to half'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from half to ready'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to half'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from half to ready'], enable_failure)
         ]
         self.product = []
 
