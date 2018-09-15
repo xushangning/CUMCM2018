@@ -5,84 +5,73 @@
 %\documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页
 
 \usepackage{url}
-\title{全国大学生数学建模竞赛编写的 \LaTeX{} 模板}
-\tihao{A}
-\baominghao{4321}
-\schoolname{XX大学}
-\membera{小米}
-\memberb{向左}
-\memberc{哈哈}
-\supervisor{老师}
-\yearinput{2017}
-\monthinput{08}
-\dayinput{22}
-
 \begin{document}
 
- \maketitle
- \begin{abstract}
-cumcmthesis 是为全国大学生数学建模竞赛编写的\LaTeX{}模板, 旨在让大家专注于 论文的内容写作, 而不用花费过多精力在格式的定制和调整上. 本手册是相应的参考, 其 中提供了一些环境和命令可以让模板的使用更为方便. 同时需要注意, 使用者需要有一 定的 \LaTeX{} 的使用经验, 至少要会使用常用宏包的一些功能, 比如参考文献，数学公式，图片使用，列表环境等等. 例子文件参看 example.pdf.
+\begin{abstract}
 
-另外, 本模板制作了视频使用教程, 参看\url{https://item.taobao.com/item.htm?spm=a1z10.1-c.w4004-3473795048.2.ZlPoPL&id=43823508044}.
-
-视频教程试看的话，请点击：\url{http://v.xue.taobao.com/learn.htm?spm=2013.1.0.0.959eebeTPNhDq&courseId=26740}.
-
-\keywords{折叠桌\quad  曲线拟合\quad   非线性优化模型\quad  受力分析}
+\keywords{决策模型\ \ }
 \end{abstract}
 
 %目录
 \tableofcontents
 
 \section{问题重述}
+\subsection{问题背景}
+一个智能加工系统由8台计算机数控机床 (Computer Number Controller, CNC)、1辆轨道式自动导引车 (Rail Guide Vehicle, RGV)、1条RGV直线轨道、1条上料传送带、1条下料传送带等附属设备组成。RGV是一种无人驾驶、能在固定轨道上自由运行的智能车。它根据指令能自动控制移动方向和距离，并自带一个机械手臂、两只机械手爪和物料清洗槽，能够完成上下料及清洗物料等作业任务。\cite{Saiti}通常来说，一个工件成品的完成需要若干步，鉴于RGV小车在同一时间只能处理同一种任务，而同时最多可以有8台数控机床在运行，因此对RGV小车进行正确的调度将显著地提高该智能加工系统的加工效率。在本文中，我们将运用不同模型讨论在不同情形下，如何调度小车能够使该系统达到最高效的工作状态。
 
-创意平板折叠桌注重于表达木制品的优雅和设计师所想要强调的自动化与功能性。为了增大有效使用面积。设计师以长方形木板的宽为直径截取了一个圆形作为桌面，又将木板剩余的面积切割成了若干个长短不一的木条，每根木条的长度为平板宽到圆上一点的距离，分别用两根钢筋贯穿两侧的木条，使用者只需提起木板的两侧，便可以在重力的作用下达到自动升起的效果，相互对称的木条宛如下垂的桌布，精密的制作工艺配以质朴的木材，让这件工艺品看起来就像是工业革命时期的机器。
-
-\subsection{问题的提出}
-
-围绕创意平板折叠桌的动态变化过程、设计加工参数，本文依次提出如下问题：
-
-（1）给定长方形平板尺寸 （$120 cm \times 50 cm \times 3 cm$），每根木条宽度（2.5 cm），连接桌腿木条的钢筋的位置，折叠后桌子的高度（53 cm）。要求建立模型描述此折叠桌的动态变化过程，并在此基础上给出此折叠桌的设计加工参数和桌脚边缘线的数学描述。
-
-（2）......
-
-
-\section{模型的假设}
+\subsection{问题提出}
+根据以上的背景，我们在本文中需要针对下面的三种具体情况：
 
 \begin{itemize}
-\item 忽略实际加工误差对设计的影响；
-\item 木条与圆桌面之间的交接处缝隙较小，可忽略；
-\item 钢筋强度足够大，不弯曲；
-\item 假设地面平整。
+    \item 一道工序的物料加工作业情况，每台CNC安装同样的刀具，物料可以在任一台CNC上加工完成；
+    \item 两道工序的物料加工作业情况，每个物料的第一和第二道工序分别由两台不同的CNC依次加工完成；
+    \item CNC在加工过程中可能发生故障（据统计：故障的发生概率约为1\%）的情况，每次故障排除（人工处理，未完成的物料报废）时间介于10~20分钟之间，故障排除后即刻加入作业序列。要求分别考虑一道工序和两道工序的物料加工作业情况。
 \end{itemize}
 
+完成两项任务：\newline
+任务1：对一般问题进行研究，给出RGV动态调度模型和相应的求解算法；\newline
+任务2：利用已给出的系统作业参数的3组数据分别检验模型的实用性和算法的有效性，给出RGV的调度策略和系统的作业效率。
+
+\section{模型的假设}
+基于赛题中给出的一些条件和生活常识，我们在本文中提出如下假设。此后在用到这些假设时，我们将不再另作声明。
+\begin{itemize}
+\item RGV小车需要对某台数控机床上下料作业时，数控机床对应的传送带上一定有一个预备好的原料工件；
+\item RGV小车不能同时进行两项或以上的工作 (包括移动)；
+\item 
+\end{itemize}
+
+
 \section{符号说明}
-\begin{center}
-\begin{tabular}{cc}
- \hline
- \makebox[0.3\textwidth][c]{符号}	&  \makebox[0.4\textwidth][c]{意义} \\ \hline
- D	    & 木条宽度（cm） \\ \hline
- L	    & 木板长度（cm）  \\ \hline
- W	    & 木板宽度（cm）  \\ \hline
- N	    & 第n根木条  \\ \hline
- T	    & 木条根数  \\ \hline
-\end{tabular}
-\end{center}
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{cc}
+    \toprule[1.5pt]
+    符号 & 意义\\
+    \midrule[1pt]
+    alg     & 调度算法 \\
+    \(n_t\) & 在$t$时间内加工完的工件数  \\
+    10 & 421.0 \\
+    20 & 640.2 \\
+    \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{文中用到的符号和含义}\label{fuHaoShuoMing}
+\end{table}
 
 \section{问题分析}
-
-\subsection{问题一分析}
-题目要求建立模型描述折叠桌的动态变化图，由于在折叠时用力大小的不同，我们不能描述在某一时刻折叠桌的具体形态，但我们可以用每根木条的角度变化来描述折叠桌的动态变化。首先，我们知道折叠桌前后左右对称，我们可以运用几何知识求出四分之一木条的角度变化。最后，根据初始时刻和最终形态两种状态求出桌腿木条开槽的长度。
-
-
-
-
-问题流程图：
-\begin{figure}[!h]
-\centering
-\includegraphics[width=.6\textwidth]{1.png}
-\caption{问题三流程图}
-\end{figure}
-
+我们将针对本问题给出的三种情况分别予以分析，并提出可能的优化算法。
+\subsection{情况一、二分析}
+在情况一中，一个工件只需经过一步加工就可以成为成品，然后经过RGV小车清洗后放入下料传送带送出该系统。此时，一个工件从原料到成品需要RGV小车的如下操作：
+\begin{enumerate}
+    \item 移动步骤：RGV小车从原来的位置运行到CNC的位置；
+    \item 第一次上下料步骤：小车将上料传送带上的原料取下，将CNC中的成品置换为原料，若CNC原来处于空置状态，则只将原料放入CNC中；
+    \item 等待：等待CNC加工完成，此时小车可以进行其他任务；
+    \item 第二次上下料步骤：小车再次运行到CNC的位置，将CNC中的成品置换为原料，此时小车不能为已装载成品的状态；
+    \item 清晰步骤：小车清洗成品，并将成品置入下料传送带上。
+\end{enumerate}
+而在情况二中，一个工件需要两步加工才能制成成品，因此工件由原料到成品需要多一次上下料步骤，即在第一轮加工完成后，将加工完成的工件放入第二步工序的CNC中加工。其他的步骤均是相同的。\newline
+显然，因为不存在任何随机因素，因此所有小车调度方案的数量是有限的，故情况一、二的最优解是一定存在并且确定的，意即：
+\[\exists\textrm{alg}\ \textrm{s.t.}\ n_{t, \textrm{alg}}=\textrm{MAX}[n_t]\]
+因此我们需要找到该最优的调度方案或接近最优的调度方案
 \section{绘制普通三线表格}
 表格应具有三线表格式，因此常用 booktabs宏包，其标准格式如表~\ref{tab001}~所示。
 \begin{table}[!htbp]
@@ -128,8 +117,7 @@ tabular环境的必选参数由每列对应一个格式字符所组成：c表示
 
 %参考文献
 \begin{thebibliography}{9}%宽度9
- \bibitem{bib:one} ....
- \bibitem{bib:two} ....
+    \bibitem{Saiti} 2018年全国大学生数学建模竞赛B题，cumcm.cnki.net，2018.9.13
 \end{thebibliography}
 
 \newpage
