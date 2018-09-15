@@ -4,7 +4,7 @@ from cargo import Cargo, Cargo_modecode
 
 
 class World:
-    def __init__(self, alg, total_time, enable_failure=False):
+    def __init__(self, alg, template, total_time, enable_failure=False):
         # tricky
         self.cnc_api = {
             'status': self.cnc_check,
@@ -21,6 +21,7 @@ class World:
         self.entity_dict['RGV'] = rgv.RGV(rgv.RGV_param, self.cnc_api)
         self.entity_dict['CNC'] = [
             -1,
+<<<<<<< HEAD
             cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to half'], enable_failure),
             cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from half to ready'], enable_failure),
             cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to half'], enable_failure),
@@ -29,6 +30,16 @@ class World:
             cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from half to ready'], enable_failure),
             cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to half'], enable_failure),
             cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from half to ready'], enable_failure)
+=======
+            cnc.CNC(cnc.CNC_proctime[template[0]], template[0], enable_failure),
+            cnc.CNC(cnc.CNC_proctime[template[1]], template[1], enable_failure),
+            cnc.CNC(cnc.CNC_proctime[template[2]], template[2], enable_failure),
+            cnc.CNC(cnc.CNC_proctime[template[3]], template[3], enable_failure),
+            cnc.CNC(cnc.CNC_proctime[template[4]], template[4], enable_failure),
+            cnc.CNC(cnc.CNC_proctime[template[5]], template[5], enable_failure),
+            cnc.CNC(cnc.CNC_proctime[template[6]], template[6], enable_failure),
+            cnc.CNC(cnc.CNC_proctime[template[7]], template[7], enable_failure),
+>>>>>>> origin/kelvin34501-dev
         ]
         self.product = []
 
@@ -55,28 +66,42 @@ class World:
                         print(rgv.RGV_modecode[event])
                         self.info()
 
-                    if event == rgv.RGV_modecode_rev['supply cargo 1']:
-                        self.up_log.append({
-                            'id': cargo_t.id,
-                            'time': self.clock,
-                            'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 1)
-                        })
-                    elif event == rgv.RGV_modecode_rev['supply cargo 2']:
-                        self.up_log.append({
-                            'id': cargo_t.id,
-                            'time': self.clock,
-                            'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 2)
-                        })
-                    elif event == rgv.RGV_modecode_rev['wash']:
+                    if event == rgv.RGV_modecode_rev['wash']:
                         self.product.append(cargo_t)
 
                     new_inst = self.alg(self.entity_dict, self.clock)
-                    if new_inst == rgv.RGV_modecode_rev['supply cargo 1'] or \
-                            new_inst == rgv.RGV_modecode_rev['supply cargo 2']:
-                        if self.entity_dict['RGV'].carry is None:
+                    if new_inst == rgv.RGV_modecode_rev['supply cargo 1']:
+                        target_id = self.get_cnc_id(
+                            self.entity_dict['RGV'].posi, 1)
+                        if self.entity_dict['RGV'].carry is None and \
+                                self.entity_dict['CNC'][target_id].proc_mode != \
+                                cnc.CNC_typecode_rev['from half to ready']:
                             self.cargo_id += 1
                             flag, opt_cargo = self.entity_dict['RGV'].inst(
                                 new_inst, Cargo(self.cargo_id))
+                            self.up_log.append({
+                                'id': self.cargo_id,
+                                'time': self.clock,
+                                'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 1)
+                            })
+
+                        else:
+                            flag, opt_cargo = self.entity_dict['RGV'].inst(
+                                new_inst, None)
+                    elif new_inst == rgv.RGV_modecode_rev['supply cargo 2']:
+                        target_id = self.get_cnc_id(
+                            self.entity_dict['RGV'].posi, 2)
+                        if self.entity_dict['RGV'].carry is None and \
+                                self.entity_dict['CNC'][target_id].proc_mode != \
+                                cnc.CNC_typecode_rev['from half to ready']:
+                            self.cargo_id += 1
+                            flag, opt_cargo = self.entity_dict['RGV'].inst(
+                                new_inst, Cargo(self.cargo_id))
+                            self.up_log.append({
+                                'id': self.cargo_id,
+                                'time': self.clock,
+                                'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 2)
+                            })
                         else:
                             flag, opt_cargo = self.entity_dict['RGV'].inst(
                                 new_inst, None)
@@ -212,8 +237,11 @@ class World:
         else:
             return -1
 
-        self.entity_dict['CNC'][cnc_id].proc = cargo_t
-        flag, _ = self.entity_dict['CNC'][cnc_id].inst(cnc.CNC_modecode_rev['processing'])
+        if cargo_t is not None:
+            self.entity_dict['CNC'][cnc_id].proc = cargo_t
+            flag, _ = self.entity_dict['CNC'][cnc_id].inst(cnc.CNC_modecode_rev['processing'])
+        else:
+            flag, _ = self.entity_dict['CNC'][cnc_id].inst(cnc.CNC_modecode_rev['idle'])
         return flag
 
     def cnc_consume(self, posi, side):
