@@ -102,8 +102,6 @@ class RGV:
                     self.carry.status != Cargo_modecode_rev['ready']:
                 return -1, None
 
-        if self.status != 0:
-            self.last_inst = self.status
         self.status = modecode
         if self.status != 0:
             self.inst_list.append(self.status)
@@ -119,6 +117,7 @@ class RGV:
             self.proc_clock -= 1
 
         if self.proc_clock == 0:
+            self.last_inst = self.status
             tmp = self.status
             self.status = RGV_modecode_rev['idle']
             self.proc_clock = -1
