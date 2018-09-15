@@ -70,7 +70,7 @@ def fitness(chromosomes):
         simulator.simulate()
         fitness_values[i] = simulator.total()
     # 计算每个染色体被选择的概率
-    probability = fitness_values / np.sum(fitness_values)
+    probability = np.exp(fitness_values) / np.sum(np.exp(fitness_values))
     # 得到每个染色体被选中的累积概率
     cum_probability = np.cumsum(probability)
     return fitness_values, cum_probability
