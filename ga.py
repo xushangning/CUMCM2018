@@ -35,6 +35,8 @@ def decode(chromosome):
                 if (entity_dict['CNC'][target_cnc].status
                         == cnc.CNC_modecode_rev['idle']):
                     alg.should_wash = False
+                else:
+                    alg.should_wash = True
                 if target_cnc % 2:
                     return rgv.RGV_modecode_rev['supply cargo 1']
                 else:
