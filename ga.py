@@ -66,7 +66,7 @@ def fitness(chromosomes):
     fitness_values = np.zeros(population)
     # 计算适应度值
     for i in range(population):
-        simulator = world.World(decode(chromosomes[i]), 3600 * 4)
+        simulator = world.World(decode(chromosomes[i]), 3600 * 8)
         simulator.simulate()
         fitness_values[i] = simulator.total()
     # 计算每个染色体被选择的概率
