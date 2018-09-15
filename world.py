@@ -21,16 +21,6 @@ class World:
         self.entity_dict['RGV'] = rgv.RGV(rgv.RGV_param, self.cnc_api)
         self.entity_dict['CNC'] = [
             -1,
-<<<<<<< HEAD
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to half'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from half to ready'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to half'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from half to ready'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to half'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from half to ready'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to half'], enable_failure),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from half to ready'], enable_failure)
-=======
             cnc.CNC(cnc.CNC_proctime[template[0]], template[0], enable_failure),
             cnc.CNC(cnc.CNC_proctime[template[1]], template[1], enable_failure),
             cnc.CNC(cnc.CNC_proctime[template[2]], template[2], enable_failure),
@@ -39,7 +29,6 @@ class World:
             cnc.CNC(cnc.CNC_proctime[template[5]], template[5], enable_failure),
             cnc.CNC(cnc.CNC_proctime[template[6]], template[6], enable_failure),
             cnc.CNC(cnc.CNC_proctime[template[7]], template[7], enable_failure),
->>>>>>> origin/kelvin34501-dev
         ]
         self.product = []
 
