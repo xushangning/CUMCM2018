@@ -52,7 +52,7 @@ class World:
                         return -1
 
                     if event != 0:
-                        print(rgv.RGV_modecode[event])
+                        # print(rgv.RGV_modecode[event])
                         self.info()
 
                     if event == rgv.RGV_modecode_rev['wash']:
@@ -135,42 +135,44 @@ class World:
                 break
 
     def info(self):
-        # print("{}".format(self.entity_dict['RGV'].last_inst))
-        print("Clock: {}".format(self.clock))
-
-        print("{:<12}".format("RGV:"), end='')
-        for i in range(len(self.entity_dict['CNC'][1:])):
-            print("{:<12}".format("CNC {}:".format(i + 1)), end='')
-        print()
-
-        print("{:<12}".format(rgv.RGV_modecode[self.entity_dict['RGV'].status]), end='')
-        for c in self.entity_dict['CNC'][1:]:
-            print("{:<12}".format(cnc.CNC_modecode[c.status]), end='')
-        print()
-
-        if self.entity_dict['RGV'].carry is not None:
-            print("{:<12}".format("{}, {}".format(self.entity_dict['RGV'].carry.id,
-                                                  Cargo_modecode[
-                                                      self.entity_dict['RGV'].carry.status
-                                                  ])
-                                  ),
-                  end='')
-        else:
-            print("{:<12}".format(''), end='')
-        for i, c in enumerate(self.entity_dict['CNC'][1:]):
-            if c.proc is not None:
-                print("{:<12}".format("{}, {}".format(c.proc.id,
-                                                      Cargo_modecode[
-                                                          c.proc.status
-                                                      ])
-                                      ),
-                      end='')
-            else:
-                print("{:<12}".format(''), end='')
-        print()
-
-        print("current cargo: {}".format(self.cargo_id))
-        print()
+        pass
+    # def info(self):
+    #     # print("{}".format(self.entity_dict['RGV'].last_inst))
+    #     print("Clock: {}".format(self.clock))
+    #
+    #     print("{:<12}".format("RGV:"), end='')
+    #     for i in range(len(self.entity_dict['CNC'][1:])):
+    #         print("{:<12}".format("CNC {}:".format(i + 1)), end='')
+    #     print()
+    #
+    #     print("{:<12}".format(rgv.RGV_modecode[self.entity_dict['RGV'].status]), end='')
+    #     for c in self.entity_dict['CNC'][1:]:
+    #         print("{:<12}".format(cnc.CNC_modecode[c.status]), end='')
+    #     print()
+    #
+    #     if self.entity_dict['RGV'].carry is not None:
+    #         print("{:<12}".format("{}, {}".format(self.entity_dict['RGV'].carry.id,
+    #                                               Cargo_modecode[
+    #                                                   self.entity_dict['RGV'].carry.status
+    #                                               ])
+    #                               ),
+    #               end='')
+    #     else:
+    #         print("{:<12}".format(''), end='')
+    #     for i, c in enumerate(self.entity_dict['CNC'][1:]):
+    #         if c.proc is not None:
+    #             print("{:<12}".format("{}, {}".format(c.proc.id,
+    #                                                   Cargo_modecode[
+    #                                                       c.proc.status
+    #                                                   ])
+    #                                   ),
+    #                   end='')
+    #         else:
+    #             print("{:<12}".format(''), end='')
+    #     print()
+    #
+    #     print("current cargo: {}".format(self.cargo_id))
+    #     print()
 
     def final(self):
         print(self.entity_dict['RGV'].inst_list)
