@@ -116,21 +116,37 @@ class World:
 
     def info(self):
         print("Clock: {}".format(self.clock))
-        print("RGV:")
-        print("\t{}".format(rgv.RGV_modecode[self.entity_dict['RGV'].status]))
+
+        print("{:<12}".format("RGV:"), end='')
+        for i in range(len(self.entity_dict['CNC'][1:])):
+            print("{:<12}".format("CNC {}:".format(i + 1)), end='')
+        print()
+
+        print("{:<12}".format(rgv.RGV_modecode[self.entity_dict['RGV'].status]), end='')
+        for c in self.entity_dict['CNC'][1:]:
+            print("{:<12}".format(cnc.CNC_modecode[c.status]), end='')
+        print()
+
         if self.entity_dict['RGV'].carry is not None:
-            print("\t{}, {}".format(self.entity_dict['RGV'].carry.id,
-                                    Cargo_modecode[
-                                        self.entity_dict['RGV'].carry.status
-                                    ]))
+            print("{:<12}".format("{}, {}".format(self.entity_dict['RGV'].carry.id,
+                                                  Cargo_modecode[
+                                                      self.entity_dict['RGV'].carry.status
+                                                  ])
+                                  ),
+                  end='')
+        else:
+            print("{:<12}".format(''), end='')
         for i, c in enumerate(self.entity_dict['CNC'][1:]):
-            print("CNC {}:".format(i + 1))
-            print("\t{}".format(cnc.CNC_modecode[c.status]))
             if c.proc is not None:
-                print("\t{}, {}".format(c.proc.id,
-                                        Cargo_modecode[
-                                            c.proc.status
-                                        ]))
+                print("{:<12}".format("{}, {}".format(c.proc.id,
+                                                      Cargo_modecode[
+                                                          c.proc.status
+                                                      ])
+                                      ),
+                      end='')
+            else:
+                print("{:<12}".format(''), end='')
+        print()
 
         print("current cargo: {}".format(self.cargo_id))
         print()
