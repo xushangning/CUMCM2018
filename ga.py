@@ -176,4 +176,8 @@ def ga(max_iter):
 
 
 if __name__ == '__main__':
-    ga(400)
+    template = np.zeros(8, 'uint8')
+    best_chromosome = np.array([1, 2, 3, 4, 5, 6, 7, 8] * 50, 'uint8')
+    simulator = world.World(decode(best_chromosome), template, 3600 * 8)
+    simulator.simulate()
+    simulator.final()

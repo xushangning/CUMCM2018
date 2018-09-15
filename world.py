@@ -176,6 +176,12 @@ class World:
 
     def final(self):
         print(self.entity_dict['RGV'].inst_list)
+        with open('1.1.csv', 'w') as f:
+            for i in range(len(self.down_log)):
+                f.write(str(self.down_log[i]['cnc']) + ','
+                        + str(self.up_log[i]['time']) + ','
+                        + str(self.down_log[i]['time']) + '\n')
+
         print(self.up_log)
         print(self.down_log)
         print(self.die_log)
