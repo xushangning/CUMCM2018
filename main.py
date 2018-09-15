@@ -22,7 +22,7 @@ def get_event(dic, time):
         return 7
     elif time == 3000:
         return 8
-    elif time == 3100:
+    elif time == 3900:
         return 8
     else:
         return 0
