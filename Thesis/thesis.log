@@ -1,10 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.9.14)  15 SEP 2018 17:12
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.9.14)  15 SEP 2018 18:30
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/Administrator/CUMCM2018/Thesis/thesis
-(c:/Users/Administrator/CUMCM2018/Thesis/thesis.tex
+**thesis.tex
+(./thesis.tex
 LaTeX2e <2018-04-01> patch level 5
 (./cumcmthesis.cls
 Document Class: cumcmthesis 2017/09/16 v2.6 Standard LaTeX Template for CUMCM
@@ -1565,7 +1564,25 @@ Package caption Info: End \AtBeginDocument code.
 .................................................
 [1
 
-] (./thesis.toc
+] (./thesis.toc)
+\tf@toc=\write4
+\openout4 = `thesis.toc'.
+
+
+
+LaTeX Warning: Citation `Saiti' on page 2 undefined on input line 20.
+
+[2]
+LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 47.
+LaTeX Font Info:    Try loading font information for U+msa on input line 47.
+ (g:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 47.
+
+(g:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1592,26 +1609,21 @@ Package caption Info: End \AtBeginDocument code.
 . - 'normal' (m/n) with NFSS spec.: <->"SimSun/OT:script=hani;language=DFLT;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-)
-\tf@toc=\write4
-\openout4 = `thesis.toc'.
 
- [2]
-LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 47.
-LaTeX Font Info:    Try loading font information for U+msa on input line 47.
- (g:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 47.
-
-(g:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
 (Font)              using `TU/SimSun(1)/m/n' instead on input line 57.
 
-[3] [4] (g:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+[3] [4] [5]
+Overfull \hbox (96.63885pt too wide) in paragraph at lines 154--162
+[][] 
+ []
+
+[6]
+
+LaTeX Warning: Reference `tab001' on page 7 undefined on input line 177.
+
+(g:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 )
 (g:/texlive/2018/texmf-dist/tex/latex/listings/lstlang2.sty
@@ -1668,7 +1680,7 @@ File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
 . <->"FangSong/OT:script=hani;language=DFLT;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
- [5] [6]
+ [7] [8]
 (g:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 )
@@ -1677,19 +1689,25 @@ File: lstlang1.sty 2018/09/02 1.7 listings language file
 )
 (g:/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
-) [7] [8]
+) [9] [10]
 (./thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 22376 strings out of 492962
- 456107 string characters out of 6136967
- 720526 words of memory out of 5000000
- 26053 multiletter control sequences out of 15000+600000
- 540197 words of font info for 95 fonts, out of 8000000 for 9000
+ 22350 strings out of 492962
+ 454573 string characters out of 6136967
+ 721544 words of memory out of 5000000
+ 26029 multiletter control sequences out of 15000+600000
+ 540189 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,10n,74p,481b,2483s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,10n,82p,445b,1915s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (8 pages).
+Output written on thesis.pdf (10 pages).
