@@ -50,6 +50,8 @@ class RGV:
 
         self.posi = 1  # 1,2,3,4
         self.carry_id = 0
+        self.last_inst = 0
+        self.inst_list = []
 
         self.cnc = cnc_api
 
@@ -86,7 +88,9 @@ class RGV:
             self.carry_id = cid
             last_id = self.cnc['curr_id'](self.posi, 2)
 
+        self.last_inst = self.status
         self.status = modecode
+        self.inst_list.append(self.status)
         self.proc_clock = RGV_param[modecode]
         return 0, last_id
 
