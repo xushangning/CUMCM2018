@@ -28,10 +28,7 @@ def decode(chromosome):
                     return rgv.RGV_modecode_rev['supply cargo 2']
         else:
             steps = (target_cnc + 1) // 2 - entity_dict['RGV'].posi
-            if steps > 0:
-                return rgv.RGV_modecode_rev['move ' + str(steps) + ' right']
-            else:
-                return rgv.RGV_modecode_rev['move ' + str(abs(steps)) + ' left']
+            return rgv.RGV_modecode_rev['move ' + str(steps)]
 
     alg.chromosome = chromosome
     alg.index = 0   # subscript the chromosome
