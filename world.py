@@ -115,6 +115,7 @@ class World:
                 break
 
     def info(self):
+        # print("{}".format(self.entity_dict['RGV'].last_inst))
         print("Clock: {}".format(self.clock))
 
         print("{:<12}".format("RGV:"), end='')
