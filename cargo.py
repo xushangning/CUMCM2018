@@ -1,14 +1,14 @@
 Cargo_modecode = {
     0: 'raw',
-    1: 'cnc 1',
-    2: 'cnc 2',
+    1: 'half',
+    2: 'ready',
     3: 'done'
 }
 
 Cargo_modecode_rev = {
     'raw': 0,
-    'cnc 1': 1,
-    'cnc 2': 2,
+    'half': 1,
+    'ready': 2,
     'done': 3
 }
 
