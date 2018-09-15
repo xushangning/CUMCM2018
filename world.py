@@ -156,6 +156,10 @@ class World:
         print(self.entity_dict['RGV'].inst_list)
         print(self.up_log)
         print(self.down_log)
+        print(len(self.product))
+
+    def total(self):
+        return len(self.product)
 
     # static method
     def get_cnc_id(self, posi, side):
