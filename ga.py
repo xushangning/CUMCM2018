@@ -1,5 +1,6 @@
 import numpy as np
 import random
+import multiprocessing
 
 import cnc
 import rgv
@@ -13,15 +14,16 @@ def decode(chromosome):
     :param chromosome:
     :return:
     """
+
     def alg(entity_dict, clock):
         target_cnc = alg.chromosome[alg.index]
 
         # if the last instruction is supplying cargo, then do the washing,
         # except that the cargo is the first one supplied to the CNC
         if ((entity_dict['RGV'].last_inst
-                == rgv.RGV_modecode_rev['supply cargo 1']
-                or entity_dict['RGV'].last_inst
-                == rgv.RGV_modecode_rev['supply cargo 2'])
+             == rgv.RGV_modecode_rev['supply cargo 1']
+             or entity_dict['RGV'].last_inst
+             == rgv.RGV_modecode_rev['supply cargo 2'])
                 and alg.should_wash):
             return rgv.RGV_modecode_rev['wash']
         # if RGV is right in front of the target CNC
@@ -30,7 +32,7 @@ def decode(chromosome):
                     == cnc.CNC_modecode_rev['processing']):
                 return rgv.RGV_modecode_rev['idle']
             else:
-                alg.index += 1   # cargo supplied
+                alg.index += 1  # cargo supplied
                 # if this is the first cargo supplied to the CNC
                 # DON'T WASH
                 if (entity_dict['CNC'][target_cnc].status
@@ -47,7 +49,7 @@ def decode(chromosome):
             return rgv.RGV_modecode_rev['move ' + str(steps)]
 
     alg.chromosome = chromosome
-    alg.index = 0   # subscript the chromosome
+    alg.index = 0  # subscript the chromosome
     # whether supplying cargo should be followed by washing
     alg.should_wash = False
     return alg
@@ -59,16 +61,26 @@ def initial_population(encode_length, population_size):
     return chromosomes
 
 
+def simmap(chromo):
+    simulator = world.World(decode(chromo), 3600 * 8)
+    simulator.simulate()
+    fitness_value = simulator.total()
+    return fitness_value
+
+
 def fitness(chromosomes):
     # 得到种群规模和决策变量的个数
     population = chromosomes.shape[0]
     # 初始化种群的适应度值为0
     fitness_values = np.zeros(population)
     # 计算适应度值
-    for i in range(population):
-        simulator = world.World(decode(chromosomes[i]), 3600 * 8)
-        simulator.simulate()
-        fitness_values[i] = simulator.total()
+    cores = multiprocessing.cpu_count()
+    pool = multiprocessing.Pool(processes=cores)
+    # for i in range(population):
+    #     simulator = world.World(decode(chromosomes[i]), 3600 * 8)
+    #     simulator.simulate()
+    #     fitness_values[i] = simulator.total()
+    fitness_values = pool.map(simmap, chromosomes)
     # 计算每个染色体被选择的概率
     probability = np.exp(fitness_values) / np.sum(np.exp(fitness_values))
     # 得到每个染色体被选中的累积概率
@@ -124,7 +136,7 @@ def crossover(population, pc=0.8):
     return update_population
 
 
-def mutation(population, Pm=0.01):
+def mutation(population, Pm=0.05):
     """
     :param population: 经交叉后得到的种群
     :param Pm: 变异概率默认是0.01
@@ -150,8 +162,8 @@ def mutation(population, Pm=0.01):
 
 
 def ga(max_iter):
-    chromosome_length = 200
-    chromosomes = initial_population(chromosome_length, 30)
+    chromosome_length = 400
+    chromosomes = initial_population(chromosome_length, 50)
     for iteration in range(max_iter):
         cum_proba = fitness(chromosomes)[1]
         new_populations = select_new_population(chromosomes, cum_proba)
@@ -164,4 +176,4 @@ def ga(max_iter):
 
 
 if __name__ == '__main__':
-    ga(10)
+    ga(400)
