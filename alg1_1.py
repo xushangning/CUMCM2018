@@ -68,7 +68,7 @@ class PriorityListAlgorithm:
 
         for cncNum in range(1, len(cncStatus)):
             cnc = cncStatus[cncNum]
-            if cnc.status == 1:
+            if cnc.status == 1 or cnc.status == 3:
                 continue
             cncPosition = (cncNum + 1) // 2  # the position of the current CNC
 
@@ -105,7 +105,7 @@ class PriorityListAlgorithm:
                     else:
                         commandCode.append(7)    # append the odd one
 
-            else:
+            elif cnc.status == 2:
                 # if the cnc is done working, load then wash
                 command = "Take" + str(abs(rgvPosition - cncPosition)) + OEproperty
                 commandPriority = self.priorList[command]
