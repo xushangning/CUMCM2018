@@ -1,6 +1,7 @@
 import numpy as np
 import random
 import multiprocessing
+import gc
 
 import cnc
 import rgv
@@ -65,26 +66,31 @@ def simmap(chromo):
     simulator = world.World(decode(chromo), 3600 * 8)
     simulator.simulate()
     fitness_value = simulator.total()
+    del simulator
+    gc.collect()
     return fitness_value
 
 
 def fitness(chromosomes):
     # 得到种群规模和决策变量的个数
-    population = chromosomes.shape[0]
+    # population = chromosomes.shape[0]
     # 初始化种群的适应度值为0
-    fitness_values = np.zeros(population)
+    # fitness_values = np.zeros(population)
     # 计算适应度值
-    cores = multiprocessing.cpu_count()
-    pool = multiprocessing.Pool(processes=cores)
     # for i in range(population):
     #     simulator = world.World(decode(chromosomes[i]), 3600 * 8)
     #     simulator.simulate()
     #     fitness_values[i] = simulator.total()
+    multiprocessing.freeze_support()
+    cores = multiprocessing.cpu_count()
+    pool = multiprocessing.Pool(processes=cores)
     fitness_values = pool.map(simmap, chromosomes)
     # 计算每个染色体被选择的概率
     probability = np.exp(fitness_values) / np.sum(np.exp(fitness_values))
     # 得到每个染色体被选中的累积概率
     cum_probability = np.cumsum(probability)
+    del pool
+    gc.collect()
     return fitness_values, cum_probability
 
 
@@ -163,7 +169,7 @@ def mutation(population, Pm=0.05):
 
 def ga(max_iter):
     chromosome_length = 400
-    chromosomes = initial_population(chromosome_length, 50)
+    chromosomes = initial_population(chromosome_length, 60)
     for iteration in range(max_iter):
         cum_proba = fitness(chromosomes)[1]
         new_populations = select_new_population(chromosomes, cum_proba)
@@ -173,7 +179,8 @@ def ga(max_iter):
         fitness_values = fitness(chromosomes)[0]
         fitness_values.sort()
         print(iteration, fitness_values)
+        gc.collect()
 
 
 if __name__ == '__main__':
-    ga(400)
+    ga(500)

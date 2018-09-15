@@ -37,8 +37,9 @@ class World:
 
         # logging
         self.cargo_id = 0
-        self.up_log = []  # {'id': 1, 'time': 0}
-        self.down_log = []
+        self.counter = 0
+        # self.up_log = []  # {'id': 1, 'time': 0}
+        # self.down_log = []
 
     def update(self):
         for name, entity in self.entity_dict.items():
@@ -49,24 +50,25 @@ class World:
                     if event == -1:
                         return -1
 
-                    if event != 0:
-                        # print(rgv.RGV_modecode[event])
-                        self.info()
+                    # if event != 0:
+                    #     print(rgv.RGV_modecode[event])
+                        # self.info()
 
-                    if event == rgv.RGV_modecode_rev['supply cargo 1']:
-                        self.up_log.append({
-                            'id': cargo_t.id,
-                            'time': self.clock,
-                            'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 1)
-                        })
-                    elif event == rgv.RGV_modecode_rev['supply cargo 2']:
-                        self.up_log.append({
-                            'id': cargo_t.id,
-                            'time': self.clock,
-                            'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 2)
-                        })
-                    elif event == rgv.RGV_modecode_rev['wash']:
-                        self.product.append(cargo_t)
+                    # if event == rgv.RGV_modecode_rev['supply cargo 1']:
+                        # self.up_log.append({
+                        #     'id': cargo_t.id,
+                        #     'time': self.clock,
+                        #     'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 1)
+                        # })
+                    # elif event == rgv.RGV_modecode_rev['supply cargo 2']:
+                    #     self.up_log.append({
+                    #         'id': cargo_t.id,
+                    #         'time': self.clock,
+                    #         'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 2)
+                    #     })
+                    if event == rgv.RGV_modecode_rev['wash']:
+                        # self.product.append(cargo_t)
+                        self.counter += 1
 
                     new_inst = self.alg(self.entity_dict, self.clock)
                     if new_inst == rgv.RGV_modecode_rev['supply cargo 1'] or \
@@ -84,20 +86,20 @@ class World:
                     if flag == -1:
                         return -1
 
-                    if new_inst == rgv.RGV_modecode_rev['supply cargo 1'] and \
-                            opt_cargo is not None:
-                        self.down_log.append({
-                            'id': opt_cargo.id,
-                            'time': self.clock,
-                            'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 1)
-                        })
-                    elif new_inst == rgv.RGV_modecode_rev['supply cargo 2'] and \
-                            opt_cargo is not None:
-                        self.down_log.append({
-                            'id': opt_cargo.id,
-                            'time': self.clock,
-                            'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 2)
-                        })
+                    # if new_inst == rgv.RGV_modecode_rev['supply cargo 1'] and \
+                    #         opt_cargo is not None:
+                    #     self.down_log.append({
+                    #         'id': opt_cargo.id,
+                    #         'time': self.clock,
+                    #         'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 1)
+                    #     })
+                    # elif new_inst == rgv.RGV_modecode_rev['supply cargo 2'] and \
+                    #         opt_cargo is not None:
+                    #     self.down_log.append({
+                    #         'id': opt_cargo.id,
+                    #         'time': self.clock,
+                    #         'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 2)
+                    #     })
 
             if name == 'CNC':
                 for e in entity[1:]:
@@ -156,12 +158,12 @@ class World:
 
     def final(self):
         print(self.entity_dict['RGV'].inst_list)
-        print(self.up_log)
-        print(self.down_log)
-        print(len(self.product))
+        # print(self.up_log)
+        # print(self.down_log)
+        # print(len(self.product))
 
     def total(self):
-        return len(self.product)
+        return self.counter
 
     # static method
     def get_cnc_id(self, posi, side):
