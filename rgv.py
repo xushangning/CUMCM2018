@@ -84,7 +84,7 @@ class RGV:
             if self.cnc['status'](self.posi, 2) == cnc.CNC_modecode_rev['processing']:
                 return -1, None
             self.carry_id = cid
-            last_id = self.cnc['curr_id'](self.posi, 1)
+            last_id = self.cnc['curr_id'](self.posi, 2)
 
         self.status = modecode
         self.proc_clock = RGV_param[modecode]
@@ -122,7 +122,7 @@ class RGV:
                 return tmp, None
             elif tmp == RGV_modecode_rev['supply cargo 1']:
                 tmp_id = self.carry_id
-                self.carry_id = self.cnc['consume'](self.posi, 2)
+                self.carry_id = self.cnc['consume'](self.posi, 1)
                 self.cnc['supply'](self.posi, 1, tmp_id)
                 return tmp, tmp_id
             elif tmp == RGV_modecode_rev['supply cargo 2']:

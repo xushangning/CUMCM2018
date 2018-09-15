@@ -68,13 +68,19 @@ class World:
                     flag, opt_id = self.entity_dict['RGV'].inst(new_inst, self.cargo_id)
                     if flag == -1:
                         return -1
-                    if (new_inst == rgv.RGV_modecode_rev['supply cargo 1'] or \
-                        new_inst == rgv.RGV_modecode_rev['supply cargo 2']) and \
+                    if new_inst == rgv.RGV_modecode_rev['supply cargo 1'] and \
                             opt_id != 0:
                         self.down_log.append({
                             'id': opt_id,
                             'time': self.clock,
                             'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 1)
+                        })
+                    elif new_inst == rgv.RGV_modecode_rev['supply cargo 2'] and \
+                            opt_id != 0:
+                        self.down_log.append({
+                            'id': opt_id,
+                            'time': self.clock,
+                            'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 2)
                         })
 
             if name == 'CNC':
