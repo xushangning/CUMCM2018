@@ -4,7 +4,7 @@ from cargo import Cargo, Cargo_modecode
 
 
 class World:
-    def __init__(self, alg, total_time):
+    def __init__(self, alg, total_time, enable_failure=False):
         # tricky
         self.cnc_api = {
             'status': self.cnc_check,
@@ -14,20 +14,21 @@ class World:
         }
 
         self.alg = alg
+        self.enable_failure = enable_failure
 
         # init all objects
         self.entity_dict = dict()
         self.entity_dict['RGV'] = rgv.RGV(rgv.RGV_param, self.cnc_api)
         self.entity_dict['CNC'] = [
             -1,
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready']),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready']),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready']),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready']),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready']),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready']),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready']),
-            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'])
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure),
+            cnc.CNC(cnc.CNC_proctime_1, cnc.CNC_typecode_rev['from raw to ready'], enable_failure)
         ]
         self.product = []
 
@@ -39,6 +40,7 @@ class World:
         self.cargo_id = 0
         self.up_log = []  # {'id': 1, 'time': 0}
         self.down_log = []
+        self.die_log = []
 
     def update(self):
         for name, entity in self.entity_dict.items():
@@ -100,8 +102,21 @@ class World:
                         })
 
             if name == 'CNC':
-                for e in entity[1:]:
-                    event, cargo = e.update()
+                for i, e in enumerate(entity[1:]):
+                    event, opt_cargo = e.update()
+                    if event is not None:
+                        if event == cnc.CNC_modecode_rev['down']:
+                            self.die_log.append({
+                                'id': opt_cargo.id,
+                                'time': self.clock,
+                                'cnc': i + 1
+                            })
+
+                            print('CNC {} is down'.format(i + 1))
+                            self.info()
+                        elif event == cnc.CNC_modecode_rev['idle']:
+                            print('CNC {} is up again'.format(i + 1))
+                            self.info()
 
         self.clock += 1
         return 0
@@ -156,6 +171,7 @@ class World:
         print(self.entity_dict['RGV'].inst_list)
         print(self.up_log)
         print(self.down_log)
+        print(self.die_log)
         print(len(self.product))
 
     def total(self):

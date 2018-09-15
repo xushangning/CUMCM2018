@@ -81,6 +81,8 @@ class RGV:
         elif RGV_modecode[modecode] == 'supply cargo 1':
             if self.cnc['status'](self.posi, 1) == cnc.CNC_modecode_rev['processing']:
                 return -1, None
+            elif self.cnc['status'](self.posi, 1) == cnc.CNC_modecode_rev['down']:
+                return -1, None
 
             if cargo_t is not None:
                 self.carry = cargo_t
@@ -90,6 +92,8 @@ class RGV:
             last_t = self.cnc['curr'](self.posi, 1)
         elif RGV_modecode[modecode] == 'supply cargo 2':
             if self.cnc['status'](self.posi, 2) == cnc.CNC_modecode_rev['processing']:
+                return -1, None
+            elif self.cnc['status'](self.posi, 2) == cnc.CNC_modecode_rev['down']:
                 return -1, None
 
             if cargo_t is not None:

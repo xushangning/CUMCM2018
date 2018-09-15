@@ -39,7 +39,7 @@ def get_event(dic, time):
 
 
 if __name__ == '__main__':
-    sim = world.World(get_event, 10000)
+    sim = world.World(get_event, 10000, True)
     sim.simulate()
     sim.info()
     sim.final()
