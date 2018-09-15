@@ -157,6 +157,7 @@ def ga(max_iter):
         new_populations = select_new_population(chromosomes, cum_proba)
         crossover_population = crossover(new_populations)
         mutated_population = mutation(crossover_population)
+        chromosomes = mutated_population
         fitness_values = fitness(chromosomes)[0]
         fitness_values.sort()
         print(iteration, fitness_values)
