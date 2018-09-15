@@ -55,28 +55,33 @@ class World:
                         print(rgv.RGV_modecode[event])
                         self.info()
 
-                    if event == rgv.RGV_modecode_rev['supply cargo 1']:
-                        self.up_log.append({
-                            'id': cargo_t.id,
-                            'time': self.clock,
-                            'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 1)
-                        })
-                    elif event == rgv.RGV_modecode_rev['supply cargo 2']:
-                        self.up_log.append({
-                            'id': cargo_t.id,
-                            'time': self.clock,
-                            'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 2)
-                        })
-                    elif event == rgv.RGV_modecode_rev['wash']:
+                    if event == rgv.RGV_modecode_rev['wash']:
                         self.product.append(cargo_t)
 
                     new_inst = self.alg(self.entity_dict, self.clock)
-                    if new_inst == rgv.RGV_modecode_rev['supply cargo 1'] or \
-                            new_inst == rgv.RGV_modecode_rev['supply cargo 2']:
+                    if new_inst == rgv.RGV_modecode_rev['supply cargo 1']:
                         if self.entity_dict['RGV'].carry is None:
                             self.cargo_id += 1
                             flag, opt_cargo = self.entity_dict['RGV'].inst(
                                 new_inst, Cargo(self.cargo_id))
+                            self.up_log.append({
+                                'id': self.cargo_id,
+                                'time': self.clock,
+                                'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 1)
+                            })
+                        else:
+                            flag, opt_cargo = self.entity_dict['RGV'].inst(
+                                new_inst, None)
+                    elif new_inst == rgv.RGV_modecode_rev['supply cargo 2']:
+                        if self.entity_dict['RGV'].carry is None:
+                            self.cargo_id += 1
+                            flag, opt_cargo = self.entity_dict['RGV'].inst(
+                                new_inst, Cargo(self.cargo_id))
+                            self.up_log.append({
+                                'id': self.cargo_id,
+                                'time': self.clock,
+                                'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 2)
+                            })
                         else:
                             flag, opt_cargo = self.entity_dict['RGV'].inst(
                                 new_inst, None)
