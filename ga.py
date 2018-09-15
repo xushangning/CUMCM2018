@@ -21,7 +21,6 @@ def decode(chromosome):
                 return rgv.RGV_modecode_rev['idle']
             else:
                 alg.index += 1   # cargo supplied
-                print(alg.index)
                 if target_cnc % 2:
                     return rgv.RGV_modecode_rev['supply cargo 1']
                 else:
