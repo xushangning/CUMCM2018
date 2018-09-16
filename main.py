@@ -23,7 +23,7 @@ def get_event(dic, time):
 
 
 if __name__ == '__main__':
-    t = [1, 2, 2, 2, 1, 2, 2, 2]
+    t = [1, 2, 2, 2, 2, 2, 2, 2]
     sim = world.World(get_event, t, 3600 * 8)
     sim.simulate()
     sim.info()
