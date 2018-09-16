@@ -75,7 +75,7 @@ class PriorityListAlgorithm:
                     genetic_list[1].append(cncPosition)
             if currentCommand == 8:
                 cncPosition = rgvPosition * 2
-                if cncPosition in [2, 3, 7, 8]:
+                if cncPosition in [1, 4, 5, 6]:
                     genetic_list[0].append(cncPosition)
                 else:
                     genetic_list[1].append(cncPosition)
@@ -92,7 +92,7 @@ class PriorityListAlgorithm:
                     genetic_list[1].append(cncPosition)
             if currentCommand == 8:
                 cncPosition = rgvPosition * 2
-                if cncPosition in [2, 3, 7, 8]:
+                if cncPosition in [1, 4, 5, 6]:
                     genetic_list[0].append(cncPosition)
                 else:
                     genetic_list[1].append(cncPosition)
