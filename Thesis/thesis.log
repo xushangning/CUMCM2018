@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2018.9.6)  16 SEP 2018 11:33
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2018.9.6)  16 SEP 2018 13:12
 entering extended mode
 **c:/Users/gavin/CUMCM2018/Thesis/thesis
 (c:/Users/gavin/CUMCM2018/Thesis/thesis.tex
@@ -895,7 +895,7 @@ Requested font "Arial/BI/BI/ICU" at 10.0pt
 \Urlmuskip=\muskip11
 Package: url 2004/03/15  ver 3.1  Verb mode for urls, etc.
 )
-No file thesis.aux.
+(c:\Users\gavin\CUMCM2018\Thesis\thesis.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
@@ -914,6 +914,7 @@ LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 8.
 LaTeX Font Info:    Try loading font information for T3+cmr on input line 8.
+
 (D:\CTEX\MiKTeX\tex\latex\tipa\t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
@@ -1145,8 +1146,47 @@ Requested font "SimSun/ICU" at 17.28pt
 Requested font "SimHei/ICU:script=latn;language=DFLT;mapping=tex-text;" at 17.2
 8pt
  -> C:/WINDOWS/Fonts/simhei.ttf
-
-No file thesis.toc.
+ (c:\Users\gavin\CUMCM2018\Thesis\thesis.toc
+Requested font "Times New Roman/B/ICU:script=latn;language=DFLT;mapping=tex-tex
+t;" at 12.05pt
+ -> C:/WINDOWS/Fonts/timesbd.ttf
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SimSun(0)' created for font 'SimSun' with options
+. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
+. 
+. This font family consists of the following shapes:
+.................................................
+Requested font "SimSun/I/ICU" at 12.05pt
+ -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font SimSun/I (it probably doesn't exist).
+.................................................
+Requested font "SimSun/I/ICU" at 12.05pt
+ -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font SimSun/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SimSun(1)' created for font 'SimSun' with options
+. [Ligatures=TeX,BoldFont={SimSun},BoldFeatures={RawFeature={embolden=4}}].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;"
+. 
+. * 'bold' with NFSS spec.:
+. <->"SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;embolden=4;"
+.................................................
+)
 \tf@toc=\write4
 Requested font "Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;
 " at 14.4pt
@@ -1169,13 +1209,7 @@ Requested font "SimSun/ICU" at 14.4pt
 Requested font "SimHei/ICU:script=latn;language=DFLT;mapping=tex-text;" at 14.4
 pt
  -> C:/WINDOWS/Fonts/simhei.ttf
-Requested font "Times New Roman/B/ICU:script=latn;language=DFLT;mapping=tex-tex
-t;" at 12.05pt
- -> C:/WINDOWS/Fonts/timesbd.ttf
-
-LaTeX Warning: Citation `Saiti' on page 2 undefined on input line 20.
-
-[2]
+ [2]
 Requested font "Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;
 " at 8.0pt
  -> C:/WINDOWS/Fonts/times.ttf
@@ -1201,7 +1235,8 @@ Requested font "cmex8" at 8.0pt
 Requested font "cmex7" at 6.0pt
  -> cmex7
 LaTeX Font Info:    Try loading font information for U+msa on input line 47.
- (D:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
+
+(D:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 Requested font "msam10" at 12.05pt
@@ -1245,20 +1280,6 @@ Requested font "cmr8" at 8.0pt
  -> cmr8
 Requested font "cmr6" at 6.0pt
  -> cmr6
-Requested font "SimSun/I/ICU" at 12.05pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
-.................................................
-. fontspec info: "no-font-shape"
-. 
-. Could not resolve font SimSun/I (it probably doesn't exist).
-.................................................
-Requested font "SimSun/I/ICU" at 12.05pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
-.................................................
-. fontspec info: "no-font-shape"
-. 
-. Could not resolve font SimSun/I (it probably doesn't exist).
-.................................................
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1266,14 +1287,132 @@ Requested font "SimSun/I/ICU" at 12.05pt
 . [Ligatures=TeX,BoldFont={SimSun},BoldFeatures={RawFeature={embolden=4}}].
 . 
 . This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'bold' with NFSS spec.:
-. <->"SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;embolden=4;"
 .................................................
 Requested font "SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;embolden=
 4;" at 12.05pt
  -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
- [3
+ [3] [4] [5] [6]
+Requested font "Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;
+" at 10.95pt
+ -> C:/WINDOWS/Fonts/times.ttf
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 173
+.
+
+(D:\CTEX\MiKTeX\tex\latex\euenc\eu1lmtt.fd
+File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Requested font "[lmmono10-regular]" at 10.95pt
+ -> D:/CTEX/MiKTeX/fonts/opentype/public/lm/lmmono10-regular.otf
+ [7]
+File: simple_model_1.pdf Graphic file (type QTm)
+ <use  "simple_model_1.pdf" >
+[8] [9] (D:\CTEX\MiKTeX\tex\latex\listings\lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(D:\CTEX\MiKTeX\tex\latex\listings\lstlang2.sty
+File: lstlang2.sty 2004/09/05 1.3 listings language file
+)
+(D:\CTEX\MiKTeX\tex\latex\listings\lstlang3.sty
+File: lstlang3.sty 2004/09/05 1.3 listings language file
+)
+(D:\CTEX\MiKTeX\tex\latex\listings\lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(D:\CTEX\MiKTeX\tex\latex\listings\lstlang2.sty
+File: lstlang2.sty 2004/09/05 1.3 listings language file
+)
+(D:\CTEX\MiKTeX\tex\latex\listings\lstlang3.sty
+File: lstlang3.sty 2004/09/05 1.3 listings language file
+)
+(D:\CTEX\MiKTeX\tex\latex\listings\lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(D:\CTEX\MiKTeX\tex\latex\listings\lstlang2.sty
+File: lstlang2.sty 2004/09/05 1.3 listings language file
+)
+(D:\CTEX\MiKTeX\tex\latex\listings\lstlang3.sty
+File: lstlang3.sty 2004/09/05 1.3 listings language file
+)
+(D:\CTEX\MiKTeX\tex\latex\listings\lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+)
+Requested font "[SIMFANG.TTF]" at 10.95pt
+ -> C:/WINDOWS/Fonts/SIMFANG.TTF
+Requested font "[SIMFANG.TTF]/ICU" at 10.95pt
+ -> C:/WINDOWS/Fonts/SIMFANG.TTF
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font [SIMFANG.TTF] does not contain any OpenType `Script' information.
+.................................................
+\g_fontspec_family_[SIMFANG.TTF]_int=\count309
+Requested font "[SIMFANG.TTF]/I/ICU" at 10.95pt
+ -> C:/WINDOWS/Fonts/SIMFANG.TTF
+Requested font "[SIMFANG.TTF]/I/I/ICU" at 10.95pt
+ -> C:/WINDOWS/Fonts/SIMFANG.TTF
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family '[SIMFANG.TTF](0)' created for font '[SIMFANG.TTF]' with options
+. [Ligatures=TeX,BoldFont={[SIMFANG.TTF]},BoldFeatures={RawFeature={embolden=4}
+}].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"[SIMFANG.TTF]/ICU:mapping=tex-text;"
+. 
+. * 'bold' with NFSS spec.:
+. <->"[SIMFANG.TTF]/ICU:mapping=tex-text;embolden=4;"
+. 
+. * 'italic' with NFSS spec.:
+. <->"[SIMFANG.TTF]/I/ICU:mapping=tex-text;"
+. 
+. * 'bold italic' with NFSS spec.:
+. <->"[SIMFANG.TTF]/I/ICU:mapping=tex-text;"
+.................................................
+Requested font "[SIMFANG.TTF]/ICU:mapping=tex-text;" at 10.95pt
+ -> C:/WINDOWS/Fonts/SIMFANG.TTF
+Requested font "[lmmono12-regular]" at 12.05pt
+ -> D:/CTEX/MiKTeX/fonts/opentype/public/lm/lmmono12-regular.otf
+Requested font "[SIMFANG.TTF]" at 12.05pt
+ -> C:/WINDOWS/Fonts/SIMFANG.TTF
+Requested font "[SIMFANG.TTF]/ICU" at 12.05pt
+ -> C:/WINDOWS/Fonts/SIMFANG.TTF
+.................................................
+. fontspec info: "no-scripts"
+. 
+. Font [SIMFANG.TTF] does not contain any OpenType `Script' information.
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family '[SIMFANG.TTF](0)' created for font '[SIMFANG.TTF]' with options
+. [Ligatures=TeX,BoldFont={[SIMFANG.TTF]},BoldFeatures={RawFeature={embolden=4}
+}].
+. 
+. This font family consists of the following shapes:
+.................................................
+Requested font "[SIMFANG.TTF]/ICU:mapping=tex-text;" at 12.05pt
+ -> C:/WINDOWS/Fonts/SIMFANG.TTF
+ [10] [11]
+(D:\CTEX\MiKTeX\tex\latex\listings\lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(D:\CTEX\MiKTeX\tex\latex\listings\lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+(D:\CTEX\MiKTeX\tex\latex\listings\lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+) [12] [13]
+(c:\Users\gavin\CUMCM2018\Thesis\thesis.aux) ) 
+Here is how much of TeX's memory you used:
+ 21782 strings out of 430478
+ 411356 string characters out of 3191503
+ 470245 words of memory out of 3000000
+ 24546 multiletter control sequences out of 15000+200000
+ 11893 words of font info for 98 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 64i,10n,122p,872b,2209s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on thesis.pdf (13 pages).
