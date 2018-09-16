@@ -77,6 +77,12 @@ class World:
                         else:
                             flag, opt_cargo = self.entity_dict['RGV'].inst(
                                 new_inst, None)
+                            if self.entity_dict['RGV'].carry is not None:
+                                self.up_log.append({
+                                    'id': self.entity_dict['RGV'].carry.id,
+                                    'time': self.clock,
+                                    'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 1)
+                                })
                     elif new_inst == rgv.RGV_modecode_rev['supply cargo 2']:
                         target_id = self.get_cnc_id(
                             self.entity_dict['RGV'].posi, 2)
@@ -94,6 +100,12 @@ class World:
                         else:
                             flag, opt_cargo = self.entity_dict['RGV'].inst(
                                 new_inst, None)
+                            if self.entity_dict['RGV'].carry is not None:
+                                self.up_log.append({
+                                    'id': self.entity_dict['RGV'].carry.id,
+                                    'time': self.clock,
+                                    'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 2)
+                                })
                     else:
                         flag, opt_cargo = self.entity_dict['RGV'].inst(
                             new_inst, None)
