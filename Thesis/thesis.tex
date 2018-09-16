@@ -5,6 +5,7 @@
 	%\documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页
 	
 	\usepackage{url}
+	\usepackage{amssymb}
 	\begin{document}
 	
 	\begin{abstract}
@@ -49,8 +50,14 @@
 		符号 & 意义\\
 		\midrule[1pt]
 		alg     & 调度算法/调度方案 \\
-		\(n_t\) & 在$t$时间内加工完的工件数  \\
-		10 & 421.0 \\
+		$n_t$ & 在$t$时间内加工完的工件数  \\
+		$T_0$ & 情况一CNC由原料加工为成品的时间 \\
+		$T_1$ & 情况二CNC由原料加工为半成品的时间 \\
+		$T_2$ & 情况二CNC由半成品加工为成品的时间 \\
+		$T_{move k}$ & RGV移动$k$步所花的时间($k\in{1, 2, 3}$) \\
+		$T_{wash}$ & RGV清洗所花的时间 \\
+		$T_{load odd}$ & RGV为奇数号CNC上下料所花的时间 \\
+		$T_{load even}$ & RGV为偶数号CNC上下料所花的时间 \\
 		20 & 640.2 \\
 		\bottomrule[1.5pt]
 		\end{tabular}
@@ -176,7 +183,10 @@
 	模拟结束后，模拟器会将数据写入对应的文件中。
 	
 	\section{标准调度模型}
-	为了能够定量的评价后续模型的优劣，我们按照题意设计了一个标准调度模型，来与之后的模型对比。对于情况一，标准调度模型基于以下几条原则：
+	为了能够定量的评价后续模型的优劣，我们按照题意设计了一个标准调度模型，来与之后的模型对比。标准调度模型是一种确定性模型，由人来确定小车调度中应当依次完成工作的优先级，然后小车就依照确定的优先级处理CNC发送的请求。
+
+	\subsection{情况一的标准调度模型}
+	对于情况一，标准调度模型基于以下几条原则：
 	\begin{itemize}
 		\item 小车会优先执行完当前的指令队列，然后再接收CNC的服务请求；
 		\item 在所有CNC都工作时，若小车的执行队列为空，则小车处于空闲状态；
@@ -184,12 +194,28 @@
 		\item 若有多台CNC处于可服务状态，小车将会优先服务近的、奇数号的CNC；
 		\item 在完成一次上下料作业后，若需要清洗，小车会立即进行清洗。
 	\end{itemize}
-	
+	在这个情况下，小车的调度成为了一个确定问题。在每次小车处于空闲状态时，它可能会接收多个CNC的服务请求，但是它将要执行的指令其实已经确定了。我们可以认为，小车会将CNC的优先级按照距离和奇偶性排序。在它接收了多个CNC的服务请求以后，将按照图 \ref{StandardModelCondition1} 所示的流程依次判断服务对象，然后将整个服务流程所需的步骤编入其指令队列。例如，若小车处于位置1，而编号为3，4，5，7的CNC需要服务，那么小车会按照1，2，……，7，8的顺序询问CNC是否需要服务。最终，小车将对编号为3的机器提供服务。
 	\begin{figure}
 		\centering
 		\includegraphics[width=.7\linewidth]{simple_model_1.pdf}
-		\caption{标准模型（情况一）的运行流程}
+		\caption{标准模型（情况一）的运行流程}\label{StandardModelCondition1}
 	\end{figure}
+	在有机器出现故障的情况下，该标准模型仍能正常工作。
+
+	\subsection{情况二的标准调度模型}
+	对于情况二，一个工件从原料到成品需要两个工序，依次经过两台CNC。因此，我们对情况一的原则稍加改动，引入情况二标准模型的几条原则：
+	\begin{itemize}
+		\item 小车会优先执行完当前的指令队列，然后再接收CNC的服务请求；
+		\item 在所有CNC都工作时，若小车的执行队列为空，则小车处于空闲状态；
+		\item 若小车当前只能为一台CNC提供服务，则小车将会为这台CNC提供服务；
+		\item 若小车当前能为多台CNC提供服务，则小车会按照先服务第一工序CNC，再服务第二工序CNC；先近后远；先奇后偶的顺序依次对要服务的CNC进行排序，然后服务第一顺序的CNC；
+		\item 在完成一次上下料作业后，若需要清洗，小车会立即进行清洗。
+	\end{itemize}
+	同样地，在情况二下小车调度也是一个确定问题，流程如图 所示。
+
+	\section{情况一的解}
+	\subsection{标准调度模型}
+	使用标准调度模型可以快速地得到一个基本令人满意的解。鉴于标准调度模型的时间复杂度为\(O(n)\)，标准调度模型测试程序运行需要的时间非常短，约在 秒以内。而此模型的结果为：在8小时内共有 个成品被送上了下料传送带，如图 所示。
 	
 	\section{遗传算法}
 	
@@ -301,20 +327,94 @@
 	\bottomrule[1.5pt]
 	\end{tabular}
 	\end{table}
+
+	\subsection{最优解}
+	经过观察和验证，我们认为我们得到了情况一下一种特殊情况的最优解。当该加工系统的各项时间满足
+	\[T_0 \geq 3T_{move 1}+T_{move 3}+8T_{wash}+3T_{load odd}+4T_{load even}\]
+	时，在标准模型的基础上增加一条原则：
+	\begin{itemize}
+		\item 当小车没有需要服务的对象而自身空闲时，小车将前往最快要完成的CNC旁等候。
+	\end{itemize}
+	该情况下，8小时内加工完成的工件数达到所有情况下能达到的最大值。接下来我们对其进行证明：
+	\begin{lemma}
+		在一定时间$t$内（$t$足够大），若所有CNC的总等待时间最小，则加工完成的工件数达到最大。
+	\end{lemma}
+	\begin{proof}
+		设在$t$内，所有CNC的最小总等待时间为$T$，此时加工完成的工件数为$n_t$，则有：
+		$$8t-n_tT_0>T\geq \textrm{Max}[0, 8t-n_tT_0-8T_0]$$
+		因此若$T'>8t-n_tT_0$，则显然此时$n_t'<n_t$。\newline
+		若$8t-n_tT_0>T'>T$，而$n_t'>n_t$，则有$\hfill\blacksquare$
+	\end{proof}
+	\begin{theorem}
+		小车空闲时，若有多台CNC请求服务，小车应当先应对耗时最短的服务请求。
+	\end{theorem}
+	\begin{proof}
+		设有$k$台CNC向小车发送了服务请求，其服务需要的时间分别为$t_1<t_2<...<t_k$，则小车先为第$i$台CNC服务所产生的总等待时间为$k\cdot t_i$，取$t_1$可使总等待时间最小化，之后由引理1即可得证。$\hfill\blacksquare$
+	\end{proof}
+	由该定理我们验证了小车对不同CNC进行排序服务原则的合理性。
+	\begin{theorem}
+		小车空闲时，若没有CNC请求服务，小车应当前往最快要完成的CNC旁等候。
+	\end{theorem}
+	\begin{proof}
+		对任意的CNC来说，若小车完成了一次上下料任务，则小车为其他CNC完成上下料，再返回当前CNC的位置所需的时间最大值为
+		\[T_{needMax}=3T_{move 1}+T_{move 3}+8T_{wash}+3T_{load odd}+4T_{load even}\]
+		而下一次该CNC需要上下料服务的时间为$T_0>T_{needMax}$
+		因此在RGV完成其他上下料任务后，其应当返回该CNC处准备对该CNC进行上下料任务。此时，该CNC即为最快要完成的CNC。$\hfill\blacksquare$
+	\end{proof}
+	对于其他原则，我们认为其十分显然，就不再给出额外的证明。由此，我们可以获知该调度模型即为最优的调度模型。特殊地，对于情况一，该调度模型可以简化为一个周期性调度方案：
+	\begin{center}
+	\fangsong
+	RGV为CNC1上下料（含清洗）$\Rightarrow$RGV为CNC2上下料（含清洗）$\Rightarrow$...\newline$\Rightarrow$RGV为CNC8上下料（含清洗）$\Rightarrow$RGV回到位置1\newline$\Rightarrow$等待CNC1完成$\Rightarrow$RGV为CNC1上下料（含清洗）$\Rightarrow$...
+	\end{center}
+	该最优算法可以使加工系统在8小时内完成383(数据组1)和392(数据组3)个成品，远远超过了标准模型和遗传算法模型的效率。而数据组2虽然在此情况下并非最优解，但是也在8小时内完成了360个成品，其效率仍然超过了标准模型和遗传算法模型。
+
+	\section{情况二的解}
+	对于情况二，CNC的分配在模型中也是十分重要的一个因素。我们认为CNC的分配应当遵从平均原则，即通过给加工时间长的CNC赋予更短的平均服务时间和更多的数量来使CNC与RGV的工作更为协调。因此，对于给出的三组数据：对第一组数据，只需将处理时间长的第一道工序CNC放在1，3，5，7位置，将第二道工序CNC放在2，4，6，8位置即可。而对第二组数据，为满足平均原则，有：
+	$$\frac{x}{280}\approx \frac{8-x}{500}$$
+	则可得到$x\approx 2.9$，因此安排3台第一道工序CNC。经过试验，得到将第二道工序CNC放在1，2，3，5，7位置效率最高。\newline
+	对第三组数据，同样有：
+	$$\frac{x}{455}\approx\frac{8-x}{182}$$
+	可得$x\approx 5.7$，因此安排6台第一道工序CNC。同样地，经过试验，得到将第一道工序CNC放在 位置效率最高。
 	
-	\bigskip
-	table环境是一个将表格嵌入文本的浮动环境。
-	tabular环境的必选参数由每列对应一个格式字符所组成：c表示居中，l表示左对齐，r表示右对齐，其总
-	个数应与表的列数相同。此外，\verb|@{文本}|可以出现在任意两个上述的列格式之间，其中的文本将被插入每一行
-	的同一位置。表格的各行以\verb|\\|分隔，同一行的各列则以\&分隔。
-	\verb|\toprule|、\verb|\midrule|和\verb|\bottomrule|三个命令是由booktabs宏包提供的，其
-	中\verb|\toprule|和\verb|\bottomrule|分别用来绘制表格的第一条（表格最顶部）和第三条（表格最底部）水平线，
-	\verb|\midrule|用来绘制第二条（表头之下）水平线，且第一条和第三条水平线的线宽为1.5pt，第二条水平线的线宽为1pt。
-	引用方法：“如表~\verb|\ref{标签名}|~所示”。
+	\subsection{标准调度模型}
+	同样地，应用在情况二中，标准调度模型依然可以得到一个可以接受的解。用标准调度模型运行情况二的系统分别可以在8小时内完成 个成品。
+
+	\subsection{遗传算法}
+	\subsection{遗传算法的并行化}
+	遗传算法需要计算每一代个体的适应度。如果将$v_{ch}$作为染色体向量，$v_{ch}^{(i)}$作为第$i$个个体的染色体，那么适应度的计算可以抽象成一个函数$h(v_{ch}^{(i)})=v_{ch}^{(i)}\rightarrow\mathbf{R}$，对于整代个体来说就是计算$h(v_{ch})=[h(v_{vh}^{(1)}),h(v_{vh}^{(2)}),...,h(v_{vh}^{(k)})]^T$。这一部分计算需要使用模拟世界来得出生产的工件数量，需要消耗较长的时间，因此将这部分内容并行化，加速算法的计算。
 	
+	实现上使用了python的mutiprocessing包，使用了其中的进程池Pool的map()方法来完成遗传算法的并行化。这样，python解释器会创建多个进程，并行地计算个体的适应度。代码如下：
+	\begin{lstlisting}[language=python]
+	import multiprocessing
+	
+	cores = multiprocessing.cpu_count()
+	pool = multiprocessing.Pool(processes=cores)
+	
+	fitness_values = pool.map(
+		Functor,
+		chromosome_pairs
+	)
+	
+	pool.close()
+	pool.join()
+	\end{lstlisting}
+	
+	\subsection{不同的编码方式}
+	
+	值得注意的是，RGV在智能加工系统中收到的指令序列常常具有周期性。然而简单的将目标CNC的编号作为个体的染色体编码不能体现这种周期性的特征。因此，我们设计了另一种编码，以体现这种周期性的特征。
+	
+	每个个体的染色体为长度为p的向量，向量p的元素是等长(q)的序列，序列中代表某一个周期内RGV小车的目标CNC的序列。例如$$v_{ch}^{(m)} = (\{1,2,3,4,5,6,7,8\},\{8,7,6,5,4,3,2,1\})$$就是一个长度为2的编码。染色体的重组是将序列作为整体进行重组,但是每一个序列内部的顺序没有变化。而染色体的突变就是随机选择编码中的某个序列进行重排shuffle()，使序列内部的顺序发生变化。
+	
+	基于这种编码方式，我们重新实现了遗传算法，并且尝试对单阶段加工与二阶段加工进行优化。通过调整编码的长度和序列的长度，我们可以得到相对原有遗传算法较好的结果。
+
+	\section{情况三的解}
+	\subsection{情况3-1}
+	情况3-1用情况1的最优解仍然能够实现。因为机器故障可以视为强制增加的等待时间，因此最优解的证明对情况3-1仍然有效。由此可以得到3-1的解，在此不再赘述了。
+	\subsection{情况3-2}
+	对有故障的双工序作业，要通过遗传算法来解决调度问题是十分困难的。我们的遗传算法使用的是确定性序列，而由于故障是随机因素，故障的存在会使得遗传算法的训练受到很大程度的影响，导致优秀的基因被筛去或不好的基因因为故障而被保留。因此使用遗传算法来解决有故障的双工序作业并不能得到理想的解。因此，我们仍然尝试用标准算法来解决3-2的情况，
 	
 	%参考文献
-	\begin{thebibliography}{9}%宽度9
+	\begin{thebibliography}{9}
 		\bibitem{Saiti} 2018年全国大学生数学建模竞赛B题，cumcm.cnki.net，2018.9.13
 		\bibitem{chengrunwei} Cheng, Runwei, Mitsuo Gen, and Yasuhiro Tsujimura. "A tutorial survey of job-shop scheduling problems using genetic algorithms—I. Representation." Computers \& industrial engineering 30.4 (1996): 983-997.
 	\end{thebibliography}
