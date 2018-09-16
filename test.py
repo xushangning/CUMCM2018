@@ -13,7 +13,7 @@ res_3 = [0] * 500
 res_4 = [0] * 500
 res_5 = [0] * 500
 res_6 = [0] * 500
-with open("fail-5-1.csv", "w") as f:
+with open("fail-6-1.csv", "w") as f:
     for up in simulator.up_log:
         if res_1[up['id']] == 0:
             res_1[up['id']] = up

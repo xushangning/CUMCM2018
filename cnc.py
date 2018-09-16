@@ -2,9 +2,9 @@ from cargo import Cargo_modecode, Cargo_modecode_rev
 import random
 
 CNC_proctime = [
-    580,
-    280,
-    500
+    545,
+    455,
+    182
 ]
 
 CNC_modecode = {
