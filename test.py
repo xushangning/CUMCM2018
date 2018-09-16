@@ -1,7 +1,7 @@
 import alg2_1
 import world
 
-simulator = world.World(alg2_1.PriorityListAlgorithm().alg, [1, 1, 1, 2, 1, 1, 1, 2], 3600 * 8)
+simulator = world.World(alg2_1.PriorityListAlgorithm().alg, [1, 2, 1, 2, 1, 2, 1, 2], 3600 * 8, True)
 simulator.simulate()
 
 print(alg2_1.genetic_list)
@@ -11,7 +11,9 @@ res_1 = [0] * 500
 res_2 = [0] * 500
 res_3 = [0] * 500
 res_4 = [0] * 500
-with open("3.3.csv", "w") as f:
+res_5 = [0] * 500
+res_6 = [0] * 500
+with open("fail-1-1.csv", "w") as f:
     for up in simulator.up_log:
         if res_1[up['id']] == 0:
             res_1[up['id']] = up

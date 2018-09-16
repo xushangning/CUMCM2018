@@ -22,7 +22,7 @@ Cargo_modecode_rev = {
 
 genetic_list = [[], []]
 
-mask = [1, 2, 3, 5, 6, 7]
+mask = [1, 3, 5, 7]
 
 
 class PriorityListAlgorithm:
@@ -115,7 +115,7 @@ class PriorityListAlgorithm:
                 if rgvStatus.carry:
                     if rgvStatus.carry.status == Cargo_modecode_rev['half']:
                         continue
-                if cnc.status == 1:
+                if cnc.status == 1 or cnc.status == 3:
                     continue
                 cncPosition = (cncNum + 1) // 2
 
@@ -151,7 +151,7 @@ class PriorityListAlgorithm:
 
             # if the cnc is going to process the half-completed cargo
             if cnc.proc_mode == 2:
-                if cnc.status == 1:
+                if cnc.status == 1 or cnc.status == 3:
                     continue
                 if not rgvStatus.carry:
                     continue
