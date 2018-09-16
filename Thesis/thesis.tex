@@ -5,6 +5,7 @@
 	%\documentclass[withoutpreface,bwprint]{cumcmthesis} %去掉封面与编号页
 	
 	\usepackage{url}
+	\usepackage{amssymb}
 	\begin{document}
 	
 	\begin{abstract}
@@ -223,55 +224,51 @@
 	\[T_0 \geq 3T_{move 1}+T_{move 3}+8T_{wash}+3T_{load odd}+4T_{load even}\]
 	时，在标准模型的基础上增加一条原则：
 	\begin{itemize}
-		\item 当小车没有需要服务的对象而自身空闲时，小车将前往最近要完成的CNC旁等候。
+		\item 当小车没有需要服务的对象而自身空闲时，小车将前往最快要完成的CNC旁等候。
 	\end{itemize}
-	该情况下，8小时内加工完成的工件数达到所有情况下能达到的最大值。
+	该情况下，8小时内加工完成的工件数达到所有情况下能达到的最大值。接下来我们对其进行证明：
+	\begin{lemma}
+		在一定时间$t$内（$t$足够大），若所有CNC的总等待时间最小，则加工完成的工件数达到最大。
+	\end{lemma}
+	\begin{proof}
+		设在$t$内，所有CNC的最小总等待时间为$T$，此时加工完成的工件数为$n_t$，则有：
+		$$8t-n_tT_0>T\geq \textrm{Max}[0, 8t-n_tT_0-8T_0]$$
+		因此若$T'>8t-n_tT_0$，则显然此时$n_t'<n_t$。\newline
+		若$8t-n_tT_0>T'>T$，而$n_t'>n_t$，则有$\hfill\blacksquare$
+	\end{proof}
+	\begin{theorem}
+		小车空闲时，若有多台CNC请求服务，小车应当先应对耗时最短的服务请求。
+	\end{theorem}
+	\begin{proof}
+		设有$k$台CNC向小车发送了服务请求，其服务需要的时间分别为$t_1<t_2<...<t_k$，则小车先为第$i$台CNC服务所产生的总等待时间为$k\cdot t_i$，取$t_1$可使总等待时间最小化，之后由引理1即可得证。$\hfill\blacksquare$
+	\end{proof}
+	由该定理我们验证了小车对不同CNC进行排序服务原则的合理性。
+	\begin{theorem}
+		小车空闲时，若没有CNC请求服务，小车应当前往最快要完成的CNC旁等候。
+	\end{theorem}
+	\begin{proof}
+		对任意的CNC来说，若小车完成了一次上下料任务，则小车为其他CNC完成上下料，再返回当前CNC的位置所需的时间最大值为
+		\[T_{needMax}=3T_{move 1}+T_{move 3}+8T_{wash}+3T_{load odd}+4T_{load even}\]
+		而下一次该CNC需要上下料服务的时间为$T_0>T_{needMax}$
+		因此在RGV完成其他上下料任务后，其应当返回该CNC处准备对该CNC进行上下料任务。此时，该CNC即为最快要完成的CNC。$\hfill\blacksquare$
+	\end{proof}
+	对于其他原则，我们认为其十分显然，就不再给出额外的证明。由此，我们可以获知该调度模型即为最优的调度模型。特殊地，对于情况一，该调度模型可以简化为一个周期性调度方案：
+	\begin{center}
+	\fangsong
+	RGV为CNC1上下料（含清洗）$\Rightarrow$RGV为CNC2上下料（含清洗）$\Rightarrow$...\newline$\Rightarrow$RGV为CNC8上下料（含清洗）$\Rightarrow$RGV回到位置1\newline$\Rightarrow$等待CNC1完成$\Rightarrow$RGV为CNC1上下料（含清洗）$\Rightarrow$...
+	\end{center}
+	该最优算法可以使加工系统在8小时内完成383(数据组1)和392(数据组3)个成品，远远超过了标准模型和遗传算法模型的效率。而数据组2虽然在此情况下并非最优解，但是也在8小时内完成了360个成品，其效率仍然超过了标准模型和遗传算法模型。
+
+	\section{情况二的解}
+	\subsection{标准调度模型}
+	\subsection{遗传算法}
+	\subsection{优先队列算法}
 	
-	\section{绘制普通三线表格}
-	表格应具有三线表格式，因此常用 booktabs宏包，其标准格式如表~\ref{tab001}~所示。
-	\begin{table}[!htbp]
-	\caption{标准三线表格}\label{tab001} \centering
-	\begin{tabular}{ccccc}
-	\toprule[1.5pt]
-	$D$(in) & $P_u$(lbs) & $u_u$(in) & $\beta$ & $G_f$(psi.in)\\
-	\midrule[1pt]
-	 5 & 269.8 & 0.000674 & 1.79 & 0.04089\\
-	10 & 421.0 & 0.001035 & 3.59 & 0.04089\\
-	20 & 640.2 & 0.001565 & 7.18 & 0.04089\\
-	\bottomrule[1.5pt]
-	\end{tabular}
-	\end{table}
-	
-	其绘制表格的代码及其说明如下。
-	\begin{tcode}
-	\begin{table}[!htbp]
-	\caption[标签名]{中文标题}
-	\begin{tabular}{cc...c}
-	\toprule[1.5pt]
-	表头第1个格   & 表头第2个格   & ... & 表头第n个格  \\
-	\midrule[1pt]
-	表中数据(1,1) & 表中数据(1,2) & ... & 表中数据(1,n)\\
-	表中数据(2,1) & 表中数据(2,2) & ... & 表中数据(2,n)\\
-	...................................................\\
-	表中数据(m,1) & 表中数据(m,2) & ... & 表中数据(m,n)\\
-	\bottomrule[1.5pt]
-	\end{tabular}
-	\end{table}
-	\end{tcode}
-	
-	\bigskip
-	table环境是一个将表格嵌入文本的浮动环境。
-	tabular环境的必选参数由每列对应一个格式字符所组成：c表示居中，l表示左对齐，r表示右对齐，其总
-	个数应与表的列数相同。此外，\verb|@{文本}|可以出现在任意两个上述的列格式之间，其中的文本将被插入每一行
-	的同一位置。表格的各行以\verb|\\|分隔，同一行的各列则以\&分隔。
-	\verb|\toprule|、\verb|\midrule|和\verb|\bottomrule|三个命令是由booktabs宏包提供的，其
-	中\verb|\toprule|和\verb|\bottomrule|分别用来绘制表格的第一条（表格最顶部）和第三条（表格最底部）水平线，
-	\verb|\midrule|用来绘制第二条（表头之下）水平线，且第一条和第三条水平线的线宽为1.5pt，第二条水平线的线宽为1pt。
-	引用方法：“如表~\verb|\ref{标签名}|~所示”。
-	
+	\section{情况三的解}
+	\subsection{情况3-1}
 	
 	%参考文献
-	\begin{thebibliography}{9}%宽度9
+	\begin{thebibliography}{9}
 		\bibitem{Saiti} 2018年全国大学生数学建模竞赛B题，cumcm.cnki.net，2018.9.13
 	\end{thebibliography}
 	

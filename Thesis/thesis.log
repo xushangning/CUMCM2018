@@ -1,17 +1,17 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2018.9.6)  16 SEP 2018 13:12
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.9.14)  16 SEP 2018 16:24
 entering extended mode
-**c:/Users/gavin/CUMCM2018/Thesis/thesis
-(c:/Users/gavin/CUMCM2018/Thesis/thesis.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for loaded.
-(c:\Users\gavin\CUMCM2018\Thesis\cumcmthesis.cls
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**c:/Users/Administrator/CUMCM2018/Thesis/thesis
+(c:/Users/Administrator/CUMCM2018/Thesis/thesis.tex
+LaTeX2e <2018-04-01> patch level 5
+(./cumcmthesis.cls
 Document Class: cumcmthesis 2017/09/16 v2.6 Standard LaTeX Template for CUMCM
-(D:\CTEX\MiKTeX\tex\latex\base\article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(D:\CTEX\MiKTeX\tex\latex\base\size12.clo
-File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
-Requested font "cmr12" at 12.0pt
- -> cmr12
+(g:/texlive/2018/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(g:/texlive/2018/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@section=\count81
@@ -25,903 +25,1417 @@ Requested font "cmr12" at 12.0pt
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(D:\CTEX\MiKTeX\tex\generic\ifxetex\ifxetex.sty
+(g:/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(D:\CTEX\MiKTeX\tex\latex\ctex\ctex.sty
-Package: ctex 2011/03/11 v1.02c ctex macros package
+(g:/texlive/2018/texmf-dist/tex/latex/ctex/ctex.sty
+(g:/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2018-08-23 L3 programming layer (loader) 
 
-(D:\CTEX\MiKTeX\tex\latex\ctex\opt\ctex-common-opts.def)
-(D:\CTEX\CTeX\tex\latex\ctex\cfg\ctexopts.cfg)
-(D:\CTEX\MiKTeX\tex\latex\ctex\def\ctex-common.def
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\expl3.sty
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3names.sty
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3bootstrap.sty
-Package: l3bootstrap 2011/12/29 v3110 L3 Experimental bootstrap code
+(g:/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2018-08-23 L3 programming layer (code)
+\c_max_int=\count88
+\l_tmpa_int=\count89
+\l_tmpb_int=\count90
+\g_tmpa_int=\count91
+\g_tmpb_int=\count92
+\g__kernel_prg_map_int=\count93
+\c_log_iow=\count94
+\l_iow_line_count_int=\count95
+\l__iow_line_target_int=\count96
+\l__iow_one_indent_int=\count97
+\l__iow_indent_int=\count98
+\c_zero_dim=\dimen103
+\c_max_dim=\dimen104
+\l_tmpa_dim=\dimen105
+\l_tmpb_dim=\dimen106
+\g_tmpa_dim=\dimen107
+\g_tmpb_dim=\dimen108
+\c_zero_skip=\skip43
+\c_max_skip=\skip44
+\l_tmpa_skip=\skip45
+\l_tmpb_skip=\skip46
+\g_tmpa_skip=\skip47
+\g_tmpb_skip=\skip48
+\c_zero_muskip=\muskip10
+\c_max_muskip=\muskip11
+\l_tmpa_muskip=\muskip12
+\l_tmpb_muskip=\muskip13
+\g_tmpa_muskip=\muskip14
+\g_tmpb_muskip=\muskip15
+\l_keys_choice_int=\count99
+\l__intarray_loop_int=\count100
+\c__intarray_sp_dim=\dimen109
+\g__intarray_font_int=\count101
+\c__fp_leading_shift_int=\count102
+\c__fp_middle_shift_int=\count103
+\c__fp_trailing_shift_int=\count104
+\c__fp_big_leading_shift_int=\count105
+\c__fp_big_middle_shift_int=\count106
+\c__fp_big_trailing_shift_int=\count107
+\c__fp_Bigg_leading_shift_int=\count108
+\c__fp_Bigg_middle_shift_int=\count109
+\c__fp_Bigg_trailing_shift_int=\count110
+\g__fp_array_int=\count111
+\l__fp_array_loop_int=\count112
+\l__sort_length_int=\count113
+\l__sort_min_int=\count114
+\l__sort_top_int=\count115
+\l__sort_max_int=\count116
+\l__sort_true_max_int=\count117
+\l__sort_block_int=\count118
+\l__sort_begin_int=\count119
+\l__sort_end_int=\count120
+\l__sort_A_int=\count121
+\l__sort_B_int=\count122
+\l__sort_C_int=\count123
+\l__tl_analysis_normal_int=\count124
+\l__tl_analysis_index_int=\count125
+\l__tl_analysis_nesting_int=\count126
+\l__tl_analysis_type_int=\count127
+\l__regex_internal_a_int=\count128
+\l__regex_internal_b_int=\count129
+\l__regex_internal_c_int=\count130
+\l__regex_balance_int=\count131
+\l__regex_group_level_int=\count132
+\l__regex_mode_int=\count133
+\c__regex_cs_in_class_mode_int=\count134
+\c__regex_cs_mode_int=\count135
+\l__regex_catcodes_int=\count136
+\l__regex_default_catcodes_int=\count137
+\c__regex_catcode_L_int=\count138
+\c__regex_catcode_O_int=\count139
+\c__regex_catcode_A_int=\count140
+\c__regex_all_catcodes_int=\count141
+\l__regex_show_lines_int=\count142
+\l__regex_min_state_int=\count143
+\l__regex_max_state_int=\count144
+\l__regex_left_state_int=\count145
+\l__regex_right_state_int=\count146
+\l__regex_capturing_group_int=\count147
+\l__regex_min_pos_int=\count148
+\l__regex_max_pos_int=\count149
+\l__regex_curr_pos_int=\count150
+\l__regex_start_pos_int=\count151
+\l__regex_success_pos_int=\count152
+\l__regex_curr_char_int=\count153
+\l__regex_curr_catcode_int=\count154
+\l__regex_last_char_int=\count155
+\l__regex_case_changed_char_int=\count156
+\l__regex_curr_state_int=\count157
+\l__regex_step_int=\count158
+\l__regex_min_active_int=\count159
+\l__regex_max_active_int=\count160
+\l__regex_replacement_csnames_int=\count161
+\l__regex_match_count_int=\count162
+\l__regex_min_submatch_int=\count163
+\l__regex_submatch_int=\count164
+\l__regex_zeroth_submatch_int=\count165
+\g__regex_trace_regex_int=\count166
+\c_empty_box=\box26
+\l_tmpa_box=\box27
+\l_tmpb_box=\box28
+\g_tmpa_box=\box29
+\g_tmpb_box=\box30
+\l__box_top_dim=\dimen110
+\l__box_bottom_dim=\dimen111
+\l__box_left_dim=\dimen112
+\l__box_right_dim=\dimen113
+\l__box_top_new_dim=\dimen114
+\l__box_bottom_new_dim=\dimen115
+\l__box_left_new_dim=\dimen116
+\l__box_right_new_dim=\dimen117
+\l__box_internal_box=\box31
+\l__coffin_internal_box=\box32
+\l__coffin_internal_dim=\dimen118
+\l__coffin_offset_x_dim=\dimen119
+\l__coffin_offset_y_dim=\dimen120
+\l__coffin_x_dim=\dimen121
+\l__coffin_y_dim=\dimen122
+\l__coffin_x_prime_dim=\dimen123
+\l__coffin_y_prime_dim=\dimen124
+\c_empty_coffin=\box33
+\l__coffin_aligned_coffin=\box34
+\l__coffin_aligned_internal_coffin=\box35
+\l_tmpa_coffin=\box36
+\l_tmpb_coffin=\box37
+\l__coffin_display_coffin=\box38
+\l__coffin_display_coord_coffin=\box39
+\l__coffin_display_pole_coffin=\box40
+\l__coffin_display_offset_dim=\dimen125
+\l__coffin_display_x_dim=\dimen126
+\l__coffin_display_y_dim=\dimen127
+\g__file_internal_ior=\read1
+\l__coffin_bounding_shift_dim=\dimen128
+\l__coffin_left_corner_dim=\dimen129
+\l__coffin_right_corner_dim=\dimen130
+\l__coffin_bottom_corner_dim=\dimen131
+\l__coffin_top_corner_dim=\dimen132
+\l__coffin_scaled_total_height_dim=\dimen133
+\l__coffin_scaled_width_dim=\dimen134
 )
-Package: l3names 2011/12/30 v3113 L3 Experimental namespace for primitives
-)
-(D:\CTEX\MiKTeX\tex\latex\misc\etex.sty
-Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
-\et@xins=\count88
-)
-Package: expl3 2012/02/26 v3471 L3 Experimental code bundle wrapper
-
-(D:\CTEX\MiKTeX\tex\latex\graphics\color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
-
-(D:\CTEX\MiKTeX\tex\latex\00miktex\color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package color Info: Driver file: xetex.def on input line 130.
-
-(D:\CTEX\MiKTeX\tex\xelatex\xetex-def\xetex.def
-File: xetex.def 2009/11/22 v0.94 LaTeX color/graphics driver for XeTeX (RRM/JK)
-
+(g:/texlive/2018/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
+File: l3xdvidpfmx.def 2018-08-23 v L3 Experimental driver: xdvipdfmx
+\g__driver_image_int=\count167
 ))
-(D:\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+Package: ctex 2018/05/02 v2.4.14 Chinese adapter in LaTeX (CTEX)
 
-(D:\CTEX\MiKTeX\tex\latex\graphics\trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+(g:/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2018-08-23 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count168
+\g__xparse_grabber_int=\count169
+\l__xparse_m_args_int=\count170
+\l__xparse_mandatory_args_int=\count171
+\l__xparse_v_nesting_int=\count172
 )
-(D:\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(g:/texlive/2018/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2018-08-23 LaTeX2e option processing using LaTeX3 keys
 )
-Package graphics Info: Driver file: xetex.def on input line 91.
+(g:/texlive/2018/texmf-dist/tex/latex/ctex/ctexhook.sty
+Package: ctexhook 2018/05/02 v2.4.14 Document and package hooks (CTEX)
 )
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3basics.sty
-Package: l3basics 2012/02/26 v3460 L3 Experimental basic definitions
+(g:/texlive/2018/texmf-dist/tex/latex/ctex/ctexpatch.sty
+Package: ctexpatch 2018/05/02 v2.4.14 Patching commands (CTEX)
 )
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3expan.sty
-Package: l3expan 2012/02/26 v3460 L3 Experimental argument expansion
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3tl.sty
-Package: l3tl 2012/02/26 v3460 L3 Experimental token lists
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3seq.sty
-Package: l3seq 2012/01/09 v3158 L3 Experimental sequences and stacks
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3int.sty
-Package: l3int 2012/02/26 v3460 L3 Experimental integers
-\c_max_int=\count89
-\l_tmpa_int=\count90
-\l_tmpb_int=\count91
-\l_tmpc_int=\count92
-\g_tmpa_int=\count93
-\g_tmpb_int=\count94
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3quark.sty
-Package: l3quark 2012/02/12 v3384 L3 Experimental quarks
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3prg.sty
-Package: l3prg 2012/02/26 v3464 L3 Experimental control structures
-\g_prg_map_int=\count95
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3clist.sty
-Package: l3clist 2012/02/26 v3460 L3 Experimental comma separated lists
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3token.sty
-Package: l3token 2012/02/26 v3460 L3 Experimental token manipulation
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3prop.sty
-Package: l3prop 2012/02/26 v3460 L3 Experimental property lists
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3msg.sty
-Package: l3msg 2012/02/26 v3470 L3 Experimental messages
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3file.sty
-Package: l3file 2012/02/26 v3464 L3 Experimental file and I/O operations
-\l_iow_stream_int=\count96
-\l_iow_line_length_int=\count97
-\l_iow_target_length_int=\count98
-\l_iow_current_line_int=\count99
-\l_iow_current_word_int=\count100
-\l_iow_current_indentation_int=\count101
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3skip.sty
-Package: l3skip 2012/02/26 v3460 L3 Experimental dimensions and skips
-\l_tmpa_dim=\dimen103
-\l_tmpb_dim=\dimen104
-\l_tmpc_dim=\dimen105
-\g_tmpa_dim=\dimen106
-\g_tmpb_dim=\dimen107
-\l_tmpa_skip=\skip43
-\l_tmpb_skip=\skip44
-\l_tmpc_skip=\skip45
-\g_tmpa_skip=\skip46
-\g_tmpb_skip=\skip47
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3keys.sty
-Package: l3keys 2011/12/22 v3086 L3 Experimental key-value interfaces
-\g_keyval_level_int=\count102
-\l_keys_choice_int=\count103
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3fp.sty
-Package: l3fp 2012/02/06 v3315 L3 Experimental floating-point operations
-\c_one_hundred_million=\count104
-\c_five_hundred_million=\count105
-\c_one_thousand_million=\count106
-\c_fp_pi_by_four_decimal_int=\count107
-\c_fp_pi_by_four_extended_int=\count108
-\c_fp_pi_decimal_int=\count109
-\c_fp_pi_extended_int=\count110
-\c_fp_two_pi_decimal_int=\count111
-\c_fp_two_pi_extended_int=\count112
-\l_fp_count_int=\count113
-\l_fp_div_offset_int=\count114
-\l_fp_exp_integer_int=\count115
-\l_fp_exp_decimal_int=\count116
-\l_fp_exp_extended_int=\count117
-\l_fp_exp_exponent_int=\count118
-\l_fp_input_a_sign_int=\count119
-\l_fp_input_a_integer_int=\count120
-\l_fp_input_a_decimal_int=\count121
-\l_fp_input_a_exponent_int=\count122
-\l_fp_input_b_sign_int=\count123
-\l_fp_input_b_integer_int=\count124
-\l_fp_input_b_decimal_int=\count125
-\l_fp_input_b_exponent_int=\count126
-\l_fp_input_a_extended_int=\count127
-\l_fp_input_b_extended_int=\count128
-\l_fp_mul_a_i_int=\count129
-\l_fp_mul_a_ii_int=\count130
-\l_fp_mul_a_iii_int=\count131
-\l_fp_mul_a_iv_int=\count132
-\l_fp_mul_a_v_int=\count133
-\l_fp_mul_a_vi_int=\count134
-\l_fp_mul_b_i_int=\count135
-\l_fp_mul_b_ii_int=\count136
-\l_fp_mul_b_iii_int=\count137
-\l_fp_mul_b_iv_int=\count138
-\l_fp_mul_b_v_int=\count139
-\l_fp_mul_b_vi_int=\count140
-\l_fp_mul_output_int=\count141
-\l_fp_output_sign_int=\count142
-\l_fp_output_integer_int=\count143
-\l_fp_output_decimal_int=\count144
-\l_fp_output_exponent_int=\count145
-\l_fp_output_extended_int=\count146
-\l_fp_round_position_int=\count147
-\l_fp_round_target_int=\count148
-\l_fp_split_sign_int=\count149
-\l_fp_internal_int=\count150
-\l_fp_trig_octant_int=\count151
-\l_fp_trig_sign_int=\count152
-\l_fp_trig_decimal_int=\count153
-\l_fp_trig_extended_int=\count154
-\l_fp_internal_dim=\dimen108
-\l_fp_internal_skip=\skip48
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3box.sty
-Package: l3box 2012/02/18 v3432 L3 Experimental boxes
-\l_tmpb_box=\box26
-\l_box_top_dim=\dimen109
-\l_box_bottom_dim=\dimen110
-\l_box_left_dim=\dimen111
-\l_box_right_dim=\dimen112
-\l_box_top_new_dim=\dimen113
-\l_box_bottom_new_dim=\dimen114
-\l_box_left_new_dim=\dimen115
-\l_box_right_new_dim=\dimen116
-\l_box_internal_box=\box27
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3coffins.sty
-Package: l3coffins 2012/02/26 v3460 L3 Experimental coffin code layer
-\l_coffin_internal_box=\box28
-\l_coffin_internal_dim=\dimen117
-\l_coffin_offset_x_dim=\dimen118
-\l_coffin_offset_y_dim=\dimen119
-\l_coffin_x_dim=\dimen120
-\l_coffin_y_dim=\dimen121
-\l_coffin_x_prime_dim=\dimen122
-\l_coffin_y_prime_dim=\dimen123
-\l_coffin_Depth_dim=\dimen124
-\l_coffin_Height_dim=\dimen125
-\l_coffin_TotalHeight_dim=\dimen126
-\l_coffin_Width_dim=\dimen127
-\c_empty_coffin=\box29
-\l_coffin_aligned_coffin=\box30
-\l_coffin_aligned_internal_coffin=\box31
-\l_coffin_bounding_shift_dim=\dimen128
-\l_coffin_left_corner_dim=\dimen129
-\l_coffin_right_corner_dim=\dimen130
-\l_coffin_bottom_corner_dim=\dimen131
-\l_coffin_top_corner_dim=\dimen132
-\l_coffin_scaled_total_height_dim=\dimen133
-\l_coffin_scaled_width_dim=\dimen134
-\l_coffin_display_coffin=\box32
-\l_coffin_display_coord_coffin=\box33
-\l_coffin_display_pole_coffin=\box34
-\l_coffin_display_offset_dim=\dimen135
-\l_coffin_display_x_dim=\dimen136
-\l_coffin_display_y_dim=\dimen137
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3color.sty
-Package: l3color 2011/09/07 v2776 L3 Experimental colour support
-)
-(D:\CTEX\MiKTeX\tex\latex\l3kernel\l3luatex.sty
-Package: l3luatex 2012/02/09 v3355 L3 Experimental LuaTeX-specific functions
-\g_cctab_allocate_int=\count155
-\g_cctab_stack_int=\count156
-))
-(D:\CTEX\MiKTeX\tex\latex\etoolbox\etoolbox.sty
-Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
-\etb@tempcnta=\count157
-)
-(D:\CTEX\MiKTeX\tex\generic\oberdiek\ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is not detected.
-)
-(D:\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks14
-)
-(D:\CTEX\MiKTeX\tex\latex\tools\indentfirst.sty
-Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
-)
-(D:\CTEX\MiKTeX\tex\latex\base\fix-cm.sty
-Package: fix-cm 2006/09/13 v1.1m fixes to LaTeX
+(g:/texlive/2018/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
 
-(D:\CTEX\MiKTeX\tex\latex\base\ts1enc.def
+(g:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 ))
-(D:\CTEX\MiKTeX\tex\latex\ctex\engine\ctex-xecjk-engine.def
-(D:\CTEX\MiKTeX\tex\latex\savesym\savesym.sty
+(g:/texlive/2018/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\l__ctex_tmp_int=\count173
+\l__ctex_tmp_box=\box41
+\l__ctex_tmp_dim=\dimen135
+\g__ctex_font_size_flag=\count174
 
-LaTeX Warning: You have requested package `savesym',
-               but the package provides `savesymbol'.
+(g:/texlive/2018/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
+File: ctexopts.cfg 2018/05/02 v2.4.14 Option configuration file (CTEX)
+)
+(g:/texlive/2018/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def
+File: ctex-engine-xetex.def 2018/05/02 v2.4.14 XeLaTeX adapter (CTEX)
 
-Package: savesymbol 2003/06/01 v1.1 Saves and restores symbols
-) (D:\CTEX\MiKTeX\tex\xelatex\xecjk\xeCJK.sty
-Package: xeCJK 2012/01/31 2.4.5 package for typesetting CJK scripts with XeLaTe
-X
+(g:/texlive/2018/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
+Package: xeCJK 2018/04/30 v3.7.1 Typesetting CJK scripts with XeLaTeX
 
-(D:\CTEX\MiKTeX\tex\latex\xkeyval\xkeyval.sty
-Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+(g:/texlive/2018/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
+Package: xtemplate 2018-08-23 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen136
+\l__xtemplate_tmp_int=\count175
+\l__xtemplate_tmp_muskip=\muskip16
+\l__xtemplate_tmp_skip=\skip49
+)
+\l__xeCJK_tmp_int=\count176
+\l__xeCJK_tmp_box=\box42
+\l__xeCJK_tmp_dim=\dimen137
+\l__xeCJK_tmp_skip=\skip50
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKShipoutHook with sig. '' on line 150.
+.................................................
+\g__xeCJK_space_factor_int=\count177
+\l__xeCJK_begin_int=\count178
+\l__xeCJK_end_int=\count179
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \makexeCJKactive with sig. '' on line 396.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \makexeCJKinactive with sig. '' on line 398.
+.................................................
+\c__xeCJK_CJK_class_int=\XeTeXcharclass1
+\c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
+\c__xeCJK_FullRight_class_int=\XeTeXcharclass3
+\c__xeCJK_HalfLeft_class_int=\XeTeXcharclass4
+\c__xeCJK_HalfRight_class_int=\XeTeXcharclass5
+\c__xeCJK_NormalSpace_class_int=\XeTeXcharclass6
+\c__xeCJK_CM_class_int=\XeTeXcharclass7
+\c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKDeclareCharClass with sig. 's>{\TrimSpaces }mm' on
+. line 580.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__xeCJK_set_char_class_aux:Nnw with sig.
+. 'm>{\SplitArgument {1}{->}}m' on line 601.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \normalspacedchars with sig. 'm' on line 647.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKResetPunctClass with sig. '' on line 658.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKResetCharClass with sig. '' on line 670.
+.................................................
+\l__xeCJK_last_skip=\skip51
+\g__xeCJK_node_int=\count180
+\c__xeCJK_CJK_node_dim=\dimen138
+\c__xeCJK_CJK-space_node_dim=\dimen139
+\c__xeCJK_default_node_dim=\dimen140
+\c__xeCJK_default-space_node_dim=\dimen141
+\c__xeCJK_CJK-widow_node_dim=\dimen142
+\c__xeCJK_normalspace_node_dim=\dimen143
+\l__xeCJK_ccglue_skip=\skip52
+\l__xeCJK_ecglue_skip=\skip53
+\l__xeCJK_punct_kern_skip=\skip54
+\l__xeCJK_last_penalty_int=\count181
+\l__xeCJK_last_bound_dim=\dimen144
+\l__xeCJK_last_kern_dim=\dimen145
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKnobreak with sig. '' on line 1889.
+.................................................
+\l__xeCJK_widow_penalty_int=\count182
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKDeclareSubCJKBlock with sig. 's>{\TrimSpaces }mm' on
+. line 2084.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKCancelSubCJKBlock with sig. 'sm' on line 2095.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKRestoreSubCJKBlock with sig. 'sm' on line 2104.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetwidth with sig. 'smm' on line 2202.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKsetkern with sig. 'mmm' on line 2206.
+.................................................
+.................................................
+. xtemplate info: "declare-object-type"
+. 
+. Declaring object type 'xeCJK/punctuation' taking 0 argument(s) on line 2362.
+.................................................
+\l__xeCJK_fixed_punct_width_dim=\dimen146
+\l__xeCJK_mixed_punct_width_dim=\dimen147
+\l__xeCJK_middle_punct_width_dim=\dimen148
+\l__xeCJK_fixed_margin_width_dim=\dimen149
+\l__xeCJK_mixed_margin_width_dim=\dimen150
+\l__xeCJK_middle_margin_width_dim=\dimen151
+\l__xeCJK_bound_punct_width_dim=\dimen152
+\l__xeCJK_bound_margin_width_dim=\dimen153
+\l__xeCJK_margin_minimum_dim=\dimen154
+\l__xeCJK_kerning_total_width_dim=\dimen155
+\l__xeCJK_same_align_margin_dim=\dimen156
+\l__xeCJK_different_align_margin_dim=\dimen157
+\l__xeCJK_kerning_margin_width_dim=\dimen158
+\l__xeCJK_kerning_margin_minimum_dim=\dimen159
+\l__xeCJK_bound_dim=\dimen160
+\l__xeCJK_reverse_bound_dim=\dimen161
+\l__xeCJK_minimum_bound_dim=\dimen162
+\l__xeCJK_kerning_margin_dim=\dimen163
+\l__xeCJK_original_margin_dim=\dimen164
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKDeclarePunctStyle with sig. '>{\TrimSpaces }mm' on
+. line 2942.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKEditPunctStyle with sig. '>{\TrimSpaces }mm' on line
+. 2955.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKfallbackfamilyfont with sig. 'mom' on line 3059.
+.................................................
+\g__xeCJK_family_int=\count183
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKfamily with sig. 't+t-m' on line 3493.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__xeCJK_gobble_CJKfamily:wn with sig. 't+t-m' on line
+. 3558.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__xeCJK_post_arg:w with sig. 'mmmO{}' on line 3618.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKmainfont with sig. 'om' on line 3624.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKsansfont with sig. 'om' on line 3631.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKmonofont with sig. 'om' on line 3637.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKfamilyfont with sig. 'mom' on line 3648.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newCJKfontfamily with sig. 'omom' on line 3658.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CJKfontspec with sig. 'om' on line 3664.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultCJKfontfeatures with sig. 'm' on line 3687.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addCJKfontfeatures with sig. 'sO{}m' on line 3693.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setCJKmathfont with sig. 'om' on line 3870.
+.................................................
+\l__xeCJK_fam_int=\count184
+\g__xeCJK_fam_allocation_int=\count185
+\l__xeCJK_verb_case_int=\count186
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKVerbAddon with sig. '' on line 4117.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKOffVerbAddon with sig. '' on line 4121.
+.................................................
+\l__xeCJK_verb_exspace_skip=\skip55
 
-(D:\CTEX\MiKTeX\tex\generic\xkeyval\xkeyval.tex
-\XKV@toks=\toks15
-\XKV@tempa@toks=\toks16
-\XKV@depth=\count158
-File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+(g:/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec.sty
+Package: fontspec 2018/07/30 vv2.6h Font selection for XeLaTeX and LuaLaTeX
+
+(g:/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2018/07/30 vv2.6h Font selection for XeLaTeX and LuaLaT
+eX
+\l__fontspec_script_int=\count187
+\l__fontspec_language_int=\count188
+\l__fontspec_strnum_int=\count189
+\l__fontspec_tmp_int=\count190
+\l__fontspec_em_int=\count191
+\l__fontspec_emdef_int=\count192
+\l__fontspec_strong_int=\count193
+\l__fontspec_strongdef_int=\count194
+\l__fontspec_tmpa_dim=\dimen165
+\l__fontspec_tmpb_dim=\dimen166
+\l__fontspec_tmpc_dim=\dimen167
+
+(g:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+(g:/texlive/2018/texmf-dist/tex/latex/base/tuenc.def
+File: tuenc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TU on input line 82.
 ))
-(D:\CTEX\MiKTeX\tex\latex\fontspec\fontspec.sty
-Package: fontspec 2011/09/18 v2.2a Advanced font selection for XeLaTeX/LuaLaTeX
-
-
-(D:\CTEX\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
-Package: xparse 2012/02/26 v3471 L3 Experimental document command parser
-\l_xparse_current_arg_int=\count159
-\l_xparse_m_args_int=\count160
-\l_xparse_mandatory_args_int=\count161
-\l_xparse_processor_int=\count162
-\l_xparse_v_nesting_int=\count163
-)
-\l_fontspec_script_int=\count164
-\l_fontspec_language_int=\count165
-\l_fontspec_strnum_int=\count166
-\l_fontspec_tmpa_dim=\dimen138
-\l_fontspec_tmpb_dim=\dimen139
-\l_fontspec_tmpc_dim=\dimen140
-Variant \tl_gset:cV already defined; not changing it on line 66
-
-(D:\CTEX\MiKTeX\tex\latex\fontspec\fontspec-patches.sty
-Package: fontspec-patches 2011/09/18 v2.2a Advanced font selection for XeLaTeX/
-LuaLaTeX
-
-(D:\CTEX\MiKTeX\tex\latex\base\fixltx2e.sty
-Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
-LaTeX Info: Redefining \em on input line 420.
-)
-LaTeX Info: Redefining \em on input line 22.
-LaTeX Info: Redefining \emph on input line 29.
-LaTeX Info: Redefining \- on input line 32.
-
-*************************************************
-* LaTeX warning: "xparse/redefine-command"
-* 
-* Redefining document command \oldstylenums with arg. spec. 'm' on line 107.
-*************************************************
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \liningnums with arg. spec. 'm' on line 111.
+. Defining command \fontspec with sig. 'O{}mO{}' on line 561.
 .................................................
-) (D:\CTEX\MiKTeX\tex\latex\fontspec\fontspec-xetex.sty
-Package: fontspec-xetex 2011/09/18 v2.2a Advanced font selection for XeLaTeX/Lu
-aLaTeX
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmainfont with sig. 'O{}mO{}' on line 566.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setsansfont with sig. 'O{}mO{}' on line 571.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmonofont with sig. 'O{}mO{}' on line 576.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathrm with sig. 'O{}mO{}' on line 580.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setboldmathrm with sig. 'O{}mO{}' on line 584.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathsf with sig. 'O{}mO{}' on line 588.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathtt with sig. 'O{}mO{}' on line 592.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setromanfont with sig. 'O{}mO{}' on line 596.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfamily with sig. 'mO{}mO{}' on line 600.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \renewfontfamily with sig. 'mO{}mO{}' on line 604.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setfontfamily with sig. 'mO{}mO{}' on line 608.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontface with sig. 'mO{}mO{}' on line 612.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultfontfeatures with sig. 't+om' on line 619.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeatures with sig. 'm' on line 623.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeature with sig. 'm' on line 627.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfeature with sig. 'mm' on line 631.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newAATfeature with sig. 'mmmm' on line 635.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newopentypefeature with sig. 'mmm' on line 639.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newICUfeature with sig. 'mmm' on line 643.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeature with sig. 'mm' on line 647.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeatureoption with sig. 'mmm' on line 651.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontscript with sig. 'mm' on line 655.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontlanguage with sig. 'mm' on line 659.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareFontExtensions with sig. 'm' on line 663.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \IfFontFeatureActiveTF with sig. 'mmm' on line 667.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingCommand with sig. 'mO{}m' on line 3655.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingAccent with sig. 'mm' on line 3661.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingSymbol with sig. 'mm' on line 3667.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingComposite with sig. 'mmm' on line 3673.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingCompositeCommand with sig. 'mmm' on line 3679.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUnicodeEncoding with sig. 'mm' on line 3704.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareSymbol with sig. 'm' on line 3710.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareAccent with sig. 'm' on line 3716.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareCommand with sig. 'm' on line 3722.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareComposite with sig. 'mm' on line 3729.
+.................................................
 
-(D:\CTEX\MiKTeX\tex\latex\base\fontenc.sty
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
-
-(D:\CTEX\MiKTeX\tex\latex\euenc\eu1enc.def
-File: eu1enc.def 2010/05/27 v0.1h Experimental Unicode font encodings
-)
-LaTeX Font Info:    Try loading font information for EU1+lmr on input line 100.
-
-
-(D:\CTEX\MiKTeX\tex\latex\euenc\eu1lmr.fd
-File: eu1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Requested font "[lmroman10-regular]:mapping=tex-text" at 10.0pt
- -> D:/CTEX/MiKTeX/fonts/opentype/public/lm/lmroman10-regular.otf
-)
-(D:\CTEX\MiKTeX\tex\xelatex\xunicode\xunicode.sty
-File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
-other characters in Unicode lower plane
-
-(D:\CTEX\MiKTeX\tex\latex\tipa\t3enc.def
-File: t3enc.def 2001/12/31 T3 encoding
-Requested font "[lmromanslant10-regular]:mapping=tex-text" at 10.0pt
- -> D:/CTEX/MiKTeX/fonts/opentype/public/lm/lmromanslant10-regular.otf
-Requested font "[lmroman10-italic]:mapping=tex-text" at 10.0pt
- -> D:/CTEX/MiKTeX/fonts/opentype/public/lm/lmroman10-italic.otf
-Requested font "[lmroman10-bold]:mapping=tex-text" at 10.0pt
- -> D:/CTEX/MiKTeX/fonts/opentype/public/lm/lmroman10-bold.otf
-LaTeX Font Info:    Try loading font information for EU1+lmss on input line 357
-.
-
-(D:\CTEX\MiKTeX\tex\latex\euenc\eu1lmss.fd
-File: eu1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Requested font "[lmsans10-regular]:mapping=tex-text" at 10.0pt
- -> D:/CTEX/MiKTeX/fonts/opentype/public/lm/lmsans10-regular.otf
-)
-\tipaTiiicode=\count167
-\tipasavetokens=\toks17
-\tipachecktokens=\toks18
-
-(D:\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
-\Gin@req@height=\dimen141
-\Gin@req@width=\dimen142
+(g:/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec.cfg)
+LaTeX Info: Redefining \itshape on input line 3910.
+LaTeX Info: Redefining \slshape on input line 3915.
+LaTeX Info: Redefining \scshape on input line 3920.
+LaTeX Info: Redefining \upshape on input line 3925.
+LaTeX Info: Redefining \em on input line 3955.
+LaTeX Info: Redefining \emph on input line 3980.
+LaTeX Info: Redefining \- on input line 4034.
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \oldstylenums with sig. 'm' on line 4129.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \liningnums with sig. 'm' on line 4133.
+.................................................
 ))
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \fontspec with arg. spec. 'O{}m' on line 39.
+. Defining command \xeCJKsetup with sig. '+m' on line 4422.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \setmainfont with arg. spec. 'O{}m' on line 43.
+. Defining command \xeCJKsetemboldenfactor with sig. 'm' on line 4424.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \setsansfont with arg. spec. 'O{}m' on line 47.
+. Defining command \xeCJKsetslantfactor with sig. 'm' on line 4426.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \setmonofont with arg. spec. 'O{}m' on line 51.
+. Defining command \punctstyle with sig. 'm' on line 4427.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \setmathrm with arg. spec. 'O{}m' on line 59.
+. Defining command \xeCJKplainchr with sig. '' on line 4428.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \setboldmathrm with arg. spec. 'O{}m' on line 62.
+. Defining command \CJKsetecglue with sig. 'm' on line 4429.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \setmathsf with arg. spec. 'O{}m' on line 65.
+. Defining command \CJKspace with sig. '' on line 4431.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \setmathtt with arg. spec. 'O{}m' on line 68.
+. Defining command \CJKnospace with sig. '' on line 4432.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \newfontfamily with arg. spec. 'mO{}m' on line 84.
+. Defining command \xeCJKallowbreakbetweenpuncts with sig. '' on line 4434.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \newfontface with arg. spec. 'mO{}m' on line 87.
+. Defining command \xeCJKnobreakbetweenpuncts with sig. '' on line 4436.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \defaultfontfeatures with arg. spec. 'm' on line
-. 91.
+. Defining command \xeCJKenablefallback with sig. '' on line 4438.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \addfontfeatures with arg. spec. 'm' on line 107.
+. Defining command \xeCJKdisablefallback with sig. '' on line 4440.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining document command \newfontfeature with arg. spec. 'mm' on line 118.
+. Defining command \xeCJKsetcharclass with sig. 'mmm' on line 4445.
 .................................................
 .................................................
-. LaTeX info: "xparse/define-command"
+. LaTeX info: "xparse/redefine-command"
 . 
-. Defining document command \newAATfeature with arg. spec. 'mmmm' on line 125.
+. Redefining command \fontfamily with sig. 'm' on line 4628.
 .................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining document command \newICUfeature with arg. spec. 'mmm' on line 132.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining document command \aliasfontfeature with arg. spec. 'mm' on line
-. 159.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining document command \aliasfontfeatureoption with arg. spec. 'mmm' on
-. line 164.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining document command \newfontscript with arg. spec. 'mm' on line 169.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining document command \newfontlanguage with arg. spec. 'mm' on line 192.
-.................................................
-.................................................
-. LaTeX info: "xparse/define-command"
-. 
-. Defining document command \DeclareFontsExtensions with arg. spec. 'm' on
-. line 211.
-.................................................
-Variant \prop_gput:cnV already defined; not changing it on line 485
-Variant \prop_gput:cnx already defined; not changing it on line 486
-Variant \keys_set:nx already defined; not changing it on line 963
-\c@fontspec_tmp_int=\count168
-LaTeX Info: Redefining \itshape on input line 1881.
-LaTeX Info: Redefining \slshape on input line 1885.
-LaTeX Info: Redefining \scshape on input line 1889.
-LaTeX Info: Redefining \upshape on input line 1893.
 
-(D:\CTEX\MiKTeX\tex\latex\fontspec\fontspec.cfg)))
-\xeCJK@cnta=\count169
-\xeCJK@cntb=\count170
-\xeCJK@cntc=\count171
-\xeCJK@cntd=\count172
-\xeCJK@cnte=\count173
-\xeCJK@dima=\dimen143
-LaTeX Info: Redefining \normalfont on input line 886.
-LaTeX Info: Redefining \rmfamily on input line 895.
-LaTeX Info: Redefining \sffamily on input line 899.
-LaTeX Info: Redefining \ttfamily on input line 903.
-\xeCJK@featureadded=\count174
-\g_xecjk_exspace_dim=\dimen144
-)
-(D:\CTEX\MiKTeX\tex\latex\ctex\engine\ctex-cjk-common.def
-\ccwd=\dimen145
-)
-(D:\CTEX\MiKTeX\tex\latex\ctex\fontset\ctex-xecjk-winfonts.def))
-\CTEX@q=\count175
-\CTEX@r=\count176
+(g:/texlive/2018/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
+File: xeCJK.cfg 2018/04/30 v3.7.1 Configuration file for xeCJK package
 ))
-(D:\CTEX\MiKTeX\tex\latex\ctex\def\ctex-utf8.def)
-(D:\CTEX\MiKTeX\tex\latex\ctex\cfg\ctex.cfg)
-(D:\CTEX\MiKTeX\tex\latex\geometry\geometry.sty
-Package: geometry 2010/09/12 v5.6 Page Geometry
+(g:/texlive/2018/texmf-dist/tex/xelatex/xecjk/xeCJKfntef.sty
+Package: xeCJKfntef 2018/04/30 v3.7.1 xeCJK font effect
 
-(D:\CTEX\MiKTeX\tex\generic\oberdiek\ifvtex.sty
-Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+(g:/texlive/2018/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box43
+\UL@hyphenbox=\box44
+\UL@skip=\skip56
+\UL@hook=\toks14
+\UL@height=\dimen168
+\UL@pe=\count195
+\UL@pixel=\dimen169
+\ULC@box=\box45
+Package: ulem 2012/05/18
+\ULdepth=\dimen170
+)
+(g:/texlive/2018/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(g:/texlive/2018/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks15
+)
+(g:/texlive/2018/texmf-dist/tex/latex/cjk/texinput/CJKfntef.sty
+Package: CJKfntef 2015/04/18 4.8.4
+\CJK@fntefSkip=\skip57
+\CJK@nest=\count196
+\CJK@fntefDimen=\dimen171
+\CJK@underdotBox=\box46
+\CJK@ULbox=\box47
+\CJK@underanyskip=\dimen172
+)
+\l__xeCJK_space_skip=\skip58
+\c__xeCJK_ulem-begin_node_dim=\dimen173
+\c__xeCJK_null_box=\box48
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \xeCJKfntefon with sig. 'st-so' on line 657.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderline with sig. 'st-so' on line 673.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \varCJKunderline with sig. '' on line 675.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderwave with sig. 'st-so' on line 685.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderdblline with sig. 'st-so' on line 709.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKsout with sig. 'st-so' on line 728.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKxout with sig. 'st-so' on line 745.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderanyline with sig. 'st-somm' on line 766.
+.................................................
+\l__xeCJK_fntef_box=\box49
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderanysymbol with sig. 'ommm' on line 940.
+.................................................
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \CJKunderdot with sig. 'om' on line 949.
+.................................................
+\l__xeCJK_under_symbol_box=\box50
+.................................................
+. LaTeX info: "xparse/redefine-environment"
+. 
+. Redefining environment 'CJKfilltwosides' with sig. 'O{c}m' on line 1053.
+.................................................
+\c__xeCJK_filll_skip=\skip59
+)
+\ccwd=\dimen174
+\l__ctex_ccglue_skip=\skip60
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \ctexset with sig. '' on line 377.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXsetup with sig. '+o>{\TrimSpaces }m' on line 383.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXoptions with sig. '+o' on line 389.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXsetfont with sig. '' on line 407.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \ziju with sig. 'm' on line 479.
+.................................................
+\l__ctex_ziju_dim=\dimen175
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXindent with sig. '' on line 520.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXnoindent with sig. '' on line 526.
+.................................................
+
+(g:/texlive/2018/texmf-dist/tex/latex/zhnumber/zhnumber.sty
+Package: zhnumber 2018/01/28 v2.6 Typesetting numbers with Chinese glyphs
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumber with sig. '+o+m' on line 50.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumberwithoptions with sig. '+m+m' on line 57.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnum with sig. '+o+m' on line 111.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumwithoptions with sig. '+m+m' on line 118.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhdig with sig. '+o+m' on line 295.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhdigwithoptions with sig. '+m+m' on line 302.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhdigits with sig. '+s+o+m' on line 316.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhdigitswithoptions with sig. '+m+m+m' on line 323.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhdate with sig. '+s+m' on line 382.
+.................................................
+\l__zhnum_scale_int=\count197
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumExtendScaleMap with sig. '>{\TrimSpaces }+o+m' on
+. line 504.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zhnumsetup with sig. '+m' on line 934.
+.................................................
+
+(g:/texlive/2018/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg
+File: zhnumber-utf8.cfg 2018/01/28 v2.6 Chinese numerals with UTF8 encoding
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXnumber with sig. 'mm' on line 543.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTEXdigits with sig. 'mm' on line 545.
+.................................................
+
+(g:/texlive/2018/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese.def
+File: ctex-scheme-chinese.def 2018/05/02 v2.4.14 Chinese scheme for generic (CT
+EX)
+
+(g:/texlive/2018/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg
+File: ctex-name-utf8.cfg 2018/05/02 v2.4.14 Caption with encoding UTF8 (CTEX)
+))
+(g:/texlive/2018/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \zihao with sig. 'm' on line 642.
+.................................................
+
+(g:/texlive/2018/texmf-dist/tex/latex/ctex/ctex-c5size.clo
+File: ctex-c5size.clo 2018/05/02 v2.4.14 c5size option (CTEX)
+)
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \CTeX with sig. '' on line 746.
+.................................................
+
+(g:/texlive/2018/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-windows.def
+File: ctex-fontset-windows.def 2018/05/02 v2.4.14 Windows fonts definition (CTE
+X)
+
+(g:/texlive/2018/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-windowsnew.def
+File: ctex-fontset-windowsnew.def 2018/05/02 v2.4.14 Windows fonts definition f
+or Vista or later version (CTEX)
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "KaiTi/B" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "SimHei/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "SimSun/BI" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SimSun(0)' created for font 'SimSun' with options
+. [Script={CJK},BoldFont={SimHei},ItalicFont={KaiTi}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->"SimSun/OT:script=hani;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. - 'bold' (bx/n) with NFSS spec.: <->"SimHei/OT:script=hani;language=DFLT;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. - 'italic' (m/it) with NFSS spec.: <->"KaiTi/OT:script=hani;language=DFLT;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: 
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \songti with sig. '' on line 111.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \heiti with sig. '' on line 112.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fangsong with sig. '' on line 113.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \kaishu with sig. '' on line 114.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \lishu with sig. '' on line 115.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \youyuan with sig. '' on line 116.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \yahei with sig. '' on line 117.
+.................................................
+))) (g:/texlive/2018/texmf-dist/tex/latex/ctex/config/ctex.cfg
+File: ctex.cfg 2018/05/02 v2.4.14 Configuration file (CTEX)
+)
+(g:/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+(g:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(g:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+(g:/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-\Gm@cnth=\count177
-\Gm@cntv=\count178
-\c@Gm@tempcnt=\count179
-\Gm@bindingoffset=\dimen146
-\Gm@wd@mp=\dimen147
-\Gm@odd@mp=\dimen148
-\Gm@even@mp=\dimen149
-\Gm@layoutwidth=\dimen150
-\Gm@layoutheight=\dimen151
-\Gm@layouthoffset=\dimen152
-\Gm@layoutvoffset=\dimen153
-\Gm@dimlist=\toks19
-
-(D:\CTEX\MiKTeX\tex\xelatex\xetexconfig\geometry.cfg))
-(D:\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
-Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip49
+\Gm@cnth=\count198
+\Gm@cntv=\count199
+\c@Gm@tempcnt=\count266
+\Gm@bindingoffset=\dimen176
+\Gm@wd@mp=\dimen177
+\Gm@odd@mp=\dimen178
+\Gm@even@mp=\dimen179
+\Gm@layoutwidth=\dimen180
+\Gm@layoutheight=\dimen181
+\Gm@layouthoffset=\dimen182
+\Gm@layoutvoffset=\dimen183
+\Gm@dimlist=\toks17
+)
+(g:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip61
 
 For additional information on amsmath, use the `?' option.
-(D:\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
-Package: amstext 2000/06/29 v2.01
+(g:/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
 
-(D:\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks20
-\ex@=\dimen154
+(g:/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen184
 ))
-(D:\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen155
+(g:/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen185
 )
-(D:\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
-Package: amsopn 1999/12/14 v2.01 operator names
+(g:/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count180
-LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count181
-\leftroot@=\count182
-LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count183
-\DOTSCASE@=\count184
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box35
-\strutbox@=\box36
-\big@size=\dimen156
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count185
-\c@MaxMatrixCols=\count186
-\dotsspace@=\muskip10
-\c@parentequation=\count187
-\dspbrk@lvl=\count188
-\tag@help=\toks21
-\row@=\count189
-\column@=\count190
-\maxfields@=\count191
-\andhelp@=\toks22
-\eqnshift@=\dimen157
-\alignsep@=\dimen158
-\tagshift@=\dimen159
-\tagwidth@=\dimen160
-\totwidth@=\dimen161
-\lineht@=\dimen162
-\@envbody=\toks23
-\multlinegap=\skip50
-\multlinetaggap=\skip51
-\mathdisplay@stack=\toks24
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+\inf@bad=\count267
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count268
+\leftroot@=\count269
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count270
+\DOTSCASE@=\count271
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+\big@size=\dimen186
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count272
+\c@MaxMatrixCols=\count273
+\dotsspace@=\muskip17
+\c@parentequation=\count274
+\dspbrk@lvl=\count275
+\tag@help=\toks19
+\row@=\count276
+\column@=\count277
+\maxfields@=\count278
+\andhelp@=\toks20
+\eqnshift@=\dimen187
+\alignsep@=\dimen188
+\tagshift@=\dimen189
+\tagwidth@=\dimen190
+\totwidth@=\dimen191
+\lineht@=\dimen192
+\@envbody=\toks21
+\multlinegap=\skip62
+\multlinetaggap=\skip63
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 )
-(D:\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+(g:/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-(D:\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
-Package: amssymb 2009/06/22 v3.00
+(g:/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-(D:\CTEX\MiKTeX\tex\latex\tools\bm.sty
-Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
+(g:/texlive/2018/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup6
 \symboldletters=\mathgroup7
 \symboldsymbols=\mathgroup8
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
-LaTeX Info: Redefining \bm on input line 204.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
 )
-(D:\CTEX\MiKTeX\tex\latex\titlesec\titletoc.sty
+(g:/texlive/2018/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2011/12/15 v1.6 TOC entries
-\ttl@leftsep=\dimen163
+\ttl@leftsep=\dimen193
 )
-(D:\CTEX\MiKTeX\tex\latex\xcolor\xcolor.sty
-Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+(g:/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(D:\CTEX\MiKTeX\tex\latex\00miktex\color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+(g:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: xetex.def on input line 225.
-LaTeX Info: Redefining \color on input line 702.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `RGB' extended on input line 1353.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+
+(g:/texlive/2018/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
 )
-(D:\CTEX\MiKTeX\tex\latex\tools\array.sty
-Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen164
-\extrarowheight=\dimen165
-\NC@list=\toks25
-\extratabsurround=\skip52
-\backup@length=\skip53
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(D:\CTEX\MiKTeX\tex\latex\tools\longtable.sty
-Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip54
-\LTright=\skip55
-\LTpre=\skip56
-\LTpost=\skip57
-\LTchunksize=\count192
-\LTcapwidth=\dimen166
-\LT@head=\box37
-\LT@firsthead=\box38
-\LT@foot=\box39
-\LT@lastfoot=\box40
-\LT@cols=\count193
-\LT@rows=\count194
-\c@LT@tables=\count195
-\c@LT@chunks=\count196
-\LT@p@ftn=\toks26
+(g:/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(g:/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(g:/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(D:\CTEX\MiKTeX\tex\latex\booktabs\booktabs.sty
-Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen167
-\lightrulewidth=\dimen168
-\cmidrulewidth=\dimen169
-\belowrulesep=\dimen170
-\belowbottomsep=\dimen171
-\aboverulesep=\dimen172
-\abovetopsep=\dimen173
-\cmidrulesep=\dimen174
-\cmidrulekern=\dimen175
-\defaultaddspace=\dimen176
-\@cmidla=\count197
-\@cmidlb=\count198
-\@aboverulesep=\dimen177
-\@belowrulesep=\dimen178
-\@thisruleclass=\count199
-\@lastruleclass=\count200
-\@thisrulewidth=\dimen179
+(g:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-(D:\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
-\bigstrutjot=\dimen180
+Package graphics Info: Driver file: xetex.def on input line 99.
 )
-(D:\CTEX\MiKTeX\tex\latex\multirow\bigstrut.sty)
-(D:\CTEX\MiKTeX\tex\latex\multirow\bigdelim.sty)
-(D:\CTEX\MiKTeX\tex\latex\cprotect\cprotect.sty
+\Gin@req@height=\dimen194
+\Gin@req@width=\dimen195
+)
+(g:/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
+\col@sep=\dimen196
+\ar@mcellbox=\box53
+\extrarowheight=\dimen197
+\NC@list=\toks23
+\extratabsurround=\skip64
+\backup@length=\skip65
+\ar@cellbox=\box54
+)
+(g:/texlive/2018/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip66
+\LTright=\skip67
+\LTpre=\skip68
+\LTpost=\skip69
+\LTchunksize=\count279
+\LTcapwidth=\dimen198
+\LT@head=\box55
+\LT@firsthead=\box56
+\LT@foot=\box57
+\LT@lastfoot=\box58
+\LT@cols=\count280
+\LT@rows=\count281
+\c@LT@tables=\count282
+\c@LT@chunks=\count283
+\LT@p@ftn=\toks24
+)
+(g:/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen199
+\lightrulewidth=\dimen256
+\cmidrulewidth=\dimen257
+\belowrulesep=\dimen258
+\belowbottomsep=\dimen259
+\aboverulesep=\dimen260
+\abovetopsep=\dimen261
+\cmidrulesep=\dimen262
+\cmidrulekern=\dimen263
+\defaultaddspace=\dimen264
+\@cmidla=\count284
+\@cmidlb=\count285
+\@aboverulesep=\dimen265
+\@belowrulesep=\dimen266
+\@thisruleclass=\count286
+\@lastruleclass=\count287
+\@thisrulewidth=\dimen267
+)
+(g:/texlive/2018/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2018/08/03 v2.3 Span multiple rows of a table
+\multirow@colwidth=\skip70
+\multirow@cntb=\count288
+\multirow@dima=\skip71
+\bigstrutjot=\dimen268
+)
+(g:/texlive/2018/texmf-dist/tex/latex/multirow/bigstrut.sty
+Package: bigstrut 2018/08/03 v2.3 Provide larger struts in tabulars
+)
+(g:/texlive/2018/texmf-dist/tex/latex/multirow/bigdelim.sty
+Package: bigdelim 2018/08/03 v2.3 Create big delimiters in tabular or array
+)
+(g:/texlive/2018/texmf-dist/tex/latex/cprotect/cprotect.sty
 Package: cprotect 2011/01/27 v1.0e (Bruno Le Floch)
 
-(D:\CTEX\MiKTeX\tex\latex\base\ifthen.sty
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+(g:/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(D:\CTEX\MiKTeX\tex\latex\bigfoot\suffix.sty
-Package: suffix 2006/07/15 1.5 Variant command support
+(g:/texlive/2018/texmf-dist/tex/latex/bigfoot/suffix.sty
+Package: suffix 2006/07/15 1.5a Variant command support
 )
 \CPT@WriteOut=\write3
-\c@CPT@WriteCount=\count201
-Normal \count register pool exhausted, switching to extended pool.
-\c@CPT@numB=\count277
-\CPT@commandatend@toks=\toks27
+\c@CPT@WriteCount=\count289
+\c@CPT@numB=\count290
+\CPT@commandatend@toks=\toks25
 )
-(D:\CTEX\MiKTeX\tex\latex\listings\listings.sty
-\lst@mode=\count278
-\lst@gtempboxa=\box41
-\lst@token=\toks28
-\lst@length=\count279
-\lst@currlwidth=\dimen181
-\lst@column=\count280
-\lst@pos=\count281
-\lst@lostspace=\dimen182
-\lst@width=\dimen183
-\lst@newlines=\count282
-\lst@lineno=\count283
-\lst@maxwidth=\dimen184
+(g:/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count291
+\lst@gtempboxa=\box59
+\lst@token=\toks26
+\lst@length=\count292
+\lst@currlwidth=\dimen269
+\lst@column=\count293
+\lst@pos=\count294
+\lst@lostspace=\dimen270
+\lst@width=\dimen271
+\lst@newlines=\count295
+\lst@lineno=\count296
+\lst@maxwidth=\dimen272
 
-(D:\CTEX\MiKTeX\tex\latex\listings\lstmisc.sty
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count284
-\lst@skipnumbers=\count285
-\lst@framebox=\box42
+(g:/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
+\c@lstnumber=\count297
+\lst@skipnumbers=\count298
+\lst@framebox=\box60
 )
-(D:\CTEX\MiKTeX\tex\latex\listings\listings.cfg
-File: listings.cfg 2007/02/22 1.4 listings configuration
+(g:/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2018/09/02 1.7 listings configuration
 ))
-Package: listings 2007/02/22 1.4 (Carsten Heinz)
+Package: listings 2018/09/02 1.7 (Carsten Heinz)
 
-(D:\CTEX\MiKTeX\tex\latex\caption\caption.sty
-Package: caption 2011/11/10 v3.2e Customizing captions (AR)
+(g:/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/05/01 v3.3-147 Customizing captions (AR)
 
-(D:\CTEX\MiKTeX\tex\latex\caption\caption3.sty
-Package: caption3 2011/11/01 v1.4a caption3 kernel (AR)
-\captionmargin=\dimen185
-\captionmargin@=\dimen186
-\captionwidth=\dimen187
-\caption@indent=\dimen188
-\caption@parindent=\dimen189
-\caption@hangindent=\dimen190
+(g:/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/05/27 v1.8a caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen273
+\captionmargin@=\dimen274
+\captionwidth=\dimen275
+\caption@tempdima=\dimen276
+\caption@indent=\dimen277
+\caption@parindent=\dimen278
+\caption@hangindent=\dimen279
 )
-\c@ContinuedFloat=\count286
+\c@ContinuedFloat=\count299
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 
-(D:\CTEX\MiKTeX\tex\latex\caption\ltcaption.sty
-Package: ltcaption 2011/09/12 v1.3 longtable captions (AR)
+(g:/texlive/2018/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 ))
-(D:\CTEX\MiKTeX\tex\latex\enumitem\enumitem.sty
+(g:/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip58
-\enit@outerparindent=\dimen191
-\enit@toks=\toks29
-\enit@inbox=\box43
-\enitdp@description=\count287
+\labelindent=\skip72
+\enit@outerparindent=\dimen280
+\enit@toks=\toks27
+\enit@inbox=\box61
+\enitdp@description=\count300
 )
-(D:\CTEX\MiKTeX\tex\latex\ulem\ulem.sty
-\UL@box=\box44
-\UL@hyphenbox=\box45
-\UL@skip=\skip59
-\UL@hook=\toks30
-\UL@height=\dimen192
-\UL@pe=\count288
-\UL@pixel=\dimen193
-\ULC@box=\box46
-Requested font "lasy6" scaled 1000
- -> lasy6
-Package: ulem 2011/03/18
-\ULdepth=\dimen194
+(g:/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count301
+\calc@Bcount=\count302
+\calc@Adimen=\dimen281
+\calc@Bdimen=\dimen282
+\calc@Askip=\skip73
+\calc@Bskip=\skip74
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count303
+\calc@Cskip=\skip75
 )
-(D:\CTEX\MiKTeX\tex\latex\tools\calc.sty
-Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count289
-\calc@Bcount=\count290
-\calc@Adimen=\dimen195
-\calc@Bdimen=\dimen196
-\calc@Askip=\skip60
-\calc@Bskip=\skip61
-LaTeX Info: Redefining \setlength on input line 76.
-LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count291
-\calc@Cskip=\skip62
-)
-Requested font "Times New Roman" at 10.0pt
- -> C:/WINDOWS/Fonts/times.ttf
-Requested font "Times New Roman/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/times.ttf
-\g_fontspec_family_Times New Roman_int=\count292
-Requested font "Times New Roman/B/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/timesbd.ttf
-Requested font "Times New Roman/B/B/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/timesbd.ttf
-Requested font "Times New Roman/I/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/timesi.ttf
-Requested font "Times New Roman/I/I/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/timesi.ttf
-Requested font "Times New Roman/BI/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/timesbi.ttf
-Requested font "Times New Roman/BI/BI/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/timesbi.ttf
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'TimesNewRoman(0)' created for font 'Times New Roman' with
-. options [Ligatures=TeX,].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'small caps' with NFSS spec.:
-. <->"Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;+smcp;"
-. 
-. * 'bold' with NFSS spec.:
-. <->"Times New Roman/B/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. <->"Times New Roman/B/ICU:script=latn;language=DFLT;mapping=tex-text;+smcp;"
-. 
-. * 'italic' with NFSS spec.:
-. <->"Times New Roman/I/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'italic small caps' with NFSS spec.:
-. <->"Times New Roman/I/ICU:script=latn;language=DFLT;mapping=tex-text;+smcp;"
-. 
-. * 'bold italic' with NFSS spec.:
-. <->"Times New Roman/BI/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'bold italic small caps' with NFSS spec.:
-. <->"Times New
-. Roman/BI/ICU:script=latn;language=DFLT;mapping=tex-text;+smcp;"
+. options [Ligatures=TeX].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->"Times New
+. Roman/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.: <->"Times New
+. Roman/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+. - 'bold' (bx/n) with NFSS spec.: <->"Times New
+. Roman/B/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: <->"Times New
+. Roman/B/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+. - 'italic' (m/it) with NFSS spec.: <->"Times New
+. Roman/I/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: <->"Times New
+. Roman/I/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+. - 'bold italic' (bx/it) with NFSS spec.: <->"Times New
+. Roman/BI/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: <->"Times New
+. Roman/BI/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
 .................................................
-Requested font "Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;
-" at 10.0pt
- -> C:/WINDOWS/Fonts/times.ttf
-Requested font "Arial" at 10.0pt
- -> C:/WINDOWS/Fonts/arial.ttf
-Requested font "Arial/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/arial.ttf
-\g_fontspec_family_Arial_int=\count293
-Requested font "Arial/B/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/arialbd.ttf
-Requested font "Arial/B/B/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/arialbd.ttf
-Requested font "Arial/I/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/ariali.ttf
-Requested font "Arial/I/I/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/ariali.ttf
-Requested font "Arial/BI/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/arialbi.ttf
-Requested font "Arial/BI/BI/ICU" at 10.0pt
- -> C:/WINDOWS/Fonts/arialbi.ttf
+LaTeX Info: Redefining \rmfamily on input line 124.
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'Arial(0)' created for font 'Arial' with options
-. [Ligatures=TeX,].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"Arial/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'small caps' with NFSS spec.:
-. <->"Arial/ICU:script=latn;language=DFLT;mapping=tex-text;+smcp;"
-. 
-. * 'bold' with NFSS spec.:
-. <->"Arial/B/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'bold small caps' with NFSS spec.:
-. <->"Arial/B/ICU:script=latn;language=DFLT;mapping=tex-text;+smcp;"
-. 
-. * 'italic' with NFSS spec.:
-. <->"Arial/I/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'italic small caps' with NFSS spec.:
-. <->"Arial/I/ICU:script=latn;language=DFLT;mapping=tex-text;+smcp;"
-. 
-. * 'bold italic' with NFSS spec.:
-. <->"Arial/BI/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'bold italic small caps' with NFSS spec.:
-. <->"Arial/BI/ICU:script=latn;language=DFLT;mapping=tex-text;+smcp;"
+. [Ligatures=TeX].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->"Arial/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.:
+. <->"Arial/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+. - 'bold' (bx/n) with NFSS spec.:
+. <->"Arial/B/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.:
+. <->"Arial/B/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+. - 'italic' (m/it) with NFSS spec.:
+. <->"Arial/I/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.:
+. <->"Arial/I/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->"Arial/BI/OT:script=latn;language=DFLT;mapping=tex-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
+. <->"Arial/BI/OT:script=latn;language=DFLT;+smcp;mapping=tex-text;"
 .................................................
-\c@definition=\count294
-\c@theorem=\count295
-\c@lemma=\count296
-\c@corollary=\count297
-\c@assumption=\count298
-\c@conjecture=\count299
-\c@axiom=\count300
-\c@principle=\count301
-\c@problem=\count302
-\c@example=\count303
-\c@proof=\count304
-\c@solution=\count305
+LaTeX Info: Redefining \sffamily on input line 125.
+\c@definition=\count304
+\c@theorem=\count305
+\c@lemma=\count306
+\c@corollary=\count307
+\c@assumption=\count308
+\c@conjecture=\count309
+\c@axiom=\count310
+\c@principle=\count311
+\c@problem=\count312
+\c@example=\count313
+\c@proof=\count314
+\c@solution=\count315
 )
-(D:\CTEX\MiKTeX\tex\xelatex\xetexurl\url.sty
-\Urlmuskip=\muskip11
-Package: url 2004/03/15  ver 3.1  Verb mode for urls, etc.
+(g:/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(c:\Users\gavin\CUMCM2018\Thesis\thesis.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 8.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 8.
+(g:/texlive/2018/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
+Package: xeCJK-listings 2018/04/30 v3.7.1 xeCJK patch file for listings
+\l__xeCJK_listings_max_char_int=\count316
+\l__xeCJK_listings_flag_int=\count317
+)
+No file thesis.aux.
+\openout1 = `thesis.aux'.
 
-(D:\CTEX\MiKTeX\tex\latex\tipa\t3cmr.fd
-File: t3cmr.fd 2001/12/31 TIPA font definitions
-)
-LaTeX Font Info:    ... okay on input line 8.
-Requested font "Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;
-" at 12.05pt
- -> C:/WINDOWS/Fonts/times.ttf
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 9.
 .................................................
 . fontspec info: "setup-math"
 . 
@@ -929,73 +1443,68 @@ Requested font "Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;
 .................................................
 \symlegacymaths=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 8.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 8.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 8.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 8.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 8.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 8.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 8.
-LaTeX Font Info:    Redeclaring math accent \check on input line 8.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 8.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 8.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 8.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 8.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 8.
-LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 8.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 9.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 9.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 9.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 9.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 9.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 9.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 9.
+LaTeX Font Info:    Redeclaring math accent \check on input line 9.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 9.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 9.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 9.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 9.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 9.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 9.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> EU1/TimesNewRoman(0)/m/n on input line 
-8.
-LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 8.
+(Font)                  OT1/cmr/m/n --> TU/TimesNewRoman(0)/m/n on input line 9
+.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 9.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> EU1/TimesNewRoman(0)/m/n on input line
- 8.
+(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/m/n on input line 
+9.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  EU1/TimesNewRoman(0)/m/n --> EU1/TimesNewRoman(0)/m/n o
-n input line 8.
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  EU1/TimesNewRoman(0)/m/n --> EU1/TimesNewRoman(0)/m/n o
-n input line 8.
+(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/m/n on 
+input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> EU1/TimesNewRoman(0)/m/it on input lin
-e 8.
+(Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line
+ 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> EU1/TimesNewRoman(0)/bx/n on input lin
-e 8.
+(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/bx/n on input line
+ 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/Arial(0)/m/n on input line 8.
+(Font)                  OT1/cmss/m/n --> TU/Arial(0)/m/n on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 8.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 9.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  EU1/TimesNewRoman(0)/m/n --> EU1/TimesNewRoman(0)/bx/n 
-on input line 8.
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  EU1/TimesNewRoman(0)/m/n --> EU1/TimesNewRoman(0)/bx/n 
-on input line 8.
+(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/bx/n on
+ input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> EU1/TimesNewRoman(0)/bx/it on input l
-ine 8.
+(Font)                  OT1/cmr/bx/it --> TU/TimesNewRoman(0)/bx/it on input li
+ne 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/Arial(0)/bx/n on input line 8.
+(Font)                  OT1/cmss/bx/n --> TU/Arial(0)/bx/n on input line 9.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/bx/n on input line 8.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 9.
 
-*geometry* detected driver: pdftex
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: xetex
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -1026,393 +1535,85 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count306
+\c@lstlisting=\count318
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-Requested font "Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;
-" at 14.05pt
- -> C:/WINDOWS/Fonts/times.ttf
-Requested font "Times New Roman/B/ICU:script=latn;language=DFLT;mapping=tex-tex
-t;" at 14.05pt
- -> C:/WINDOWS/Fonts/timesbd.ttf
-Requested font "SimSun" at 14.05pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
-Requested font "SimSun/ICU" at 14.05pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
-\g_fontspec_family_SimSun_int=\count307
-Requested font "SimHei/ICU" at 14.05pt
- -> C:/WINDOWS/Fonts/simhei.ttf
-Requested font "[SIMKAI.TTF]/ICU" at 14.05pt
- -> C:/WINDOWS/Fonts/SIMKAI.TTF
-Requested font "SimHei/I/ICU" at 14.05pt
- -> C:/WINDOWS/Fonts/simhei.ttf
 .................................................
 . fontspec info: "no-font-shape"
 . 
-. Could not resolve font SimHei/I (it probably doesn't exist).
+. Could not resolve font "SimHei/BI" (it probably doesn't exist).
 .................................................
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'SimSun(0)' created for font 'SimSun' with options
-. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'bold' with NFSS spec.:
-. <->"SimHei/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'italic' with NFSS spec.:
-. <->"[SIMKAI.TTF]/ICU:script=latn;language=DFLT;mapping=tex-text;"
-.................................................
-Requested font "SimHei/ICU:script=latn;language=DFLT;mapping=tex-text;" at 14.0
-5pt
- -> C:/WINDOWS/Fonts/simhei.ttf
-Requested font "SimHei" at 12.05pt
- -> C:/WINDOWS/Fonts/simhei.ttf
-Requested font "SimHei/ICU" at 12.05pt
- -> C:/WINDOWS/Fonts/simhei.ttf
-\g_fontspec_family_SimHei_int=\count308
-Requested font "SimHei/I/ICU" at 12.05pt
- -> C:/WINDOWS/Fonts/simhei.ttf
 .................................................
 . fontspec info: "no-font-shape"
 . 
-. Could not resolve font SimHei/I (it probably doesn't exist).
+. Could not resolve font "SimHei/B" (it probably doesn't exist).
 .................................................
-Requested font "SimHei/I/ICU" at 12.05pt
- -> C:/WINDOWS/Fonts/simhei.ttf
 .................................................
 . fontspec info: "no-font-shape"
 . 
-. Could not resolve font SimHei/I (it probably doesn't exist).
+. Could not resolve font "SimHei/I" (it probably doesn't exist).
 .................................................
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'SimHei(0)' created for font 'SimHei' with options
-. [Ligatures=TeX,BoldFont={SimHei},BoldFeatures={RawFeature={embolden=4}}].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"SimHei/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'bold' with NFSS spec.:
-. <->"SimHei/ICU:script=latn;language=DFLT;mapping=tex-text;embolden=4;"
+. [Script={CJK}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->"SimHei/OT:script=hani;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-Requested font "SimHei/ICU:script=latn;language=DFLT;mapping=tex-text;" at 12.0
-5pt
- -> C:/WINDOWS/Fonts/simhei.ttf
-Requested font "SimSun" at 12.05pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
-Requested font "SimSun/ICU" at 12.05pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'SimSun(0)' created for font 'SimSun' with options
-. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
-. 
-. This font family consists of the following shapes:
-.................................................
-Requested font "SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;" at 12.0
-5pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
 [1
 
 ]
-Requested font "Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;
-" at 17.28pt
- -> C:/WINDOWS/Fonts/times.ttf
-Requested font "Times New Roman/B/ICU:script=latn;language=DFLT;mapping=tex-tex
-t;" at 17.28pt
- -> C:/WINDOWS/Fonts/timesbd.ttf
-Requested font "SimSun" at 17.28pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
-Requested font "SimSun/ICU" at 17.28pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'SimSun(0)' created for font 'SimSun' with options
-. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
-. 
-. This font family consists of the following shapes:
-.................................................
-Requested font "SimHei/ICU:script=latn;language=DFLT;mapping=tex-text;" at 17.2
-8pt
- -> C:/WINDOWS/Fonts/simhei.ttf
- (c:\Users\gavin\CUMCM2018\Thesis\thesis.toc
-Requested font "Times New Roman/B/ICU:script=latn;language=DFLT;mapping=tex-tex
-t;" at 12.05pt
- -> C:/WINDOWS/Fonts/timesbd.ttf
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'SimSun(0)' created for font 'SimSun' with options
-. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
-. 
-. This font family consists of the following shapes:
-.................................................
-Requested font "SimSun/I/ICU" at 12.05pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
-.................................................
-. fontspec info: "no-font-shape"
-. 
-. Could not resolve font SimSun/I (it probably doesn't exist).
-.................................................
-Requested font "SimSun/I/ICU" at 12.05pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
-.................................................
-. fontspec info: "no-font-shape"
-. 
-. Could not resolve font SimSun/I (it probably doesn't exist).
-.................................................
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'SimSun(1)' created for font 'SimSun' with options
-. [Ligatures=TeX,BoldFont={SimSun},BoldFeatures={RawFeature={embolden=4}}].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;"
-. 
-. * 'bold' with NFSS spec.:
-. <->"SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;embolden=4;"
-.................................................
-)
+No file thesis.toc.
 \tf@toc=\write4
-Requested font "Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;
-" at 14.4pt
- -> C:/WINDOWS/Fonts/times.ttf
-Requested font "Times New Roman/B/ICU:script=latn;language=DFLT;mapping=tex-tex
-t;" at 14.4pt
- -> C:/WINDOWS/Fonts/timesbd.ttf
-Requested font "SimSun" at 14.4pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
-Requested font "SimSun/ICU" at 14.4pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'SimSun(0)' created for font 'SimSun' with options
-. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
-. 
-. This font family consists of the following shapes:
-.................................................
-Requested font "SimHei/ICU:script=latn;language=DFLT;mapping=tex-text;" at 14.4
-pt
- -> C:/WINDOWS/Fonts/simhei.ttf
- [2]
-Requested font "Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;
-" at 8.0pt
- -> C:/WINDOWS/Fonts/times.ttf
-Requested font "Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;
-" at 6.0pt
- -> C:/WINDOWS/Fonts/times.ttf
-Requested font "cmmi12" at 12.05pt
- -> cmmi12
-Requested font "cmmi8" at 8.0pt
- -> cmmi8
-Requested font "cmmi6" at 6.0pt
- -> cmmi6
-Requested font "cmsy10" at 12.05pt
- -> cmsy10
-Requested font "cmsy8" at 8.0pt
- -> cmsy8
-Requested font "cmsy6" at 6.0pt
- -> cmsy6
-Requested font "cmex10" at 12.05pt
- -> cmex10
-Requested font "cmex8" at 8.0pt
- -> cmex8
-Requested font "cmex7" at 6.0pt
- -> cmex7
-LaTeX Font Info:    Try loading font information for U+msa on input line 47.
+\openout4 = `thesis.toc'.
 
-(D:\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-Requested font "msam10" at 12.05pt
- -> msam10
-Requested font "msam10" at 8.0pt
- -> msam10
-Requested font "msam7" at 6.0pt
- -> msam7
-LaTeX Font Info:    Try loading font information for U+msb on input line 47.
 
-(D:\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+LaTeX Warning: Citation `Saiti' on page 2 undefined on input line 21.
+
+[2]
+LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 48.
+LaTeX Font Info:    Try loading font information for U+msa on input line 48.
+ (g:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-Requested font "msbm10" at 12.05pt
- -> msbm10
-Requested font "msbm10" at 8.0pt
- -> msbm10
-Requested font "msbm7" at 6.0pt
- -> msbm7
-Requested font "cmbx12" at 12.05pt
- -> cmbx12
-Requested font "cmbx8" at 8.0pt
- -> cmbx8
-Requested font "cmbx6" at 6.0pt
- -> cmbx6
-Requested font "cmmib10" at 12.05pt
- -> cmmib10
-Requested font "cmmib10" at 8.0pt
- -> cmmib10
-Requested font "cmmib7" at 6.0pt
- -> cmmib7
-Requested font "cmbsy10" at 12.05pt
- -> cmbsy10
-Requested font "cmbsy10" at 8.0pt
- -> cmbsy10
-Requested font "cmbsy7" at 6.0pt
- -> cmbsy7
-Requested font "cmr12" at 12.05pt
- -> cmr12
-Requested font "cmr8" at 8.0pt
- -> cmr8
-Requested font "cmr6" at 6.0pt
- -> cmr6
+LaTeX Font Info:    Try loading font information for U+msb on input line 48.
+
+(g:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "SimSun/BI" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "SimSun/B" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "SimSun/I" (it probably doesn't exist).
+.................................................
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'SimSun(1)' created for font 'SimSun' with options
-. [Ligatures=TeX,BoldFont={SimSun},BoldFeatures={RawFeature={embolden=4}}].
-. 
-. This font family consists of the following shapes:
+. [Script={CJK}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.: <->"SimSun/OT:script=hani;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
-Requested font "SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;embolden=
-4;" at 12.05pt
- -> D:/CTEX/CTeX/fonts/truetype/chinese/simsun.ttf
- [3] [4] [5] [6]
-Requested font "Times New Roman/ICU:script=latn;language=DFLT;mapping=tex-text;
-" at 10.95pt
- -> C:/WINDOWS/Fonts/times.ttf
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 173
-.
 
-(D:\CTEX\MiKTeX\tex\latex\euenc\eu1lmtt.fd
-File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Requested font "[lmmono10-regular]" at 10.95pt
- -> D:/CTEX/MiKTeX/fonts/opentype/public/lm/lmmono10-regular.otf
- [7]
-File: simple_model_1.pdf Graphic file (type QTm)
- <use  "simple_model_1.pdf" >
-[8] [9] (D:\CTEX\MiKTeX\tex\latex\listings\lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-(D:\CTEX\MiKTeX\tex\latex\listings\lstlang2.sty
-File: lstlang2.sty 2004/09/05 1.3 listings language file
-)
-(D:\CTEX\MiKTeX\tex\latex\listings\lstlang3.sty
-File: lstlang3.sty 2004/09/05 1.3 listings language file
-)
-(D:\CTEX\MiKTeX\tex\latex\listings\lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-(D:\CTEX\MiKTeX\tex\latex\listings\lstlang2.sty
-File: lstlang2.sty 2004/09/05 1.3 listings language file
-)
-(D:\CTEX\MiKTeX\tex\latex\listings\lstlang3.sty
-File: lstlang3.sty 2004/09/05 1.3 listings language file
-)
-(D:\CTEX\MiKTeX\tex\latex\listings\lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-(D:\CTEX\MiKTeX\tex\latex\listings\lstlang2.sty
-File: lstlang2.sty 2004/09/05 1.3 listings language file
-)
-(D:\CTEX\MiKTeX\tex\latex\listings\lstlang3.sty
-File: lstlang3.sty 2004/09/05 1.3 listings language file
-)
-(D:\CTEX\MiKTeX\tex\latex\listings\lstmisc.sty
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-)
-Requested font "[SIMFANG.TTF]" at 10.95pt
- -> C:/WINDOWS/Fonts/SIMFANG.TTF
-Requested font "[SIMFANG.TTF]/ICU" at 10.95pt
- -> C:/WINDOWS/Fonts/SIMFANG.TTF
-.................................................
-. fontspec info: "no-scripts"
-. 
-. Font [SIMFANG.TTF] does not contain any OpenType `Script' information.
-.................................................
-\g_fontspec_family_[SIMFANG.TTF]_int=\count309
-Requested font "[SIMFANG.TTF]/I/ICU" at 10.95pt
- -> C:/WINDOWS/Fonts/SIMFANG.TTF
-Requested font "[SIMFANG.TTF]/I/I/ICU" at 10.95pt
- -> C:/WINDOWS/Fonts/SIMFANG.TTF
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family '[SIMFANG.TTF](0)' created for font '[SIMFANG.TTF]' with options
-. [Ligatures=TeX,BoldFont={[SIMFANG.TTF]},BoldFeatures={RawFeature={embolden=4}
-}].
-. 
-. This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->"[SIMFANG.TTF]/ICU:mapping=tex-text;"
-. 
-. * 'bold' with NFSS spec.:
-. <->"[SIMFANG.TTF]/ICU:mapping=tex-text;embolden=4;"
-. 
-. * 'italic' with NFSS spec.:
-. <->"[SIMFANG.TTF]/I/ICU:mapping=tex-text;"
-. 
-. * 'bold italic' with NFSS spec.:
-. <->"[SIMFANG.TTF]/I/ICU:mapping=tex-text;"
-.................................................
-Requested font "[SIMFANG.TTF]/ICU:mapping=tex-text;" at 10.95pt
- -> C:/WINDOWS/Fonts/SIMFANG.TTF
-Requested font "[lmmono12-regular]" at 12.05pt
- -> D:/CTEX/MiKTeX/fonts/opentype/public/lm/lmmono12-regular.otf
-Requested font "[SIMFANG.TTF]" at 12.05pt
- -> C:/WINDOWS/Fonts/SIMFANG.TTF
-Requested font "[SIMFANG.TTF]/ICU" at 12.05pt
- -> C:/WINDOWS/Fonts/SIMFANG.TTF
-.................................................
-. fontspec info: "no-scripts"
-. 
-. Font [SIMFANG.TTF] does not contain any OpenType `Script' information.
-.................................................
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family '[SIMFANG.TTF](0)' created for font '[SIMFANG.TTF]' with options
-. [Ligatures=TeX,BoldFont={[SIMFANG.TTF]},BoldFeatures={RawFeature={embolden=4}
-}].
-. 
-. This font family consists of the following shapes:
-.................................................
-Requested font "[SIMFANG.TTF]/ICU:mapping=tex-text;" at 12.05pt
- -> C:/WINDOWS/Fonts/SIMFANG.TTF
- [10] [11]
-(D:\CTEX\MiKTeX\tex\latex\listings\lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-(D:\CTEX\MiKTeX\tex\latex\listings\lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-(D:\CTEX\MiKTeX\tex\latex\listings\lstmisc.sty
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-) [12] [13]
-(c:\Users\gavin\CUMCM2018\Thesis\thesis.aux) ) 
-Here is how much of TeX's memory you used:
- 21782 strings out of 430478
- 411356 string characters out of 3191503
- 470245 words of memory out of 3000000
- 24546 multiletter control sequences out of 15000+200000
- 11893 words of font info for 98 fonts, out of 3000000 for 9000
- 14 hyphenation exceptions out of 8191
- 64i,10n,122p,872b,2209s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on thesis.pdf (13 pages).
+LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
+(Font)              using `TU/SimSun(1)/m/n' instead on input line 64.
+
+[3
