@@ -17,8 +17,10 @@
 \contentsline {section}{\numberline {八、}情况二的解}{11}
 \contentsline {subsection}{\numberline {8\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}标准调度模型}{11}
 \contentsline {subsection}{\numberline {8\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}遗传算法}{11}
-\contentsline {section}{\numberline {九、}情况三的解}{11}
-\contentsline {subsection}{\numberline {9\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}情况3-1}{11}
-\contentsline {subsection}{\numberline {9\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}情况3-2}{11}
-\contentsline {section}{\numberline {附录A}排队算法--matlab 源程序}{12}
+\contentsline {subsection}{\numberline {8\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}遗传算法的并行化}{11}
+\contentsline {subsection}{\numberline {8\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}不同的编码方式}{11}
+\contentsline {section}{\numberline {九、}情况三的解}{12}
+\contentsline {subsection}{\numberline {9\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}情况3-1}{12}
+\contentsline {subsection}{\numberline {9\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}情况3-2}{12}
+\contentsline {section}{\numberline {附录A}排队算法--matlab 源程序}{13}
 \contentsfinish 
