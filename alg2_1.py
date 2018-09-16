@@ -20,6 +20,8 @@ Cargo_modecode_rev = {
     'done': 3
 }
 
+genetic_list = [[], []]
+
 class PriorityListAlgorithm:
     def __init__(self):
         # parameters
@@ -60,14 +62,40 @@ class PriorityListAlgorithm:
         :param entity_dict: entity_dict of world.py
         :return: method code
         """
+        rgvPosition = entity_dict['RGV'].posi
         if not self.commands:
             self.commands = self.getCommand(entity_dict)
             currentCommand = self.commands[0]
             self.nextCommand()
+            if currentCommand == 7:
+                cncPosition = rgvPosition * 2 - 1
+                if cncPosition in [1, 4, 5, 6]:
+                    genetic_list[0].append(cncPosition)
+                else:
+                    genetic_list[1].append(cncPosition)
+            if currentCommand == 8:
+                cncPosition = rgvPosition * 2
+                if cncPosition in [2, 3, 7, 8]:
+                    genetic_list[0].append(cncPosition)
+                else:
+                    genetic_list[1].append(cncPosition)
+
             return currentCommand
         else:
             currentCommand = self.commands[0]
             self.nextCommand()
+            if currentCommand == 7:
+                cncPosition = rgvPosition * 2 - 1
+                if cncPosition in [1, 4, 5, 6]:
+                    genetic_list[0].append(cncPosition)
+                else:
+                    genetic_list[1].append(cncPosition)
+            if currentCommand == 8:
+                cncPosition = rgvPosition * 2
+                if cncPosition in [2, 3, 7, 8]:
+                    genetic_list[0].append(cncPosition)
+                else:
+                    genetic_list[1].append(cncPosition)
             return currentCommand
 
     # add a command to the command queue
