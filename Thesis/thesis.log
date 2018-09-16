@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.9.14)  16 SEP 2018 17:00
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.9.14)  16 SEP 2018 17:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1645,7 +1645,7 @@ File: simple_model_1.pdf Graphic file (type pdf)
  [8] [9] [10]
 (g:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
-) [11] [12]
+) [11] [12] [13]
 (g:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 )
@@ -1654,7 +1654,7 @@ File: lstlang1.sty 2018/09/02 1.7 listings language file
 )
 (g:/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
-) [13] (./thesis.aux)
+) [14] (./thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1662,10 +1662,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  21691 strings out of 492962
  451873 string characters out of 6136967
- 715037 words of memory out of 5000000
+ 715049 words of memory out of 5000000
  25372 multiletter control sequences out of 15000+600000
  540245 words of font info for 101 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,10n,74p,482b,1542s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,10n,74p,482b,1758s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (13 pages).
+Output written on thesis.pdf (14 pages).
