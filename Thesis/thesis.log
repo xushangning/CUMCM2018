@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.9.14)  16 SEP 2018 16:24
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2018.9.14)  16 SEP 2018 16:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1414,8 +1414,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 Package: xeCJK-listings 2018/04/30 v3.7.1 xeCJK patch file for listings
 \l__xeCJK_listings_max_char_int=\count316
 \l__xeCJK_listings_flag_int=\count317
-)
-No file thesis.aux.
+) (./thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -1434,7 +1433,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
-ABD: EverySelectfont initializing macros
+ ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 9.
 .................................................
 . fontspec info: "setup-math"
@@ -1566,25 +1565,7 @@ Package caption Info: End \AtBeginDocument code.
 .................................................
 [1
 
-]
-No file thesis.toc.
-\tf@toc=\write4
-\openout4 = `thesis.toc'.
-
-
-LaTeX Warning: Citation `Saiti' on page 2 undefined on input line 21.
-
-[2]
-LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 48.
-LaTeX Font Info:    Try loading font information for U+msa on input line 48.
- (g:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 48.
-
-(g:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+] (./thesis.toc
 .................................................
 . fontspec info: "no-font-shape"
 . 
@@ -1611,9 +1592,77 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 . - 'normal' (m/n) with NFSS spec.: <->"SimSun/OT:script=hani;language=DFLT;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 .................................................
+)
+\tf@toc=\write4
+\openout4 = `thesis.toc'.
 
+ [2]
+LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 48.
+LaTeX Font Info:    Try loading font information for U+msa on input line 48.
+ (g:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 48.
+
+(g:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 
 LaTeX Font Warning: Font shape `TU/SimSun(1)/bx/n' undefined
 (Font)              using `TU/SimSun(1)/m/n' instead on input line 64.
 
-[3
+[3] [4] [5] [6]
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "FangSong/BI" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "FangSong/B" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "FangSong/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'FangSong(0)' created for font 'FangSong' with options
+. [Script={CJK}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->"FangSong/OT:script=hani;language=DFLT;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+.................................................
+ [7]
+File: simple_model_1.pdf Graphic file (type pdf)
+<use simple_model_1.pdf>
+ [8] [9] [10] [11]
+(g:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2018/09/02 1.7 listings language file
+)
+(g:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2018/09/02 1.7 listings language file
+)
+(g:/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
+) [12] (./thesis.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 21567 strings out of 492962
+ 450300 string characters out of 6136967
+ 713974 words of memory out of 5000000
+ 25252 multiletter control sequences out of 15000+600000
+ 540229 words of font info for 99 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 59i,10n,74p,482b,1571s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on thesis.pdf (12 pages).
