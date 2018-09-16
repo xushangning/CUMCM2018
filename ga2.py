@@ -74,11 +74,11 @@ def decode(chromosome_pair):
 
 
 def initial_population(encode_length, population_size, sample_space):
-    chromosomes = np.array([
-        np.array([sample_space[i] for i in np.random.randint(
-            len(sample_space), size=encode_length)], 'int8')
-        for _ in range(population_size)
-    ], 'int8')
+    chromosomes = []
+    for _ in range(population_size - 1):
+        temp = sample_space[:] * 2
+        random.shuffle(temp)
+        chromosomes.append(temp * (encode_length // 8))
     return chromosomes
 
 
@@ -143,11 +143,14 @@ def mutation(population, DNA_bases, Pm=0.05):
 
 
 def ga2(DNA_bases_group, template, max_iter):
-    chromosome_length = 200
-    chromosome_pairs = np.array([
-        initial_population(chromosome_length, 50, DNA_bases_group[0]),
-        initial_population(chromosome_length, 50, DNA_bases_group[1])
-    ], 'int8')
+    chromosome_length = 280
+    chromosome_pairs = [
+         initial_population(chromosome_length, 50, DNA_bases_group[0]),
+         initial_population(chromosome_length, 50, DNA_bases_group[1])
+    ]
+    chromosome_pairs[0].append([1, 4, 5, 6] * 70)
+    chromosome_pairs[1].append([2, 3, 7, 8] * 70)
+    chromosome_pairs = np.array(chromosome_pairs, 'int8')
 
     for iteration in range(max_iter):
         cum_proba = fitness(chromosome_pairs, template)[1]
