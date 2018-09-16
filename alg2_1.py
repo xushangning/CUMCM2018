@@ -22,7 +22,7 @@ Cargo_modecode_rev = {
 
 genetic_list = [[], []]
 
-mask = [1, 3, 5, 7]
+mask = [1, 3, 5]
 
 
 class PriorityListAlgorithm:
