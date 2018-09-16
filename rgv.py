@@ -86,8 +86,6 @@ class RGV:
 
             if cargo_t is not None:
                 self.carry = cargo_t
-            elif self.carry is None:
-                return -1, None
 
             last_t = self.cnc['curr'](self.posi, 1)
         elif RGV_modecode[modecode] == 'supply cargo 2':
@@ -98,8 +96,7 @@ class RGV:
 
             if cargo_t is not None:
                 self.carry = cargo_t
-            elif self.carry is None:
-                return -1, None
+
             last_t = self.cnc['curr'](self.posi, 2)
         elif RGV_modecode[modecode] == 'wash':
             if self.carry is None or \
@@ -146,6 +143,9 @@ class RGV:
             elif tmp == RGV_modecode_rev['supply cargo 1']:
                 tmp_t = self.carry
                 self.carry = self.cnc['consume'](self.posi, 1)
+                if tmp_t is None and self.carry is None:
+                    return -1, None
+
                 flag = self.cnc['supply'](self.posi, 1, tmp_t)
                 if flag == -1:
                     return -1, None
@@ -153,6 +153,9 @@ class RGV:
             elif tmp == RGV_modecode_rev['supply cargo 2']:
                 tmp_t = self.carry
                 self.carry = self.cnc['consume'](self.posi, 2)
+                if tmp_t is None and self.carry is None:
+                    return -1, None
+
                 flag = self.cnc['supply'](self.posi, 2, tmp_t)
                 if flag == -1:
                     return -1, None

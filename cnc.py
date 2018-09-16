@@ -1,8 +1,11 @@
 from cargo import Cargo_modecode, Cargo_modecode_rev
 import random
 
-CNC_proctime_1 = 560
-CNC_proctime_2 = 378
+CNC_proctime = [
+    560,
+    400,
+    378
+]
 
 CNC_modecode = {
     0: 'idle',
