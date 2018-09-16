@@ -60,7 +60,11 @@ class World:
 
                     new_inst = self.alg(self.entity_dict, self.clock)
                     if new_inst == rgv.RGV_modecode_rev['supply cargo 1']:
-                        if self.entity_dict['RGV'].carry is None:
+                        target_id = self.get_cnc_id(
+                            self.entity_dict['RGV'].posi, 1)
+                        if self.entity_dict['RGV'].carry is None and \
+                                self.entity_dict['CNC'][target_id].proc_mode != \
+                                cnc.CNC_typecode_rev['from half to ready']:
                             self.cargo_id += 1
                             flag, opt_cargo = self.entity_dict['RGV'].inst(
                                 new_inst, Cargo(self.cargo_id))
@@ -69,11 +73,16 @@ class World:
                                 'time': self.clock,
                                 'cnc': self.get_cnc_id(self.entity_dict['RGV'].posi, 1)
                             })
+
                         else:
                             flag, opt_cargo = self.entity_dict['RGV'].inst(
                                 new_inst, None)
                     elif new_inst == rgv.RGV_modecode_rev['supply cargo 2']:
-                        if self.entity_dict['RGV'].carry is None:
+                        target_id = self.get_cnc_id(
+                            self.entity_dict['RGV'].posi, 2)
+                        if self.entity_dict['RGV'].carry is None and \
+                                self.entity_dict['CNC'][target_id].proc_mode != \
+                                cnc.CNC_typecode_rev['from half to ready']:
                             self.cargo_id += 1
                             flag, opt_cargo = self.entity_dict['RGV'].inst(
                                 new_inst, Cargo(self.cargo_id))
@@ -219,8 +228,11 @@ class World:
         else:
             return -1
 
-        self.entity_dict['CNC'][cnc_id].proc = cargo_t
-        flag, _ = self.entity_dict['CNC'][cnc_id].inst(cnc.CNC_modecode_rev['processing'])
+        if cargo_t is not None:
+            self.entity_dict['CNC'][cnc_id].proc = cargo_t
+            flag, _ = self.entity_dict['CNC'][cnc_id].inst(cnc.CNC_modecode_rev['processing'])
+        else:
+            flag, _ = self.entity_dict['CNC'][cnc_id].inst(cnc.CNC_modecode_rev['idle'])
         return flag
 
     def cnc_consume(self, posi, side):
