@@ -217,13 +217,13 @@
 	\subsection{标准调度模型}
 	使用标准调度模型可以快速地得到一个基本令人满意的解。鉴于标准调度模型的时间复杂度为\(O(n)\)，标准调度模型测试程序运行需要的时间非常短，约在 秒以内。而此模型的结果为：在8小时内共有 个成品被送上了下料传送带，如图 所示。
 	
-	\section{遗传算法}
+	\subsection{遗传算法}
 	
-	\subsection{简介}
+	\subsubsection{简介}
 
 	遗传算法在 RGV 调度中有着广泛的应用。Runwei Cheng 等人认为\cite{chenrunwei}遗传算法之所以有效，是因为遗传算法能交替在解空间和编码空间之间切换。通过染色体编码将问题转换至编码空间，通过选择、交叉重组和突变等模拟自然遗传的过程寻找最优解，再通过解码将获得的编码转换成解。
 
-	\subsection{编码方式}
+	\subsubsection{编码方式}
 
 	染色体的编码决定了计算难度。在车间调度领域，遗传算法的编码方式主要有如下几种：
 	\begin{enumerate}
@@ -248,7 +248,7 @@
 	\end{tabular}
 	\end{table}
 	
-	\subsection{解码}
+	\subsubsection{解码}
 
 	在 \texttt{ga.py} 中，\texttt{decode()} 函数负责将染色体编码解释为 RGV 的运动路线和命令。染色体解码遵循以下原则：
 	\begin{enumerate}
@@ -257,15 +257,15 @@
 	\end{enumerate}
 	\texttt{decode()} 函数的返回值是一个函数。该函数能够被用于初始化 \texttt{World} 对象，控制 RGV 小车移动。
 
-	\subsection{适应度}
+	\subsubsection{适应度}
 
 	\texttt{fitness()} 函数计算种群中所有染色体的适应度。每一个染色体的适应度就是染色体对应的 RGV 运动路线在八小时内能够生产的工件的数量。\texttt{select\_new\_population()} 根据计算得到的适应度选择新一代。所有染色体的适应度使用 Softmax 函数归一，作为该个体在这一代选择中生存下来的概率。使用 Softmax 函数而不是直接用某一染色体的适应度处以所有适应度之和，是因为我们发现在初代中尽管染色体之间相差很大，但由于初代染色体是随机产生的，适应度非常接近。为了将被选择的概率拉开，使用了含有指数的 Softmax。
 
-	\subsection{重组与突变}
+	\subsubsection{重组与突变}
 
 	模拟重组和突变的函数分别是 \texttt{crossover()} 和 \texttt{mutation()}。\texttt{crossover()} 实现了单染色体交叉点重组。突变会改变染色体上的单个编码。重组与突变的概率均可通过其参数来调整。
 
-	\subsection{遗传流程}
+	\subsubsection{遗传流程}
 
 	函数 \texttt{ga()} 通过调用前文提及的函数对初始种群进行反复迭代，有以下几步。
 	\begin{enumerate}
@@ -274,7 +274,7 @@
 		\item 选择得到的新一代进行重组和突变后，输出其适应度，再进入下一代选择。
 	\end{enumerate}
 
-	\subsection{遗传算法成果}
+	\subsubsection{遗传算法成果}
 
 	以下是遗传算法运行样例（只有十代）：
 	
